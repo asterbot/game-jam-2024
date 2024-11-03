@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jx70ss7ct68"]
+
+[ext_resource type="Texture2D" uid="uid://qv7msyv4c3ea" path="res://icon.svg" id="1_1w3c0"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(-1, 1)
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(574, 288)
+rotation = -0.298451
+scale = Vector2(1.89, 1.89)
+texture = ExtResource("1_1w3c0")
+
+[node name="LaserImage" type="Sprite2D" parent="PlayerImage"]
+position = Vector2(80.486, 28.0822)
+rotation = 0.359538
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1w3c0")
