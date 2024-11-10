@@ -1,23 +1,22 @@
 extends Node2D
 
-var test_array: Array[String] = ["hello", "bye", "perry the platypus"]
+var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
+var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# targets the Logo node with $Logo to modify it
-	$Logo.rotation_degrees = 90
-	
+func _on_gate_player_entered_gate(body) -> void:
+	print("Player has entered gate")
+	print(body)
 
-	print(test_array[0])	
-	for s in test_array:
-		print(s)
+func _on_player_laser(pos, direction) -> void:
+	var laser = laser_scene.instantiate() as Area2D
+	laser.position = pos
+	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
+	laser.direction = direction
+	$Projectiles.add_child(laser)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	$Logo.rotation_degrees += 60 * delta
-	
-	if ($Logo.position.x > 1000):
-		$Logo.pos.x = 0
-		# note: pos, NOT position
-		# in logo.gd, we update the position attribute with pos
+func _on_player_grenade(pos, direction) -> void:
+	var grenade = grenade_scene.instantiate() as RigidBody2D
+	grenade.position = pos
+	grenade.linear_velocity = direction * grenade.speed
+	$Projectiles.add_child(grenade)

@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://brv32otybpgby"]
+
+[ext_resource type="Texture2D" uid="uid://dpciv162ulcb0" path="res://assets/fan_animation/1.png" id="1_jt0h1"]
+[ext_resource type="Texture2D" uid="uid://kiyk052ir4ep" path="res://assets/fan_animation/2.png" id="2_s6jm7"]
+[ext_resource type="Texture2D" uid="uid://6eanfqlmj4ue" path="res://assets/fan_animation/3.png" id="3_w4i2c"]
+[ext_resource type="Texture2D" uid="uid://b4d0ysp8ltqoa" path="res://assets/fan_animation/4.png" id="4_dihrx"]
+[ext_resource type="Texture2D" uid="uid://do130ovub7qe0" path="res://assets/fan_animation/5.png" id="5_fv0ti"]
+[ext_resource type="Texture2D" uid="uid://0e7ia14tiyjn" path="res://assets/fan_animation/6.png" id="6_clna8"]
+[ext_resource type="Texture2D" uid="uid://ni2xoyr63vce" path="res://assets/fan_animation/7.png" id="7_fqvha"]
+[ext_resource type="Texture2D" uid="uid://beaky6m0ett7l" path="res://assets/fan_animation/8.png" id="8_hkdnd"]
+[ext_resource type="Texture2D" uid="uid://born0ajn772gb" path="res://assets/white.png" id="9_v68lq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqbot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jt0h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s6jm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w4i2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dihrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fv0ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_clna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fqvha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hkdnd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="LightFanAnimation" type="AnimatedSprite2D"]
+modulate = Color(1, 1, 1, 0.392157)
+top_level = true
+sprite_frames = SubResource("SpriteFrames_lqbot")
+autoplay = "default"
+frame_progress = 0.761321
+flip_v = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.2
+texture = ExtResource("9_v68lq")
+texture_scale = 3.0
