@@ -1,0 +1,8 @@
+Level
+-> Player [CharacterBody2D]
+-> Tilemap [TileMap] (background & platform)
+-> CookingArea [Area2D]
+-> Ingredients [Node2D] (for stuff player can collect)
+-> Particles [GPUParticle2D]
+-> Decorations [Node2D - stores Sprite2D's for trees/bushes/bg stuff]
+-> ControlNodes [Control] (for menu's)
