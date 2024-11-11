@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxejigf2musu"]
+
+[ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
+[ext_resource type="PackedScene" uid="uid://dcj2pa8jmc04h" path="res://scenes/player/static_player.tscn" id="2_0krr8"]
+
+[node name="Mountain" type="Node2D"]
+position = Vector2(370, 193)
+
+[node name="Player" parent="." instance=ExtResource("1_461c6")]
+position = Vector2(-192, 29)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(-148, 167)
+rotation = 1.5708
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(141, -159)
+rotation = 1.5708
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(130, -404)
+rotation = 1.5708
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(134, 76)
+rotation = 1.5708
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(403, 156)
+rotation = 1.5708
