@@ -1,16 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcj2pa8jmc04h"]
 
-[ext_resource type="Texture2D" uid="uid://dau2ohq0va6h8" path="res://assets/player.png" id="1_e2kqw"]
+[ext_resource type="Texture2D" uid="uid://dkelvfh27ofkm" path="res://assets/player.png" id="1_e2kqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36aq2"]
-size = Vector2(106, 145)
+size = Vector2(51, 121)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(6, -1)
+position = Vector2(-13, -5)
 texture = ExtResource("1_e2kqw")
+region_enabled = true
+region_rect = Rect2(58.4879, 123.655, 98.0121, 123.264)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9, 61)
+position = Vector2(-0.5, -5.5)
 shape = SubResource("RectangleShape2D_36aq2")

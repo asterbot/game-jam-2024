@@ -1,33 +1,103 @@
-[gd_scene load_steps=3 format=3 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=14 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="PackedScene" uid="uid://dcj2pa8jmc04h" path="res://scenes/player/static_player.tscn" id="2_0krr8"]
+[ext_resource type="Texture2D" uid="uid://cmtgmeq3n0qtq" path="res://assets/mountain_tileset.png" id="3_lecr5"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
+tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_5lo4c"]
+tile_data = PackedInt32Array(0, 65536, 4, 65536, 65536, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_espxb"]
+tile_data = PackedInt32Array(0, 131072, 4, 65536, 131072, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ax6l2"]
+tile_data = PackedInt32Array(0, 196608, 4, 65536, 196608, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_0f5x0"]
+tile_data = PackedInt32Array(0, 262144, 0, 1, 327680, 0)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_3elql"]
+tile_data = PackedInt32Array(0, 262144, 1, 1, 327680, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_pvsdy"]
+tile_data = PackedInt32Array(0, 262144, 2, 1, 327680, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_rb0s3"]
+tile_data = PackedInt32Array(0, 262144, 3, 1, 327680, 3)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1nmt"]
+texture = ExtResource("3_lecr5")
+texture_region_size = Vector2i(300, 300)
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+1:3/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7bkx6"]
+tile_size = Vector2i(300, 300)
+sources/0 = SubResource("TileSetAtlasSource_q1nmt")
+pattern_0 = SubResource("TileMapPattern_u3jle")
+pattern_1 = SubResource("TileMapPattern_5lo4c")
+pattern_2 = SubResource("TileMapPattern_espxb")
+pattern_3 = SubResource("TileMapPattern_ax6l2")
+pattern_4 = SubResource("TileMapPattern_0f5x0")
+pattern_5 = SubResource("TileMapPattern_3elql")
+pattern_6 = SubResource("TileMapPattern_pvsdy")
+pattern_7 = SubResource("TileMapPattern_rb0s3")
 
 [node name="Mountain" type="Node2D"]
-position = Vector2(370, 193)
+
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAD2/wAAAAABAAEAAAD3////AAABAAEAAAD3/wAAAAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD4/wAAAAABAAEAAAD5//3/AAABAAEAAAD5//7/AAABAAEAAAD5////AAABAAEAAAD5/wAAAAABAAEAAAD6//z/AAABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAEAAAD6////AAABAAEAAAD6/wAAAAABAAEAAAD7//v/AAABAAEAAAD7//z/AAABAAEAAAD7//3/AAABAAEAAAD7//7/AAABAAEAAAD7////AAABAAEAAAD7/wAAAAABAAEAAAD8//z/AAABAAEAAAD8//3/AAABAAEAAAD8//7/AAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAADAP3/AAABAAEAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAAEAP3/AAABAAEAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAFAPz/AAABAAEAAAAFAP3/AAABAAEAAAAFAP7/AAABAAEAAAAFAP//AAABAAEAAAAFAAAAAAABAAEAAAAGAPv/AAABAAEAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAHAPz/AAABAAEAAAAHAP3/AAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAABAAEAAAAIAP7/AAABAAUAAAAIAP//AAABAAIAAAAIAAAAAAABAAIAAAD2//7/AAAAAAQAAAD2////AAAAAAUAAAD3//3/AAAAAAEAAAD3//7/AAABAAEAAAD4//z/AAAAAAEAAAD4//3/AAABAAEAAAD5//v/AAAEAAQAAAD5//z/AAABAAEAAAD6//r/AAAAAAQAAAD6//v/AAAAAAUAAAD7//n/AAABAAAAAAD7//r/AAABAAEAAAD8//r/AAABAAQAAAD8//v/AAABAAUAAAD9//z/AAACAAEAAAD9//3/AAABAAEAAAD+//3/AAAEAAAAAAD+//7/AAABAAEAAAD///3/AAAFAAAAAAD///7/AAABAAEAAAAAAP3/AAAEAAQAAAAAAP7/AAABAAEAAAABAP3/AAAAAAEAAAABAP7/AAABAAEAAAACAPz/AAAAAAEAAAACAP3/AAABAAEAAAADAPv/AAAEAAIAAAADAPz/AAABAAEAAAAEAPv/AAAFAAIAAAAEAPz/AAABAAEAAAAFAPr/AAAAAAEAAAAFAPv/AAABAAEAAAAGAPn/AAABAAAAAAAGAPr/AAABAAEAAAAHAPr/AAABAAQAAAAHAPv/AAABAAUAAAD2/wEAAAABAAEAAAD2/wIAAAABAAEAAAD3/wEAAAABAAEAAAD3/wIAAAABAAEAAAD4/wEAAAABAAEAAAD4/wIAAAABAAEAAAD5/wEAAAABAAEAAAD5/wIAAAABAAEAAAD6/wEAAAABAAEAAAD6/wIAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAIAP3/AAABAAQAAAAJAP//AAACAAEAAAAKAAAAAAABAAQAAAAKAAEAAAABAAUAAAAKAAIAAAABAAEAAAAJAAIAAAABAAEAAAAJAAEAAAABAAEAAAAJAAAAAAABAAEAAAD1/wAAAAAAAAEAAAD1/wEAAAABAAEAAAD1/wIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_7bkx6")
 
 [node name="Player" parent="." instance=ExtResource("1_461c6")]
-position = Vector2(-219, -14)
-scale = Vector2(1, 1)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_0krr8")]
-position = Vector2(-148, 167)
+position = Vector2(-53, 125)
 rotation = 1.5708
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_0krr8")]
-position = Vector2(141, -159)
-rotation = 1.5708
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_0krr8")]
-position = Vector2(130, -404)
-rotation = 1.5708
+scale = Vector2(1, 10)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_0krr8")]
-position = Vector2(134, 76)
+position = Vector2(-379, -34)
 rotation = 1.5708
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("2_0krr8")]
-position = Vector2(403, 156)
+position = Vector2(399, -46)
+rotation = 1.5708
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_0krr8")]
+position = Vector2(10, -226)
 rotation = 1.5708
