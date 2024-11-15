@@ -1,29 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://bouxvvctkbnvr"]
+[gd_scene load_steps=5 format=3 uid="uid://bouxvvctkbnvr"]
 
-[ext_resource type="Texture2D" uid="uid://dkelvfh27ofkm" path="res://assets/player.png" id="1_4jg1q"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
+[ext_resource type="Texture2D" uid="uid://cwo5q8id805lg" path="res://assets/player-hat.png" id="2_jstd6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pbxqe"]
+font_size = 30
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
 size = Vector2(46, 106)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_snap_length = 0.0
 script = ExtResource("1_ieyu0")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(-10, -7)
-texture = ExtResource("1_4jg1q")
-region_enabled = true
-region_rect = Rect2(59.6102, 123.541, 96.3163, 121.668)
-
-[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(9, -66)
+texture = ExtResource("2_jstd6")
+region_rect = Rect2(59.6102, -0.75, 189.89, 245.959)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -566.0
-offset_top = 293.0
-offset_right = -462.0
-offset_bottom = 316.0
+offset_left = -1076.0
+offset_top = 669.0
+offset_right = -882.0
+offset_bottom = 711.0
 text = "dqqweeqewq"
+label_settings = SubResource("LabelSettings_pbxqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -2)
 shape = SubResource("RectangleShape2D_e1kfq")
+metadata/_edit_lock_ = true
+
+[node name="FloorDetectors" type="Node2D" parent="."]
+position = Vector2(4, 51)
+metadata/_edit_lock_ = true
+
+[node name="LeftDetector" type="RayCast2D" parent="FloorDetectors"]
+position = Vector2(-22, 0)
+target_position = Vector2(0, 30)
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="MiddleDetector" type="RayCast2D" parent="FloorDetectors"]
+target_position = Vector2(0, 45)
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="RightDetector" type="RayCast2D" parent="FloorDetectors"]
+position = Vector2(22, 0)
+target_position = Vector2(0, 30)
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Test" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(4, 51)
+target_position = Vector2(0, 100)
+collision_mask = 2
