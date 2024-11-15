@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
-[ext_resource type="Texture2D" uid="uid://8kewxsnf21dw" path="res://assets/platform_tileset.png" id="2_w3c5c"]
-[ext_resource type="Texture2D" uid="uid://d2behmyyp8mpi" path="res://assets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="Texture2D" uid="uid://clsvseap45ral" path="res://assets/platform_tileset.png" id="2_w3c5c"]
+[ext_resource type="Texture2D" uid="uid://da8aad4vbil1q" path="res://assets/mountain_tileset.png" id="3_lecr5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
@@ -255,8 +255,17 @@ tile_set = SubResource("TileSet_6m4vk")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_461c6")]
-position = Vector2(-172, -1181)
+position = Vector2(-176, -1168)
 floor_snap_length = 10.0
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.8, 0.8)
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = -923.0
+offset_top = 438.0
+offset_right = -879.0
+offset_bottom = 474.0
+text = "henlo
+"
