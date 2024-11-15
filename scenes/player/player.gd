@@ -55,7 +55,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x += direction * H_VEL_DELTA
 	if direction == 0 or velocity.x < -MAX_H_VEL or velocity.x > MAX_H_VEL:
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
-	$PlayerImage.flip_h = (direction<0)
+	
+	if direction < 0:
+		$PlayerImage.flip_h = true
+	elif direction > 0:
+		$PlayerImage.flip_h = false
 	
 
 	# control vertical movement
@@ -68,6 +72,6 @@ func _physics_process(delta: float) -> void:
 	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps)
 	
 	if Input.is_action_just_pressed("speed"):
-		velocity = 2*Vector2(-3000, -500)
+		velocity = 2 * Vector2(-3000, -500)
 	
 	#print(velocity)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://ke1miiypy05s" path="res://assets/cat-walk.png" id="2_5ig5p"]
+[ext_resource type="Texture2D" uid="uid://dwgead060wgs5" path="res://assets/cat-walk.png" id="2_5ig5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
-size = Vector2(46, 106)
+size = Vector2(49, 95.5)
 
 [sub_resource type="Animation" id="Animation_cemhn"]
 length = 0.001
@@ -52,42 +52,35 @@ floor_snap_length = 0.0
 script = ExtResource("1_ieyu0")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(9, -66)
+position = Vector2(5, -65)
 texture = ExtResource("2_5ig5p")
 hframes = 4
 frame = 1
 region_rect = Rect2(56, 6.625, 131, 241)
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -2)
+position = Vector2(2.5, 5.75)
 shape = SubResource("RectangleShape2D_e1kfq")
-metadata/_edit_lock_ = true
 
 [node name="FloorDetectors" type="Node2D" parent="."]
-position = Vector2(4, 51)
-metadata/_edit_lock_ = true
+position = Vector2(2.5, 53)
 
 [node name="LeftDetector" type="RayCast2D" parent="FloorDetectors"]
-position = Vector2(-22, 0)
+position = Vector2(-24, 0)
 target_position = Vector2(0, 30)
 collision_mask = 2
-metadata/_edit_lock_ = true
 
 [node name="MiddleDetector" type="RayCast2D" parent="FloorDetectors"]
 target_position = Vector2(0, 45)
 collision_mask = 2
-metadata/_edit_lock_ = true
 
 [node name="RightDetector" type="RayCast2D" parent="FloorDetectors"]
-position = Vector2(22, 0)
+position = Vector2(24, 0)
 target_position = Vector2(0, 30)
 collision_mask = 2
-metadata/_edit_lock_ = true
 
 [node name="Test" type="RayCast2D" parent="."]
-visible = false
-position = Vector2(4, 51)
+position = Vector2(2.5, 53)
 target_position = Vector2(0, 100)
 collision_mask = 2
 
