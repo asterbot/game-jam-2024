@@ -11,6 +11,8 @@ const FRICTION = 80
 const EXTRA_JUMPS = 10
 var extra_jumps : int = 0
 
+@onready var _animation_player = $AnimationPlayer
+
 
 func _ready():
 	for raycast in $FloorDetectors.get_children():
@@ -53,8 +55,14 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_axis("left", "right")
 	if direction != 0:
 		velocity.x += direction * H_VEL_DELTA
+		_animation_player.play("walk")
+		_animation_player.advance(0)
+	else:
+		_animation_player.stop()
+
 	if direction == 0 or velocity.x < -MAX_H_VEL or velocity.x > MAX_H_VEL:
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
+			
 	
 	if direction < 0:
 		$PlayerImage.flip_h = true
