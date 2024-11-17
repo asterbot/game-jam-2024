@@ -17,6 +17,8 @@ var actions: Array[String] = ["berry_use","nut_use","tofu_use","carrot_use","pep
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for slot in selection_map:
+		selection_map[slot].set_image(slot)
 	pass # Replace with function body.
 
 
