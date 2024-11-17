@@ -5,7 +5,7 @@ const H_VEL_DELTA = 20
 const MAX_H_VEL = 600.0
 const MAX_V_VEL = 4000.0
 const JUMP_VELOCITY = -800.0
-const EXTRA_JUMP_VELOCITY = -650.0
+const EXTRA_JUMP_VELOCITY = -700.0
 const FRICTION = 80
 
 const EXTRA_JUMPS = 10

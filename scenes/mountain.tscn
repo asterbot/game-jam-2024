@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=19 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/cave_entrance.tscn" id="2_87cec"]
-[ext_resource type="Texture2D" uid="uid://dab1om8a3ou38" path="res://assets/platform_tileset.png" id="2_w3c5c"]
-[ext_resource type="Texture2D" uid="uid://c4q1auyug7wfe" path="res://assets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="Texture2D" uid="uid://dim4b7dqle5kb" path="res://assets/platform_tileset.png" id="2_w3c5c"]
+[ext_resource type="Texture2D" uid="uid://bi6midi837kka" path="res://assets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="PackedScene" uid="uid://daf1q67qg23la" path="res://scenes/ui.tscn" id="5_m08ps"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
@@ -211,7 +212,7 @@ texture_region_size = Vector2i(80, 80)
 9:2/0 = 0
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, 40, 0, 40, 0, -40, 40, -40)
 9:1/0 = 0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, 40, 40, -40, -40, -40)
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, -40, 40, 40, -40, 40, -40, -40)
 8:1/0 = 0
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, 40, 40, -40, -40, -40)
 7:1/0 = 0
@@ -270,3 +271,5 @@ offset_right = -879.0
 offset_bottom = 474.0
 text = "henlo
 "
+
+[node name="UI" parent="Player" instance=ExtResource("5_m08ps")]
