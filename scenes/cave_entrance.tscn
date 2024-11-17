@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://j6jkvpoqagi1"]
 
-[ext_resource type="Texture2D" uid="uid://cgpr7vt3dqrkf" path="res://assets/cave_entrance.png" id="1_qccpp"]
+[ext_resource type="Texture2D" uid="uid://q8q66q28g1ah" path="res://assets/cave_entrance.png" id="1_qccpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gfwy"]
 size = Vector2(117, 250.5)

@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 
-const H_VEL_DELTA = 25
+const H_VEL_DELTA = 15
 const MAX_H_VEL = 600.0
 const MAX_V_VEL = 4000.0
 const JUMP_VELOCITY = -800.0
-const EXTRA_JUMP_VELOCITY = -600.0
+const EXTRA_JUMP_VELOCITY = -650.0
 const FRICTION = 80
 
 const EXTRA_JUMPS = 10
-var extra_jumps : int = 0
+var extra_jumps_done : int = 0
 
 @onready var _animation_player = $AnimationPlayer
 
@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	
 	# reset jumps
 	if is_on_floor():
-		extra_jumps = 0
+		extra_jumps_done = 0
 	
 	# control horizontal movement
 	# direction = -1 for left, 1 for right
@@ -75,11 +75,11 @@ func _physics_process(delta: float) -> void:
 	# control vertical movement
 	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()):
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("debug") and extra_jumps < EXTRA_JUMPS:
+	if Input.is_action_just_pressed("debug") and extra_jumps_done < EXTRA_JUMPS:
 		velocity.y = EXTRA_JUMP_VELOCITY
-		extra_jumps += 1
+		extra_jumps_done += 1
 	
-	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps)
+	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps_done)
 	
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
