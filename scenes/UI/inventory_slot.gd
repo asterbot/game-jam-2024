@@ -1,10 +1,9 @@
 extends PanelContainer
 
-var enabled:bool = false;
-
-var current_image = 1;
+var enabled: bool = false;
 
 var image_map={
+	0: preload("res://assets/ingredients/low_res/unrevealed.png"),
 	1: preload("res://assets/ingredients/low_res/berry.png"),
 	2: preload("res://assets/ingredients/low_res/nut.png"),
 	3: preload("res://assets/ingredients/low_res/berry.png"),
@@ -18,11 +17,11 @@ var image_map={
 @export var stylebox_default: StyleBox  
 @export var stylebox_selected: StyleBox 
 
-func set_image(current_image):
-	%TextureRect.set_texture(image_map[current_image])
+func set_image(slot):
+	%TextureRect.set_texture(image_map[slot])
 
 func _ready():
-	print(current_image)
+	%TextureRect.set_texture(image_map[0])
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
