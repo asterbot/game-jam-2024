@@ -1,6 +1,8 @@
 extends HBoxContainer
 
-var selected = 1;
+var select_index = 1;
+
+var max_ingredients = 6
 
 @onready var selection_map = {
 	1: $BerrySlot,
@@ -23,8 +25,17 @@ func _process(delta: float) -> void:
 	for slot in selection_map:
 		selection_map[slot].enabled = false
 	for action in actions:
-		if Input.is_action_pressed(action):
-			selected = actions.find(action) + 1
+		if Input.is_action_just_pressed(action):
+			select_index = actions.find(action) + 1
 			break
-	selection_map[selected].enabled = true
-	pass
+	
+	if Input.is_action_just_pressed("inventory_left"):
+		select_index -= 1
+	if Input.is_action_just_pressed("inventory_right"):
+		select_index += 1
+
+	if select_index > max_ingredients:
+		select_index = 1
+	if select_index < 1:
+		select_index = max_ingredients
+	selection_map[select_index].enabled = true
