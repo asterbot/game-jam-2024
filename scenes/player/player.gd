@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const H_VEL_DELTA = 15
+const H_VEL_DELTA = 20
 const MAX_H_VEL = 600.0
 const MAX_V_VEL = 4000.0
 const JUMP_VELOCITY = -800.0
@@ -81,7 +81,11 @@ func _physics_process(delta: float) -> void:
 	
 	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps_done)
 	
+	if Input.is_key_pressed(KEY_SPACE) and Input.is_key_pressed(KEY_UP):
+		print("yes")
+	
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
 	
 	#print(velocity)
+	
