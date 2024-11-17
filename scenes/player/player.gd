@@ -71,7 +71,6 @@ func _physics_process(delta: float) -> void:
 	elif direction > 0:
 		$PlayerImage.flip_h = false
 	
-
 	# control vertical movement
 	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()):
 		velocity.y = JUMP_VELOCITY
@@ -80,9 +79,6 @@ func _physics_process(delta: float) -> void:
 		extra_jumps_done += 1
 	
 	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps_done)
-	
-	if Input.is_key_pressed(KEY_SPACE) and Input.is_key_pressed(KEY_UP):
-		print("yes")
 	
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
