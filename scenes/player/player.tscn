@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bouxvvctkbnvr"]
+[gd_scene load_steps=8 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://blxlnudkko16s" path="res://assets/cat-walk.png" id="2_5ig5p"]
+[ext_resource type="Texture2D" uid="uid://cokruec3vxkjj" path="res://assets/player/cat-walk.png" id="2_3o7an"]
+[ext_resource type="Script" path="res://scenes/player/data.gd" id="3_smtv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
 size = Vector2(49, 95.5)
@@ -45,7 +46,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 14
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_snap_length = 0.0
@@ -53,7 +54,7 @@ script = ExtResource("1_ieyu0")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(5, -65)
-texture = ExtResource("2_5ig5p")
+texture = ExtResource("2_3o7an")
 hframes = 4
 region_rect = Rect2(56, 6.625, 131, 241)
 
@@ -78,7 +79,7 @@ position = Vector2(24, 0)
 target_position = Vector2(0, 30)
 collision_mask = 2
 
-[node name="Test" type="RayCast2D" parent="."]
+[node name="FloorNormalDetector" type="RayCast2D" parent="."]
 position = Vector2(2.5, 53)
 target_position = Vector2(0, 100)
 collision_mask = 2
@@ -87,3 +88,6 @@ collision_mask = 2
 libraries = {
 "": SubResource("AnimationLibrary_jbc1o")
 }
+
+[node name="Data" type="Node2D" parent="."]
+script = ExtResource("3_smtv2")

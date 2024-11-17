@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu8aru7n5drf8"]
+
+[ext_resource type="StyleBox" uid="uid://l83564vecsmd" path="res://scenes/UI/inventory_slot.tres" id="1_rbkjv"]
+[ext_resource type="Script" path="res://scenes/UI/inventory_slot.gd" id="2_qs8je"]
+[ext_resource type="StyleBox" uid="uid://dxykfkam047fi" path="res://scenes/UI/inventory_slot_selected.tres" id="3_2e7u0"]
+[ext_resource type="Texture2D" uid="uid://cv5s0yf5o0mf8" path="res://assets/ingredients/low_res/berry.png" id="3_srevr"]
+
+[node name="InventorySlot" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_rbkjv")
+script = ExtResource("2_qs8je")
+stylebox_default = ExtResource("1_rbkjv")
+stylebox_selected = ExtResource("3_2e7u0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_srevr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "45"

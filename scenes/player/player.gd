@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const H_VEL_DELTA = 20
 const MAX_H_VEL = 600.0
 const MAX_V_VEL = 4000.0
@@ -13,11 +12,12 @@ var extra_jumps_done : int = 0
 
 @onready var _animation_player = $AnimationPlayer
 
+signal update_ui(ingredients:Dictionary)
 
 func _ready():
 	for raycast in $FloorDetectors.get_children():
 		raycast.enabled = true
-	$Test.enabled = true
+	$FloorNormalDetector.enabled = true
 
 func near_floor():
 	var numCollisions = 0
@@ -28,7 +28,7 @@ func near_floor():
 
 
 func get_platform_normal():
-	var raycast = $Test
+	var raycast = $FloorNormalDetector
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider is TileMapLayer:
@@ -83,5 +83,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
 	
+	update_ui.emit($Data.ingredients)
 	#print(velocity)
 	

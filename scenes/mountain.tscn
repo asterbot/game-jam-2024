@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=20 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/cave_entrance.tscn" id="2_87cec"]
-[ext_resource type="Texture2D" uid="uid://dim4b7dqle5kb" path="res://assets/platform_tileset.png" id="2_w3c5c"]
-[ext_resource type="Texture2D" uid="uid://bi6midi837kka" path="res://assets/mountain_tileset.png" id="3_lecr5"]
-[ext_resource type="PackedScene" uid="uid://daf1q67qg23la" path="res://scenes/ui.tscn" id="5_m08ps"]
+[ext_resource type="Texture2D" uid="uid://wdf21hy0fjxh" path="res://assets/tilesets/platform_tileset.png" id="2_w3c5c"]
+[ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="5_7kl0j"]
+[ext_resource type="Script" path="res://scenes/UI/ui.gd" id="6_ddy8w"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
@@ -212,7 +213,7 @@ texture_region_size = Vector2i(80, 80)
 9:2/0 = 0
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, 40, 0, 40, 0, -40, 40, -40)
 9:1/0 = 0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, -40, 40, 40, -40, 40, -40, -40)
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, 40, 40, -40, -40, -40)
 8:1/0 = 0
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 40, 40, 40, 40, -40, -40, -40)
 7:1/0 = 0
@@ -237,6 +238,7 @@ texture_region_size = Vector2i(80, 80)
 [sub_resource type="TileSet" id="TileSet_6m4vk"]
 tile_size = Vector2i(80, 80)
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 13
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_xk7ff")
 sources/0 = SubResource("TileSetAtlasSource_ofltq")
 
@@ -272,4 +274,7 @@ offset_bottom = 474.0
 text = "henlo
 "
 
-[node name="UI" parent="Player" instance=ExtResource("5_m08ps")]
+[node name="UI" parent="." instance=ExtResource("5_7kl0j")]
+script = ExtResource("6_ddy8w")
+
+[connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
