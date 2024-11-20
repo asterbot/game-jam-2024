@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccglbnkdky8ja"]
+[gd_scene load_steps=5 format=3 uid="uid://ccglbnkdky8ja"]
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_al0db"]
-[ext_resource type="Texture2D" uid="uid://b50ausc7roxal" path="res://assets/berry.png" id="2_6levn"]
+[ext_resource type="Script" path="res://scenes/ingredients/berry.gd" id="2_71djc"]
+[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="2_knvrs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7nrw"]
 radius = 28.2843
 height = 72.1249
 
 [node name="Berry" instance=ExtResource("1_al0db")]
+script = ExtResource("2_71djc")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_6levn")
+texture = ExtResource("2_knvrs")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 2.38419e-07)

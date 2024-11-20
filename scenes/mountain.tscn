@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/cave_entrance.tscn" id="2_87cec"]
-[ext_resource type="Texture2D" uid="uid://cyqhfimdoppex" path="res://assets/tilesets/platform_tileset.png" id="2_w3c5c"]
-[ext_resource type="Texture2D" uid="uid://cn1kaaqlidhyd" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="Texture2D" uid="uid://wdf21hy0fjxh" path="res://assets/tilesets/platform_tileset.png" id="2_w3c5c"]
+[ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="5_7kl0j"]
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="6_ddy8w"]
 

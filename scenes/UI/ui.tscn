@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/UI/h_box_container.gd" id="1_fdn0j"]
 [ext_resource type="PackedScene" uid="uid://bu8aru7n5drf8" path="res://scenes/UI/inventory_slot.tscn" id="1_tywlm"]
-[ext_resource type="Texture2D" uid="uid://g7gfpf8eeshh" path="res://assets/ingredients/low_res/nut.png" id="2_feu3j"]
+[ext_resource type="Texture2D" uid="uid://b1s16rr100mnt" path="res://assets/ingredients/low_res/nut.png" id="2_feu3j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scld8"]
 border_width_left = 5
@@ -54,6 +54,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 30
 script = ExtResource("1_fdn0j")
@@ -88,9 +89,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MintSlot" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_tywlm")]
-layout_mode = 2
-
-[node name="SecretIngredient" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_tywlm")]
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]

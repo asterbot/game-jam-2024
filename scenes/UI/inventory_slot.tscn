@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://l83564vecsmd" path="res://scenes/UI/inventory_slot.tres" id="1_rbkjv"]
 [ext_resource type="Script" path="res://scenes/UI/inventory_slot.gd" id="2_qs8je"]
 [ext_resource type="StyleBox" uid="uid://dxykfkam047fi" path="res://scenes/UI/inventory_slot_selected.tres" id="3_2e7u0"]
-[ext_resource type="Texture2D" uid="uid://cv5s0yf5o0mf8" path="res://assets/ingredients/low_res/berry.png" id="3_srevr"]
+[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="3_srevr"]
 
 [node name="InventorySlot" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -38,6 +38,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30

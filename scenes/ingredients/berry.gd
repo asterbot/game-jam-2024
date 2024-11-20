@@ -1,7 +1,6 @@
-extends RigidBody2D
+extends Ingredient
 
-
-class_name Ingredient
+var fruit_name:String = "berries"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

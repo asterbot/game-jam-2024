@@ -3,26 +3,32 @@ extends Node2D
 
 var ingredients = {
 	"berries": {
-		"amount": 0,
-		"discovered": false
-	},
-	"peppers": {
-		"amount": 0,
-		"discovered": false
-	},
-	"carrots": {
+		"inventory_slot":1,
 		"amount": 0,
 		"discovered": false
 	},
 	"nuts": {
+		"inventory_slot":2,
 		"amount": 0,
 		"discovered": false
 	},
-	"tofus": {
+	"tofu": {
+		"inventory_slot":3,
+		"amount": 0,
+		"discovered": false
+	},
+	"carrot": {
+		"inventory_slot":4,
+		"amount": 0,
+		"discovered": false
+	},
+	"peppers": {
+		"inventory_slot":5,
 		"amount": 0,
 		"discovered": false
 	},
 	"mints": {
+		"inventory_slot":6,
 		"amount": 0,
 		"discovered": false
 	}
