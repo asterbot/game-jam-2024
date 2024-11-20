@@ -33,10 +33,12 @@ func _process(_delta: float) -> void:
 
 
 	var actions: Array[String] = ["berry_use","nut_use","tofu_use","carrot_use","pepper_use","mint_use"]
+	var index: int = 1 # keep track of index as loop through, instead of finding index later
 	for action in actions:
 		if Input.is_action_just_pressed(action):
-			select_index = actions.find(action) + 1
+			select_index = index
 			break
+		index+=1
 	
 	if Input.is_action_just_pressed("inventory_left"):
 		select_index -= 1
@@ -47,4 +49,5 @@ func _process(_delta: float) -> void:
 		select_index = 1
 	if select_index < 1:
 		select_index = max_ingredients
+
 	selection_map[select_index].selected = true
