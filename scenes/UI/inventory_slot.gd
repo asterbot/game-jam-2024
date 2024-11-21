@@ -7,7 +7,7 @@ var selected: bool = true;
 var discovered : bool = false;
 
 # Updates as we receive signals from player
-var qty: int = 0;
+var qty: String = '-';
 
 # Set by hbox class
 var img_index : int = 0;
@@ -38,9 +38,10 @@ func set_image(slot: int):
 
 func set_qty(new_qty):
 	"""Sets qty of item in UI to new quantity"""
-	%Label.text = str(new_qty)
-	qty = new_qty
+	qty = str(new_qty)
+	%Label.text = str(qty)
 
 func _process(_delta: float) -> void:
 	add_theme_stylebox_override("panel", stylebox_selected if selected else stylebox_default)
 	set_image(img_index if discovered else 0)
+	set_qty("-" if not discovered else qty)

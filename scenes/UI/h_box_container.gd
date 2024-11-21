@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 		selection_map[slot].selected = false
 
 
-	var actions: Array[String] = ["berry_use","nut_use","tofu_use","carrot_use","pepper_use","mint_use"]
+	var actions: Array[String] = ["berry_select","nut_select","tofu_select","carrot_select","pepper_select","mint_select"]
 	var index: int = 1 # keep track of index as loop through, instead of finding index later
 	for action in actions:
 		if Input.is_action_just_pressed(action):

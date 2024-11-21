@@ -12,7 +12,7 @@ func _ready() -> void:
 	for i in range(amount):
 		var pos = spawnPositions[i].position
 		var ingredient = ingredient_scene.instantiate()
-		ingredient.position = pos
+		ingredient.global_position = pos
 		
 		$Ingredients.add_child(ingredient)
 		

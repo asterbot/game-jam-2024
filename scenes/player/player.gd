@@ -14,6 +14,8 @@ var extra_jumps_done : int = 0
 
 signal update_ui(ingredients:Dictionary)
 
+var ingredients_in_range: Array
+
 func _ready():
 	for raycast in $FloorDetectors.get_children():
 		raycast.enabled = true
@@ -36,6 +38,15 @@ func get_platform_normal():
 			return floor_normal
 	return Vector2.ZERO
 
+func get_sq_distance(ingredient):
+	return position.distance_squared_to(ingredient.global_position)	
+
+func get_closest_ingredient():
+	var distances = ingredients_in_range.map(get_sq_distance)
+	var index = distances.find(distances.min())
+	
+	var ingredient = ingredients_in_range[index] if index>=0 else null
+	return ingredient
 
 func _physics_process(delta: float) -> void:
 	
@@ -83,6 +94,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
 	
-	update_ui.emit($Data.ingredients)
+	
+	if Input.is_action_just_pressed("pick_up"):
+		var pick_up_ingredient = get_closest_ingredient()
+		if pick_up_ingredient != null:
+			pick_up_ingredient.queue_free()
+			var ingredient = pick_up_ingredient.ingredient_name
+			if not $Data.ingredients[ingredient]["discovered"]:
+				$Data.ingredients[ingredient]["discovered"] = true
+			$Data.ingredients[ingredient]["amount"] += 1
+			update_ui.emit($Data.ingredients)
+		
 	#print(velocity)
 	
+
+
+func _on_pickup_zone_body_entered(body: Node2D) -> void:
+	ingredients_in_range.append(body)
+
+
+
+func _on_pickup_zone_body_exited(body: Node2D) -> void:
+	ingredients_in_range.erase(body)

@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://l83564vecsmd" path="res://scenes/UI/inventory_slot.tres" id="1_rbkjv"]
 [ext_resource type="Script" path="res://scenes/UI/inventory_slot.gd" id="2_qs8je"]
 [ext_resource type="StyleBox" uid="uid://dxykfkam047fi" path="res://scenes/UI/inventory_slot_selected.tres" id="3_2e7u0"]
-[ext_resource type="Texture2D" uid="uid://b30x8q0dfy6vy" path="res://assets/ingredients/low_res/berry.png" id="3_srevr"]
+[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="3_srevr"]
 [ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/inventory_font.tres" id="5_cfx8y"]
 
 [node name="InventorySlot" type="PanelContainer"]
@@ -43,5 +43,5 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "45"
+text = "0"
 label_settings = ExtResource("5_cfx8y")

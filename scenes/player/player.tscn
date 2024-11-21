@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bouxvvctkbnvr"]
+[gd_scene load_steps=9 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://dae4ro1kbqsbd" path="res://assets/player/cat-walk.png" id="2_3o7an"]
+[ext_resource type="Texture2D" uid="uid://bsqsg6ko2f06" path="res://assets/player/cat-walk.png" id="2_3o7an"]
 [ext_resource type="Script" path="res://scenes/player/data.gd" id="3_smtv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
@@ -44,6 +44,10 @@ _data = {
 "RESET": SubResource("Animation_lmwvv"),
 "walk": SubResource("Animation_8olca")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46wyq"]
+radius = 100.0
+height = 200.0
 
 [node name="Player" type="CharacterBody2D"]
 disable_mode = 2
@@ -92,3 +96,12 @@ libraries = {
 
 [node name="Data" type="Node2D" parent="."]
 script = ExtResource("3_smtv2")
+
+[node name="PickupZone" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+shape = SubResource("CapsuleShape2D_46wyq")
+
+[connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
+[connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]
