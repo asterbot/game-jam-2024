@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7efyntpk2mdn"]
+
+[ext_resource type="Script" path="res://scenes/plants/abstract_plant.gd" id="1_pwo0r"]
+
+[node name="AbstractPlant" type="Sprite2D"]
+script = ExtResource("1_pwo0r")
+
+[node name="IngredientPositions" type="Node2D" parent="."]
+
+[node name="Ingredients" type="Node2D" parent="."]

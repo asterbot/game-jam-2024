@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_al0db"]
 [ext_resource type="Script" path="res://scenes/ingredients/berry.gd" id="2_71djc"]
-[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="2_knvrs"]
+[ext_resource type="Texture2D" uid="uid://b30x8q0dfy6vy" path="res://assets/ingredients/low_res/berry.png" id="2_knvrs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7nrw"]
-radius = 28.2843
-height = 72.1249
+radius = 26.163
+height = 69.2965
 
 [node name="Berry" instance=ExtResource("1_al0db")]
 script = ExtResource("2_71djc")
@@ -15,6 +15,6 @@ script = ExtResource("2_71djc")
 texture = ExtResource("2_knvrs")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 2.38419e-07)
+position = Vector2(-3, 2)
 rotation = 0.785398
 shape = SubResource("CapsuleShape2D_t7nrw")

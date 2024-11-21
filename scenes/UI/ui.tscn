@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc8ertsqq0qdm"]
+[gd_scene load_steps=11 format=3 uid="uid://bc8ertsqq0qdm"]
 
 [ext_resource type="Script" path="res://scenes/UI/h_box_container.gd" id="1_fdn0j"]
 [ext_resource type="PackedScene" uid="uid://bu8aru7n5drf8" path="res://scenes/UI/inventory_slot.tscn" id="1_tywlm"]
-[ext_resource type="Texture2D" uid="uid://b1s16rr100mnt" path="res://assets/ingredients/low_res/nut.png" id="2_feu3j"]
+[ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_wpxx6"]
+[ext_resource type="Texture2D" uid="uid://g7gfpf8eeshh" path="res://assets/ingredients/low_res/nut.png" id="2_feu3j"]
+[ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/inventory_font.tres" id="3_staen"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scld8"]
 border_width_left = 5
@@ -27,7 +29,16 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdm2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw5rw"]
+bg_color = Color(0.283875, 0.336369, 0.634543, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5l4e"]
+bg_color = Color(0.487333, 0.552045, 0.842445, 1)
+
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_wpxx6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 10
@@ -91,6 +102,11 @@ layout_mode = 2
 [node name="MintSlot" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_tywlm")]
 layout_mode = 2
 
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gdm2a")
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -98,12 +114,21 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 19.0
-value = 100.0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 18.0
+theme_override_styles/background = SubResource("StyleBoxFlat_mw5rw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b5l4e")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "30/30"
+label_settings = ExtResource("3_staen")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 texture = ExtResource("2_feu3j")
-expand_mode = 1
+expand_mode = 3

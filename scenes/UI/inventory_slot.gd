@@ -42,5 +42,5 @@ func set_qty(new_qty):
 	qty = new_qty
 
 func _process(_delta: float) -> void:
-	add_theme_stylebox_override("panel",stylebox_selected if selected else stylebox_default)
+	add_theme_stylebox_override("panel", stylebox_selected if selected else stylebox_default)
 	set_image(img_index if discovered else 0)

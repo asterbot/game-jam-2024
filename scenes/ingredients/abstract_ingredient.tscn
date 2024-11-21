@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv40bmwqlf6t"]
+[gd_scene load_steps=3 format=3 uid="uid://bv40bmwqlf6t"]
 
 [ext_resource type="Script" path="res://scenes/ingredients/abstract_ingredient.gd" id="1_52hcc"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tr4yk"]
+bounce = 0.5
+absorbent = true
+
 [node name="AbstractIngredient" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_tr4yk")
 script = ExtResource("1_52hcc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
