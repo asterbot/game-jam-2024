@@ -9,7 +9,7 @@ absorbent = true
 
 [node name="AbstractIngredient" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 11
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_5vgnj")
 gravity_scale = 0.0

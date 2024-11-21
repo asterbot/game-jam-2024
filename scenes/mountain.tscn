@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/mountain.gd" id="1_wlsso"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/cave_entrance.tscn" id="2_87cec"]
-[ext_resource type="Texture2D" uid="uid://cyqhfimdoppex" path="res://assets/tilesets/platform_tileset.png" id="2_w3c5c"]
-[ext_resource type="Texture2D" uid="uid://cn1kaaqlidhyd" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="Texture2D" uid="uid://wdf21hy0fjxh" path="res://assets/tilesets/platform_tileset.png" id="2_w3c5c"]
+[ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="5_7kl0j"]
 [ext_resource type="PackedScene" uid="uid://bprklfoejkqp" path="res://scenes/plants/bush.tscn" id="6_xvfta"]
 [ext_resource type="PackedScene" uid="uid://ccglbnkdky8ja" path="res://scenes/ingredients/berry.tscn" id="7_wwtv4"]
@@ -272,7 +272,7 @@ floor_snap_length = 10.0
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.2, 0.2)
 
 [node name="Label" type="Label" parent="Player"]
 offset_left = -923.0
@@ -284,4 +284,8 @@ text = "henlo
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
+[node name="Ingredients" type="Node2D" parent="."]
+
+[connection signal="request_selected_ingredient" from="Player" to="UI" method="_on_player_request_selected_ingredient"]
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
+[connection signal="send_selected_item" from="UI" to="Player" method="_on_ui_send_selected_item"]

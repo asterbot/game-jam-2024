@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bu8aru7n5drf8" path="res://scenes/UI/inventory_slot.tscn" id="1_tywlm"]
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_wpxx6"]
 [ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/inventory_font.tres" id="3_staen"]
-[ext_resource type="Texture2D" uid="uid://ot5p054bl2rr" path="res://assets/ingredients/sack.png" id="5_pun84"]
+[ext_resource type="Texture2D" uid="uid://cko1teb7cly0c" path="res://assets/ingredients/sack.png" id="5_pun84"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scld8"]
 border_width_left = 5

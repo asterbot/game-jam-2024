@@ -12,6 +12,15 @@ var select_index = 1;
 	6: $MintSlot
 } 
 
+var name_map = {
+	1: "berries",
+	2: "nuts",
+	3: "tofus",
+	4: "carrots",
+	5: "peppers",
+	6: "mints"
+}
+
 var max_ingredients = 0 # set in _ready()
 
 func receive_data_from_ui(items: Dictionary) -> void:
@@ -19,6 +28,10 @@ func receive_data_from_ui(items: Dictionary) -> void:
 	for item in items:
 		selection_map[items[item]["inventory_slot"]].set_qty(items[item]["amount"])
 		selection_map[items[item]["inventory_slot"]].discovered = items[item]["discovered"]
+
+func provide_selected_ingredient()->String:
+	return name_map[select_index]
+
 
 func _ready() -> void:
 	# Set the img_index to let the inventory_slot know which item to take from the maps

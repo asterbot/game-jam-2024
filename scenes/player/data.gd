@@ -5,7 +5,8 @@ var ingredients = {
 	"berries": {
 		"inventory_slot":1,
 		"amount": 0,
-		"discovered": false
+		"discovered": false,
+		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
 		"inventory_slot":2,

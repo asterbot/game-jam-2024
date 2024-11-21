@@ -13,8 +13,12 @@ var extra_jumps_done : int = 0
 @onready var _animation_player = $AnimationPlayer
 
 signal update_ui(ingredients:Dictionary)
+signal request_selected_ingredient()
 
 var ingredients_in_range: Array
+
+func ReLU(x):
+	return (x if x>0 else 0)
 
 func _ready():
 	for raycast in $FloorDetectors.get_children():
@@ -106,10 +110,9 @@ func _physics_process(delta: float) -> void:
 			update_ui.emit($Data.ingredients)
 		
 	if Input.is_action_just_pressed("discard"):
-		####################################
-		#############HERE!!!!!!!############
-		####################################
-		pass
+		request_selected_ingredient.emit()
+	
+	print("Player: ",velocity)
 
 
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
@@ -125,3 +128,16 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 
 func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
 	body.gravity_scale = 1
+
+
+func _on_ui_send_selected_item(item: String) -> void:
+	var direction = Input.get_axis("left", "right")
+	if $Data.ingredients[item]["amount"] > 0:
+		$Data.ingredients[item]["amount"] -= 1
+		update_ui.emit($Data.ingredients)
+		var ingredient_scene = $Data.ingredients[item]["scene"].instantiate()
+		ingredient_scene.global_position = global_position + Vector2(-50 if $PlayerImage.flip_h else 50,0)
+		var speed = 300 
+		ingredient_scene.linear_velocity = Vector2(-1*speed if $PlayerImage.flip_h else speed, 0) + velocity
+		$"../Ingredients".add_child(ingredient_scene)
+	pass # Replace with function body.
