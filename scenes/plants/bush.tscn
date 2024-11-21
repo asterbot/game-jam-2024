@@ -1,18 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://bprklfoejkqp"]
 
 [ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_aa57n"]
-[ext_resource type="Texture2D" uid="uid://drry6m260m8ou" path="res://assets/ingredients/plants/bush.png" id="2_0geqg"]
+[ext_resource type="Texture2D" uid="uid://ca20s1wir5hiu" path="res://assets/ingredients/plants/berry_bush.png" id="2_p2tuk"]
 
 [node name="Bush" instance=ExtResource("1_aa57n")]
-texture = ExtResource("2_0geqg")
+texture = ExtResource("2_p2tuk")
 
 [node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
+position = Vector2(109, 31)
 
 [node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
-position = Vector2(-83, 22)
+position = Vector2(-108, -11)
 
 [node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
-position = Vector2(9, -12)
+position = Vector2(48, -43)
 
-[node name="Ingredients" parent="." index="1"]
-position = Vector2(75, 33)
+[node name="Marker2D4" type="Marker2D" parent="IngredientPositions" index="3"]
+position = Vector2(-28, 35)

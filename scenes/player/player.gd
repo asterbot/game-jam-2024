@@ -105,8 +105,11 @@ func _physics_process(delta: float) -> void:
 			$Data.ingredients[ingredient]["amount"] += 1
 			update_ui.emit($Data.ingredients)
 		
-	#print(velocity)
-	
+	if Input.is_action_just_pressed("discard"):
+		####################################
+		#############HERE!!!!!!!############
+		####################################
+		pass
 
 
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
@@ -116,3 +119,9 @@ func _on_pickup_zone_body_entered(body: Node2D) -> void:
 
 func _on_pickup_zone_body_exited(body: Node2D) -> void:
 	ingredients_in_range.erase(body)
+
+
+
+
+func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
+	body.gravity_scale = 1

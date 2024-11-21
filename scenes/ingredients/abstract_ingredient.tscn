@@ -4,7 +4,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5vgnj"]
 rough = true
-bounce = 1.0
+bounce = 0.6
 absorbent = true
 
 [node name="AbstractIngredient" type="RigidBody2D"]
