@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdyfgp7p3c0fg"]
 
-[ext_resource type="Texture2D" uid="uid://gpyohc6yp0ng" path="res://assets/gate.png" id="1_brsps"]
+[ext_resource type="Texture2D" uid="uid://bi8k5g4uqt8ox" path="res://assets/gate.png" id="1_brsps"]
 [ext_resource type="Script" path="res://scenes/objects/gate.gd" id="1_hbroy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmfsk"]
 size = Vector2(142, 63)
 
 [node name="Gate" type="StaticBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 11
 script = ExtResource("1_hbroy")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca5flg54wdkfk"]
 
-[ext_resource type="Texture2D" uid="uid://drjou0swxxjqv" path="res://assets/basic_light.png" id="1_tpfyk"]
-[ext_resource type="Texture2D" uid="uid://born0ajn772gb" path="res://assets/white.png" id="2_qvn1n"]
+[ext_resource type="Texture2D" uid="uid://dhoyai2kt8xqt" path="res://assets/basic_light.png" id="1_tpfyk"]
+[ext_resource type="Texture2D" uid="uid://dhgorhfm2lw42" path="res://assets/white.png" id="2_qvn1n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjt8x"]
 radius = 21.0
@@ -11,6 +11,8 @@ height = 120.0
 polygon = PackedVector2Array(-26, -12, 26, -12, 29, -9, 29, 4, 19, -2, -19, -2, -29, 4, -29, -8)
 
 [node name="SimpleLight" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708

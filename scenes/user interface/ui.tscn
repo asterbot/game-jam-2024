@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk533kopileou"]
+
+[ext_resource type="Texture2D" uid="uid://dqx47uda7lpht" path="res://assets/laser.png" id="1_brkpd"]
+[ext_resource type="LabelSettings" uid="uid://dee84fulr6cdy" path="res://scenes/user interface/projectile_amount.tres" id="1_wdp5n"]
+[ext_resource type="Texture2D" uid="uid://cln7o38nuvwja" path="res://assets/grenade.png" id="2_qnvc4"]
+[ext_resource type="Texture2D" uid="uid://buwikeihshplc" path="res://assets/bar_under.png" id="3_tk6q1"]
+[ext_resource type="Texture2D" uid="uid://csw7ettualnat" path="res://assets/bar_over.png" id="4_4xmre"]
+[ext_resource type="Texture2D" uid="uid://nqm34fdh3pwa" path="res://assets/bar_progress.png" id="5_8scou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yprii"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="UIContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 130)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -82.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "20"
+label_settings = ExtResource("1_wdp5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("1_brkpd")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UIContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "5"
+label_settings = ExtResource("1_wdp5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UIContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yprii")
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("2_qnvc4")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="UIContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UIContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.9999
+offset_top = -94.0
+offset_right = 25.0001
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+size_flags_horizontal = 4
+size_flags_vertical = 10
+value = 30.0
+stretch_margin_left = 100
+texture_under = ExtResource("3_tk6q1")
+texture_over = ExtResource("4_4xmre")
+texture_progress = ExtResource("5_8scou")

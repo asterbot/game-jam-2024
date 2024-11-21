@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://0e7ia14tiyjn" path="res://assets/fan_animation/6.png" id="6_clna8"]
 [ext_resource type="Texture2D" uid="uid://ni2xoyr63vce" path="res://assets/fan_animation/7.png" id="7_fqvha"]
 [ext_resource type="Texture2D" uid="uid://beaky6m0ett7l" path="res://assets/fan_animation/8.png" id="8_hkdnd"]
-[ext_resource type="Texture2D" uid="uid://born0ajn772gb" path="res://assets/white.png" id="9_v68lq"]
+[ext_resource type="Texture2D" uid="uid://dhgorhfm2lw42" path="res://assets/white.png" id="9_v68lq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lqbot"]
 animations = [{

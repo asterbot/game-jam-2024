@@ -1,0 +1,104 @@
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://bhhktsyd4ejh2"]
+
+[ext_resource type="Texture2D" uid="uid://x5ow67n70e53" path="res://assets/house_tileset.png" id="1_qv6mn"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8d6sc"]
+polygon = PackedVector2Array(-40, -10, 40, -10, 40, 10, -40, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_653bi"]
+polygon = PackedVector2Array(-10, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kkx6j"]
+polygon = PackedVector2Array(-10, 10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6u21v"]
+polygon = PackedVector2Array(10, -40, 10, 40, -10, 40, -10, -40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n2nuw"]
+polygon = PackedVector2Array(10, -10, 10, 40, -10, 40, -10, 10, -40, 10, -40, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u1b3h"]
+polygon = PackedVector2Array(10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cjwqk"]
+polygon = PackedVector2Array(-10, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40, -10, 10, -40, 10, -40, -10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jire2"]
+polygon = PackedVector2Array(-10, 10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ndxig"]
+polygon = PackedVector2Array(-10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2tbm4"]
+polygon = PackedVector2Array(10, -10, 10, 40, -10, 40, -10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2xagj"]
+polygon = PackedVector2Array(10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_53dve"]
+polygon = PackedVector2Array(0, -10, 40, -10, 40, 10, 0, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1xg8r"]
+polygon = PackedVector2Array(10, 0, 10, 40, -10, 40, -10, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u7pkg"]
+polygon = PackedVector2Array(-10, 0, -10, -40, 10, -40, 10, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8p2lq"]
+polygon = PackedVector2Array(0, 10, -40, 10, -40, -10, 0, -10)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kycn6"]
+texture = ExtResource("1_qv6mn")
+texture_region_size = Vector2i(80, 80)
+0:6/0 = 0
+0:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8d6sc")
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -10, 40, -10, 40, 10, -40, 10)
+1:6/0 = 0
+1:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_6u21v")
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, -40, 10, 40, -10, 40, -10, -40)
+1:7/0 = 0
+1:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_n2nuw")
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, -10, 10, 40, -10, 40, -10, 10, -40, 10, -40, -10)
+0:7/0 = 0
+0:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_653bi")
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40)
+0:8/0 = 0
+0:8/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kkx6j")
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10)
+1:8/0 = 0
+1:8/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u1b3h")
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40)
+2:8/0 = 0
+2:8/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_jire2")
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 40, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10, 10, 10, 10, 40)
+3:8/0 = 0
+3:8/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2xagj")
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40, 10, -10, 40, -10)
+3:7/0 = 0
+3:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2tbm4")
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, -40, 10, 40, -10, 40, -10, 10, -40, 10, -40, -10, -10, -10, -10, -40)
+2:7/0 = 0
+2:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cjwqk")
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -10, 40, -10, 40, 10, 10, 10, 10, 40, -10, 40, -10, 10, -40, 10)
+3:6/0 = 0
+3:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ndxig")
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 40, -10, 10, -40, 10, -40, -10, -10, -10, -10, -40, 10, -40, 10, -10, 40, -10, 40, 10, 10, 10, 10, 40)
+4:7/0 = 0
+4:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_53dve")
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, -10, 40, 10, 0, 10, 0, -10)
+5:6/0 = 0
+5:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1xg8r")
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(10, 40, -10, 40, -10, 0, 10, 0)
+6:7/0 = 0
+6:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8p2lq")
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 10, -40, -10, 0, -10, 0, 10)
+5:8/0 = 0
+5:8/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u7pkg")
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, -40, 10, -40, 10, 0, -10, 0)
+
+[resource]
+tile_size = Vector2i(80, 80)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
+sources/0 = SubResource("TileSetAtlasSource_kycn6")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7jx70ss7ct68"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_04q7w"]
-[ext_resource type="Texture2D" uid="uid://ee3r88a22nw3" path="res://assets/player.png" id="1_l7c80"]
-[ext_resource type="Texture2D" uid="uid://b0hhaf5p0gv60" path="res://assets/gun.png" id="2_lpv6u"]
-[ext_resource type="Texture2D" uid="uid://born0ajn772gb" path="res://assets/white.png" id="4_ate4w"]
+[ext_resource type="Texture2D" uid="uid://b5agqgpoydco3" path="res://assets/player.png" id="1_l7c80"]
+[ext_resource type="Texture2D" uid="uid://dbim86mhdu1mx" path="res://assets/gun.png" id="2_lpv6u"]
+[ext_resource type="Texture2D" uid="uid://dhgorhfm2lw42" path="res://assets/white.png" id="4_ate4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7j3m"]
 radius = 42.0
@@ -65,16 +65,16 @@ wait_time = 2.0
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(56, 25)
+position = Vector2(76, 25)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(54, 19)
+position = Vector2(72, 19)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(54, 31)
+position = Vector2(72, 31)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(57, 25)
+position = Vector2(58, 25)
 emitting = false
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_qe6kg")
@@ -85,6 +85,7 @@ explosiveness = 0.7
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_sii10")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]

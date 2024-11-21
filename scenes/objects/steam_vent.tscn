@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d116p2hp1hg0k"]
 
-[ext_resource type="Texture2D" uid="uid://fedu5xc25rfq" path="res://assets/ventilation_hole.png" id="1_8jfw6"]
-[ext_resource type="Texture2D" uid="uid://born0ajn772gb" path="res://assets/white.png" id="2_0w43s"]
+[ext_resource type="Texture2D" uid="uid://cob80cu2vhwx4" path="res://assets/ventilation_hole.png" id="1_8jfw6"]
+[ext_resource type="Texture2D" uid="uid://dhgorhfm2lw42" path="res://assets/white.png" id="2_0w43s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_23t15"]
 radius = 61.0
@@ -25,7 +25,7 @@ color_ramp = SubResource("GradientTexture1D_3yicp")
 
 [node name="SteamVent" type="StaticBody2D"]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
