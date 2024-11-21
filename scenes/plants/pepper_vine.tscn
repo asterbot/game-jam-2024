@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm1kj0bbq64ch"]
+
+[ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_minaj"]
+[ext_resource type="Texture2D" uid="uid://b8n6qjohdlyw" path="res://assets/ingredients/plants/pepper_vine.png" id="2_y5oq1"]
+[ext_resource type="PackedScene" uid="uid://cjrpta5kki4dj" path="res://scenes/ingredients/pepper.tscn" id="3_f13mh"]
+
+[node name="PepperVine" instance=ExtResource("1_minaj")]
+position = Vector2(0, -140)
+texture = ExtResource("2_y5oq1")
+ingredient_scene = ExtResource("3_f13mh")
+
+[node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
+position = Vector2(-109, -5)
+
+[node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
+position = Vector2(-23, -45)
+
+[node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
+position = Vector2(75, 7)
+
+[node name="Ingredients" parent="." index="1"]
+metadata/_edit_lock_ = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://7w82sggbeh7c"]
+
+[ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_b2sii"]
+[ext_resource type="Script" path="res://scenes/ingredients/nut.gd" id="2_ccbl1"]
+[ext_resource type="Texture2D" uid="uid://drbhynr8xmy3m" path="res://assets/ingredients/low_res/nut.png" id="2_ttvif"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvubr"]
+radius = 26.163
+height = 66.468
+
+[node name="Nut" instance=ExtResource("1_b2sii")]
+script = ExtResource("2_ccbl1")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ttvif")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 2)
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_fvubr")

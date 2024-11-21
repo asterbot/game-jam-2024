@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://deertjekx84k8"]
+
+[ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_oq8pu"]
+[ext_resource type="Texture2D" uid="uid://3x3ynlpmuwlv" path="res://assets/ingredients/plants/nut_tree.png" id="2_o73uh"]
+[ext_resource type="PackedScene" uid="uid://7w82sggbeh7c" path="res://scenes/ingredients/nut.tscn" id="3_nnlb1"]
+
+[node name="NutTree" instance=ExtResource("1_oq8pu")]
+position = Vector2(-10, -122)
+texture = ExtResource("2_o73uh")
+ingredient_scene = ExtResource("3_nnlb1")
+
+[node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
+position = Vector2(-15, -127)
+
+[node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
+position = Vector2(65, -81)
+
+[node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
+position = Vector2(10, -1)
+
+[node name="Marker2D4" type="Marker2D" parent="IngredientPositions" index="3"]
+position = Vector2(-44, -58)
+
+[node name="Ingredients" parent="." index="1"]
+metadata/_edit_lock_ = true

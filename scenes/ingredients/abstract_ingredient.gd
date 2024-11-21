@@ -1,21 +1,21 @@
 extends RigidBody2D
 
-
 class_name Ingredient
 
-const VERTICAL_THRESHOLD: int = 60000
+const SPEED_THRESHOLD: int = 2000
 
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
-	
 	pass
 
+func _process(_delta) -> void:
+	if linear_velocity.length_squared() > 0:
+		gravity_scale = 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	print("Ing: ",linear_velocity)
-	print("Ing: ",linear_velocity.length())
-	var normalized = linear_velocity.normalized()
-	var len = linear_velocity.length()
-	#linear_velocity.y = normalized.y * min(VERTICAL_THRESHOLD, linear_velocity.y)
-	linear_velocity.y = clamp(linear_velocity.y, -VERTICAL_THRESHOLD, VERTICAL_THRESHOLD)
+func _integrate_forces(state) -> void:
+	# set upper bound for ingredient velocity
+	var velocity = state.get_linear_velocity()
+	if velocity.length() > SPEED_THRESHOLD:
+		velocity = velocity.normalized() * SPEED_THRESHOLD
+	state.set_linear_velocity(velocity)

@@ -1,6 +1,6 @@
 extends Ingredient
 
-var ingredient_name: String = "berries"
+var ingredient_name: String = "peppers"
 
 
 func _ready() -> void:

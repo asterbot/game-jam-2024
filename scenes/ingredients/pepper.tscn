@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjrpta5kki4dj"]
+
+[ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_d4bkd"]
+[ext_resource type="Script" path="res://scenes/ingredients/pepper.gd" id="2_8ngpo"]
+[ext_resource type="Texture2D" uid="uid://ba7s5mpag7nnq" path="res://assets/ingredients/low_res/pepper.png" id="2_lprqh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10hbu"]
+radius = 34.0
+height = 80.0
+
+[node name="Pepper" instance=ExtResource("1_d4bkd")]
+script = ExtResource("2_8ngpo")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lprqh")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-1, 4)
+shape = SubResource("CapsuleShape2D_10hbu")

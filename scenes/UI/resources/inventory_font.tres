@@ -2,6 +2,6 @@
 
 [resource]
 line_spacing = 10.0
-font_size = 40
+font_size = 35
 shadow_size = 15
 shadow_color = Color(0.290373, 0.318295, 0.478928, 1)

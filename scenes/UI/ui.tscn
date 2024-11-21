@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/UI/h_box_container.gd" id="1_fdn0j"]
 [ext_resource type="PackedScene" uid="uid://bu8aru7n5drf8" path="res://scenes/UI/inventory_slot.tscn" id="1_tywlm"]
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_wpxx6"]
-[ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/inventory_font.tres" id="3_staen"]
-[ext_resource type="Texture2D" uid="uid://cko1teb7cly0c" path="res://assets/ingredients/sack.png" id="5_pun84"]
+[ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/resources/inventory_font.tres" id="3_staen"]
+[ext_resource type="Texture2D" uid="uid://ot5p054bl2rr" path="res://assets/ingredients/sack.png" id="5_pun84"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scld8"]
 border_width_left = 5
@@ -103,7 +103,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_gdm2a")
 
@@ -115,20 +115,24 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-size_flags_stretch_ratio = 18.0
+size_flags_stretch_ratio = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_mw5rw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b5l4e")
 value = 50.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 2.0
 text = "30/30"
 label_settings = ExtResource("3_staen")
+horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 texture = ExtResource("5_pun84")
 expand_mode = 3
