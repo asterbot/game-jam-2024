@@ -17,3 +17,9 @@ script = ExtResource("1_52hcc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

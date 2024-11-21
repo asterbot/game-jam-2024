@@ -8,3 +8,9 @@ script = ExtResource("1_pwo0r")
 [node name="IngredientPositions" type="Node2D" parent="."]
 
 [node name="Ingredients" type="Node2D" parent="."]
+
+[node name="ReplenishTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="ReplenishTimer" to="." method="_on_replenish_timer_timeout"]

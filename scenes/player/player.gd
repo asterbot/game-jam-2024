@@ -144,7 +144,7 @@ func _on_ui_send_selected_item(item: String) -> void:
 		update_ui.emit($Data.ingredients)
 		var ingredient_scene = $Data.ingredients[item]["scene"].instantiate()
 		var offset = 50
-		var speed = 300
+		var speed = 350
 		# also, throw the ingredient
 		ingredient_scene.global_position = global_position + Vector2(-offset if $PlayerImage.flip_h else offset, 0) 
 		ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity

@@ -10,16 +10,16 @@ texture = ExtResource("2_pednx")
 ingredient_scene = ExtResource("3_re3wg")
 
 [node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
-position = Vector2(60, 23)
+position = Vector2(66, 23)
 
 [node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
-position = Vector2(-63, -35)
+position = Vector2(-80, -62)
 
 [node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
-position = Vector2(71, -75)
+position = Vector2(79, -118)
 
 [node name="Marker2D4" type="Marker2D" parent="IngredientPositions" index="3"]
-position = Vector2(7, -116)
+position = Vector2(6, -190)
 
 [node name="Ingredients" parent="." index="1"]
 metadata/_edit_lock_ = true

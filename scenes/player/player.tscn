@@ -9,7 +9,7 @@ size = Vector2(49, 95.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46wyq"]
 radius = 94.0
-height = 226.0
+height = 214.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpk4k"]
 size = Vector2(56, 121)
@@ -97,6 +97,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
 position = Vector2(3, -24)
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_46wyq")
 
 [node name="IngredientDetectionZone" type="Area2D" parent="."]
