@@ -4,12 +4,18 @@ extends CharacterBody2D
 const H_VEL_DELTA = 20
 const MAX_H_VEL = 600
 const MAX_V_VEL = 3000
+
+# dash velocity when using nut
 const FORWARD_SPEED_VEL = 2000
-const JUMP_VELOCITY = -860
+# jump velocity when using berries
 const EXTRA_JUMP_VELOCITY = -720
+
+# regular jump velocity
+const JUMP_VELOCITY = -860
 const FRICTION = 80
 
 const EXTRA_JUMPS = 100 # for debugging of course
+
 var extra_jumps_done: int = 0
 var direction
 
