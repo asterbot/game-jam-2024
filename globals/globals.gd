@@ -15,6 +15,9 @@ const index_sprite_map={
 # Max index in the hotbar 
 var max_index = index_sprite_map.size() - 1
 
+var inventory_capacity : int = 40
+var inventory_used: int = 0
+
 # inventory slot -> item name
 const index_ingredient_map = {
 	1: "berries",

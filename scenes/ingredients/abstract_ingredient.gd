@@ -19,7 +19,7 @@ func _process(_delta) -> void:
 		if $DespawnTimer.is_stopped():
 			$DespawnTimer.start()
 	$Label.rotation = -rotation
-
+	
 func _integrate_forces(state) -> void:
 	# set upper bound for ingredient velocity
 	var velocity = state.get_linear_velocity()

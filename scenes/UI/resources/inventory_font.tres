@@ -1,7 +1,9 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://du7rxt236lnys"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://du7rxt236lnys"]
+
+[ext_resource type="FontFile" uid="uid://dmn1werb3atbv" path="res://assets/tinypixel.otf" id="1_xdreo"]
 
 [resource]
-line_spacing = 10.0
+font = ExtResource("1_xdreo")
 font_size = 35
 shadow_size = 15
 shadow_color = Color(0.290373, 0.318295, 0.478928, 1)

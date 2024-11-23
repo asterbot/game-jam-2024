@@ -24,6 +24,8 @@ func _process(_delta: float) -> void:
 	for slot in selection_map:
 		selection_map[slot].selected = false
 
+	%CapacityLabel.text = str(Globals.inventory_used) + "/" + str(Globals.inventory_capacity)
+	%InventorySpace.value = Globals.inventory_used*100/Globals.inventory_capacity
 
 	var actions: Array[String] = ["berry_select","nut_select","tofu_select","carrot_select","pepper_select","mint_select"]
 	var index: int = 1 # keep track of index as loop through, instead of finding index later
