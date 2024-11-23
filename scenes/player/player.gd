@@ -47,15 +47,16 @@ func get_platform_normal():
 			return floor_normal
 	return Vector2.ZERO
 
-
-func get_sq_distance(ingredient):
-	return position.distance_squared_to(ingredient.global_position)
 func get_closest_ingredient():
 	# out of ingredients in range, return the closest ingredient
 	# if there are no ingredients, return null
-	var distances = ingredients_in_range.map(get_sq_distance)
+	for ingredient in ingredients_in_range:
+		ingredient.toggle_label(false);
+	var distances = ingredients_in_range.map(func(item): return position.distance_squared_to(item.global_position))
 	var index = distances.find(distances.min())
 	var ingredient = ingredients_in_range[index] if index >= 0 else null
+	if ingredient != null:
+		ingredient.toggle_label(true)
 	return ingredient
 
 
@@ -106,10 +107,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = clamp(velocity.y, -MAX_V_VEL, MAX_V_VEL)
 	
 	# logic for picking up ingredients
-	if Input.is_action_just_pressed("pick_up"):
-		var pick_up_ingredient = get_closest_ingredient()
-		# if there is a closest ingredient, update info in $Data and update UI
-		if pick_up_ingredient != null:
+	var pick_up_ingredient = get_closest_ingredient()
+	# if there is a closest ingredient, update info in $Data and update UI
+	if pick_up_ingredient != null:
+		if Input.is_action_just_pressed("pick_up"):
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
 			Globals.ingredients[ingredient_name]["discovered"] = true
@@ -131,6 +132,7 @@ func _physics_process(delta: float) -> void:
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
 	ingredients_in_range.append(body)
 func _on_pickup_zone_body_exited(body: Node2D) -> void:
+	body.toggle_label(false);
 	ingredients_in_range.erase(body)
 
 # make ingredient fall when player makes contact

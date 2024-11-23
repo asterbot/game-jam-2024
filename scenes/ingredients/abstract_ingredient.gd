@@ -5,9 +5,12 @@ class_name Ingredient
 const SPEED_THRESHOLD: int = 2000
 var display_name = ""
 
+func toggle_label(appear: bool):
+	"""Toggles label to appear"""
+	$Label.visible = appear
 
 func _ready() -> void:
-	$Label.visible = true
+	toggle_label(false)
 	$Label.text = display_name
 
 func _process(_delta) -> void:
