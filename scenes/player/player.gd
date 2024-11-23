@@ -4,6 +4,7 @@ extends CharacterBody2D
 const H_VEL_DELTA = 20
 const MAX_H_VEL = 600
 const MAX_V_VEL = 3000
+const FORWARD_SPEED_VEL = 2000
 const JUMP_VELOCITY = -860
 const EXTRA_JUMP_VELOCITY = -720
 const FRICTION = 80
@@ -132,10 +133,8 @@ func _physics_process(delta: float) -> void:
 	for action in request_actions:
 		if Input.is_action_just_pressed(action):
 			request_selected_ingredient.emit(action)
+	 		# logic is handled at end of the signal chain
 			break
-	# if Input.is_action_just_pressed("discard"):
-	# 	request_selected_ingredient.emit()
-	# 	# logic is handled at end of the signal chain
 
 	# for debugging
 	if Input.is_action_just_pressed("speed"):
@@ -181,6 +180,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					velocity.y = EXTRA_JUMP_VELOCITY
 				"nuts":
 					print("used nuts!")
+					velocity.x = -FORWARD_SPEED_VEL if $PlayerImage.flip_h else FORWARD_SPEED_VEL
 				"tofus":
 					print("used tofus!")
 				"carrots":
