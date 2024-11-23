@@ -198,3 +198,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					print("used peppers!")
 				"mints":
 					print("used mints!")
+					var checkpoint_scene = preload("res://scenes/ingredients/mint_flag.tscn").instantiate()
+					checkpoint_scene.global_position = global_position
+					checkpoint_scene.rotation = 0
+					$"../Checkpoints".add_child(checkpoint_scene)

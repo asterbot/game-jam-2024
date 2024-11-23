@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbcerw2dhad67"]
+
+[ext_resource type="Texture2D" uid="uid://bnen2p53u634b" path="res://assets/ingredients/low_res/mint-flag.png" id="1_tasra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgtdn"]
+size = Vector2(230, 296)
+
+[node name="MintFlag" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 2
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tasra")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tgtdn")
