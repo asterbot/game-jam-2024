@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr5o7ahb7jun4"]
+
+[ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_w3sgg"]
+[ext_resource type="Texture2D" uid="uid://dy6rxknsr8b42" path="res://assets/ingredients/plants/carrot_spiral.png" id="2_f7pbv"]
+[ext_resource type="PackedScene" uid="uid://cbsd3kffgjo7v" path="res://scenes/ingredients/carrot.tscn" id="3_bun1t"]
+
+[node name="CarrotSpiral" instance=ExtResource("1_w3sgg")]
+texture = ExtResource("2_f7pbv")
+ingredient_scene = ExtResource("3_bun1t")
+
+[node name="IngredientPositions" parent="." index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
+position = Vector2(-72, -19)
+
+[node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
+position = Vector2(69, 37)
+
+[node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
+position = Vector2(-1, -72)
+
+[node name="Ingredients" parent="." index="1"]
+metadata/_edit_lock_ = true

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bprklfoejkqp"]
+[gd_scene load_steps=4 format=3 uid="uid://b060pv3kgky1y"]
 
 [ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_aa57n"]
-[ext_resource type="Texture2D" uid="uid://ca20s1wir5hiu" path="res://assets/ingredients/plants/berry_bush.png" id="2_p2tuk"]
+[ext_resource type="Texture2D" uid="uid://bi2coujr0i4ad" path="res://assets/ingredients/plants/berry_bush.png" id="2_p2tuk"]
 [ext_resource type="PackedScene" uid="uid://ccglbnkdky8ja" path="res://scenes/ingredients/berry.tscn" id="3_4mqrk"]
 
 [node name="BerryBush" instance=ExtResource("1_aa57n")]

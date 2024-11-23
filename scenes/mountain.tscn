@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=25 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/mountain.gd" id="1_wlsso"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="5_7kl0j"]
 [ext_resource type="PackedScene" path="res://scenes/plants/tofu_tree.tscn" id="6_uxbuw"]
-[ext_resource type="PackedScene" path="res://scenes/plants/berry_bush.tscn" id="6_xvfta"]
+[ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="6_xvfta"]
 [ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="6_yke77"]
 [ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="7_1iwp4"]
+[ext_resource type="PackedScene" uid="uid://dr5o7ahb7jun4" path="res://scenes/plants/carrot_spiral.tscn" id="8_dho6m"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
@@ -257,6 +258,7 @@ tile_set = SubResource("TileSet_7bkx6")
 metadata/_edit_lock_ = true
 
 [node name="CaveEntrance" parent="Environment" instance=ExtResource("2_87cec")]
+position = Vector2(3, 16)
 
 [node name="Plants" type="Node2D" parent="Environment"]
 
@@ -275,6 +277,10 @@ amount = 3
 [node name="TofuTree" parent="Environment/Plants" instance=ExtResource("6_uxbuw")]
 position = Vector2(3656, -3771)
 amount = 4
+
+[node name="CarrotSpiral" parent="Environment/Plants" instance=ExtResource("8_dho6m")]
+position = Vector2(6525, -4109)
+amount = 3
 
 [node name="Platforms" type="TileMapLayer" parent="Environment"]
 position = Vector2(1, 0)

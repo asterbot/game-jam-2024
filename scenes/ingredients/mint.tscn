@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdjo35awm7n5s"]
+
+[ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_0esf4"]
+[ext_resource type="Script" path="res://scenes/ingredients/mint.gd" id="2_rp664"]
+[ext_resource type="Texture2D" uid="uid://ca7g6qpekt5cu" path="res://assets/ingredients/low_res/mint.png" id="3_dpnhy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2f6r"]
+radius = 27.6001
+height = 111.711
+
+[node name="Mint" instance=ExtResource("1_0esf4")]
+script = ExtResource("2_rp664")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_dpnhy")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.778749
+shape = SubResource("CapsuleShape2D_n2f6r")
