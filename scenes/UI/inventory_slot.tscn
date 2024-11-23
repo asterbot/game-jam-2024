@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://l83564vecsmd" path="res://scenes/UI/resources/inventory_slot.tres" id="1_rbkjv"]
 [ext_resource type="Script" path="res://scenes/UI/inventory_slot.gd" id="2_qs8je"]
 [ext_resource type="StyleBox" uid="uid://dxykfkam047fi" path="res://scenes/UI/resources/inventory_slot_selected.tres" id="3_2e7u0"]
-[ext_resource type="Texture2D" uid="uid://b6xb11r1numci" path="res://assets/ingredients/low_res/unrevealed.png" id="4_gpo8k"]
+[ext_resource type="Texture2D" uid="uid://cx3uhpg4nhnx8" path="res://assets/ingredients/low_res/unrevealed.png" id="4_gpo8k"]
 [ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/resources/inventory_font.tres" id="5_cfx8y"]
 
 [node name="InventorySlot" type="PanelContainer"]
