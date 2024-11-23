@@ -116,7 +116,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()):
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("debug") and extra_jumps_done < EXTRA_JUMPS:
-		velocity.y = EXTRA_JUMP_VELOCITY
+		velocity.y = -1500
 		extra_jumps_done += 1
 	velocity.y = clamp(velocity.y, -MAX_V_VEL, MAX_V_VEL)
 	
@@ -124,13 +124,14 @@ func _physics_process(delta: float) -> void:
 	var pick_up_ingredient = get_closest_ingredient()
 	# if there is a closest ingredient, update info in $Data and update UI
 	if pick_up_ingredient != null and Input.is_action_just_pressed("pick_up"):
-		if pick_up_ingredient.ingredient_name!="hat":
+		if pick_up_ingredient.ingredient_name!="hat" and Globals.inventory_used < Globals.inventory_capacity:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
+			Globals.inventory_used += 1
 			update_ui.emit(ingredient_name)
-		else:
+		elif pick_up_ingredient.ingredient_name=="hat":
 			pick_up_ingredient.queue_free()
 			$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
 		
@@ -165,6 +166,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 	if purpose=="discard":
 		if Globals.ingredients[item]["amount"] > 0:
 			Globals.ingredients[item]["amount"] -= 1
+			Globals.inventory_used -= 1
 			update_ui.emit(item)
 			var ingredient_scene = Globals.ingredients[item]["scene"].instantiate()
 			var offset_x = 30
@@ -178,6 +180,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 		if Globals.ingredients[item]["amount"] > 0:
 			# Decrement amount and update_ui
 			Globals.ingredients[item]["amount"] -= 1
+			Globals.inventory_used -= 1
 			update_ui.emit(item)
 			# Handle all the cases here
 			match item:
