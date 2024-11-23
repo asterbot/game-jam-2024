@@ -17,7 +17,8 @@ var direction
 
 # signals
 signal update_ui(ingredient: String)
-signal request_selected_ingredient()
+signal request_selected_ingredient(purpose: String) 
+# purpose = what action we want to request the selected item for
 
 var ingredients_in_range: Array
 
@@ -116,7 +117,6 @@ func _physics_process(delta: float) -> void:
 	var pick_up_ingredient = get_closest_ingredient()
 	# if there is a closest ingredient, update info in $Data and update UI
 	if pick_up_ingredient != null and Input.is_action_just_pressed("pick_up"):
-		print(pick_up_ingredient)
 		if pick_up_ingredient.ingredient_name!="hat":
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
@@ -127,16 +127,22 @@ func _physics_process(delta: float) -> void:
 			pick_up_ingredient.queue_free()
 			$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
 		
-	if Input.is_action_just_pressed("discard"):
-		request_selected_ingredient.emit()
-		# logic is handled at end of the signal chain
+	# These are the actions where we need to request the selected ingredient from the UI
+	var request_actions = ["discard", "use_item"]
+	for action in request_actions:
+		if Input.is_action_just_pressed(action):
+			request_selected_ingredient.emit(action)
+			break
+	# if Input.is_action_just_pressed("discard"):
+	# 	request_selected_ingredient.emit()
+	# 	# logic is handled at end of the signal chain
 
 	# for debugging
 	if Input.is_action_just_pressed("speed"):
 		velocity = 2 * Vector2(-3000, -500)
 
 
-# code for signals
+# ----------------------------------------code for signals--------------------------------------------------------
 
 # update ingredients that are in range of player
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
@@ -149,16 +155,37 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 func _on_ingredient_detection_zone_body_entered(ingredient: Node2D) -> void:
 	ingredient.gravity_scale = 1
 
-func _on_ui_send_selected_item(item: String) -> void:
+func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 	# if the player has some of the selected ingredient, remove from data
-	if Globals.ingredients[item]["amount"] > 0:
-		Globals.ingredients[item]["amount"] -= 1
-		update_ui.emit(item)
-		var ingredient_scene = Globals.ingredients[item]["scene"].instantiate()
-		var offset_x = 30
-		var offset_y = 30
-		var speed = 350
-		# also, throw the ingredient
-		ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
-		ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
-		$"../Ingredients".add_child(ingredient_scene)
+	if purpose=="discard":
+		if Globals.ingredients[item]["amount"] > 0:
+			Globals.ingredients[item]["amount"] -= 1
+			update_ui.emit(item)
+			var ingredient_scene = Globals.ingredients[item]["scene"].instantiate()
+			var offset_x = 30
+			var offset_y = 30
+			var speed = 350
+			# also, throw the ingredient
+			ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
+			ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
+			$"../Ingredients".add_child(ingredient_scene)
+	elif purpose=="use_item":
+		if Globals.ingredients[item]["amount"] > 0:
+			# Decrement amount and update_ui
+			Globals.ingredients[item]["amount"] -= 1
+			update_ui.emit(item)
+			# Handle all the cases here
+			match item:
+				"berries":
+					print("used berries!")
+					velocity.y = EXTRA_JUMP_VELOCITY
+				"nuts":
+					print("used nuts!")
+				"tofus":
+					print("used tofus!")
+				"carrots":
+					print("used carrots!")
+				"peppers":
+					print("used peppers!")
+				"mints":
+					print("used mints!")
