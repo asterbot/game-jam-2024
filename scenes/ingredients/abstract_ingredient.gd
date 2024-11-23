@@ -29,4 +29,5 @@ func _integrate_forces(state) -> void:
 
 
 func _on_despawn_timer_timeout() -> void:
+	
 	queue_free()

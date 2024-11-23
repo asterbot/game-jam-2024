@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=26 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/mountain.gd" id="1_wlsso"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="6_yke77"]
 [ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="7_1iwp4"]
 [ext_resource type="PackedScene" uid="uid://dr5o7ahb7jun4" path="res://scenes/plants/carrot_spiral.tscn" id="8_dho6m"]
+[ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="12_k7q4a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_u3jle"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5)
@@ -306,6 +307,9 @@ text = "henlo
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
 [node name="Ingredients" type="Node2D" parent="."]
+
+[node name="Hat" parent="." instance=ExtResource("12_k7q4a")]
+position = Vector2(5804, -3594)
 
 [connection signal="request_selected_ingredient" from="Player" to="UI" method="_on_player_request_selected_ingredient"]
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]

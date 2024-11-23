@@ -50,11 +50,17 @@ func get_platform_normal():
 func get_closest_ingredient():
 	# out of ingredients in range, return the closest ingredient
 	# if there are no ingredients, return null
+	
+	# Toggle all the labels of ingredients to false (make them invisible)
 	for ingredient in ingredients_in_range:
 		ingredient.toggle_label(false);
+		
+	# Find closest
 	var distances = ingredients_in_range.map(func(item): return position.distance_squared_to(item.global_position))
 	var index = distances.find(distances.min())
 	var ingredient = ingredients_in_range[index] if index >= 0 else null
+	
+	# If we have an ingredient in closest, make label visible
 	if ingredient != null:
 		ingredient.toggle_label(true)
 	return ingredient
@@ -109,13 +115,17 @@ func _physics_process(delta: float) -> void:
 	# logic for picking up ingredients
 	var pick_up_ingredient = get_closest_ingredient()
 	# if there is a closest ingredient, update info in $Data and update UI
-	if pick_up_ingredient != null:
-		if Input.is_action_just_pressed("pick_up"):
+	if pick_up_ingredient != null and Input.is_action_just_pressed("pick_up"):
+		print(pick_up_ingredient)
+		if pick_up_ingredient.ingredient_name!="hat":
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			update_ui.emit(ingredient_name)
+		else:
+			pick_up_ingredient.queue_free()
+			$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
 		
 	if Input.is_action_just_pressed("discard"):
 		request_selected_ingredient.emit()
@@ -152,4 +162,3 @@ func _on_ui_send_selected_item(item: String) -> void:
 		ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
 		ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
 		$"../Ingredients".add_child(ingredient_scene)
-	pass # Replace with function body.
