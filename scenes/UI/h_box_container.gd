@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed(action):
 			Globals.selected_index_ui = index
 			break
-		index+=1
+		index += 1
 	
 	if Input.is_action_just_pressed("inventory_left"):
 		Globals.selected_index_ui -= 1

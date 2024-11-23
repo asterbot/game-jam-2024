@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://bsqsg6ko2f06" path="res://assets/player/cat-walk.png" id="2_3o7an"]
+[ext_resource type="Texture2D" uid="uid://dae4ro1kbqsbd" path="res://assets/player/cat-walk.png" id="2_3o7an"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
 size = Vector2(49, 95.5)

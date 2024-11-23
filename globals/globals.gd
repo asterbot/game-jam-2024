@@ -13,7 +13,7 @@ const index_sprite_map={
 }
 
 # Max index in the hotbar 
-var max_index = index_sprite_map.size()
+var max_index = index_sprite_map.size() - 1
 
 # inventory slot -> item name
 const index_ingredient_map = {
@@ -65,6 +65,6 @@ var ingredients = {
 		"inventory_slot": 6,
 		"amount": 0,
 		"discovered": false,
-		 #"scene": preload("res://scenes/ingredients/mint.tscn")
+		 "scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://50smyj7smuvi"]
+
+[ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_ko86q"]
+[ext_resource type="Texture2D" uid="uid://ccnyx8ik6xvey" path="res://assets/ingredients/plants/mint_stalk.png" id="2_lin68"]
+[ext_resource type="PackedScene" uid="uid://bdjo35awm7n5s" path="res://scenes/ingredients/mint.tscn" id="3_01iy5"]
+
+[node name="MintStalk" instance=ExtResource("1_ko86q")]
+position = Vector2(3, -182)
+texture = ExtResource("2_lin68")
+ingredient_scene = ExtResource("3_01iy5")
+metadata/_edit_lock_ = true
+
+[node name="IngredientPositions" parent="." index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="IngredientPositions" index="0"]
+position = Vector2(-35, 12)
+
+[node name="Marker2D2" type="Marker2D" parent="IngredientPositions" index="1"]
+position = Vector2(70, 70)
+
+[node name="Marker2D3" type="Marker2D" parent="IngredientPositions" index="2"]
+position = Vector2(21, -132)
+
+[node name="Ingredients" parent="." index="1"]
+metadata/_edit_lock_ = true

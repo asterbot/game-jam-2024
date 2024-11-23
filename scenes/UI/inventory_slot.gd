@@ -12,7 +12,7 @@ func set_image(slot: int):
 		slot (int) - must be in [0,num_items]
 					 0 means default "?" and 1 to num_items for fruits
 	"""
-	assert (slot>=0 and slot<=Globals.max_index) # just for sanity ig
+	assert (slot >= 0 and slot <= Globals.max_index) # just for sanity ig
 	%TextureRect.set_texture(Globals.index_sprite_map[slot])
 
 func set_amount(new_qty):
