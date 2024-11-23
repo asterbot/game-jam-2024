@@ -388,6 +388,7 @@ physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_2og43")
 
 [node name="Mountain" type="Node2D"]
+position = Vector2(-1, 0)
 script = ExtResource("1_wlsso")
 
 [node name="Environment" type="Node2D" parent="."]
