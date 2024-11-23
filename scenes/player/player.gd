@@ -197,4 +197,4 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 				"peppers":
 					print("used peppers!")
 				"mints":
-					print("used mints!")
+					print("used mints! testest")
