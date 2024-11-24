@@ -2,7 +2,8 @@ extends Node
 
 
 # I just set this manually, we can use this as the starting position in the game
-var last_checkpoint = Vector2(4248, -3256)
+const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
+var respawn_pos = DEFAULT_RESPAWN_POS
 
 # index value -> sprite for fruit at index
 const index_sprite_map={
