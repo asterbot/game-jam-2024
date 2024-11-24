@@ -14,6 +14,8 @@ const EXTRA_JUMP_VELOCITY = -720
 const JUMP_VELOCITY = -860
 const FRICTION = 80
 
+const DEATH_HEIGHT = 5000
+
 const EXTRA_JUMPS = 100 # for debugging of course
 
 var extra_jumps_done: int = 0
@@ -102,6 +104,9 @@ func _physics_process(delta: float) -> void:
 	# reset jumps
 	if is_on_floor():
 		extra_jumps_done = 0
+
+	if position.y >= DEATH_HEIGHT:
+		position = Globals.last_checkpoint
 	
 	# control horizontal movement
 	# direction = -1 for left, 1 for right, 0 otherwise
@@ -200,5 +205,6 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					print("used mints!")
 					var checkpoint_scene = preload("res://scenes/ingredients/mint_flag.tscn").instantiate()
 					checkpoint_scene.global_position = global_position
+					Globals.last_checkpoint = checkpoint_scene.global_position # set the last checkpoint to respawn to
 					checkpoint_scene.rotation = 0
 					$"../Checkpoints".add_child(checkpoint_scene)
