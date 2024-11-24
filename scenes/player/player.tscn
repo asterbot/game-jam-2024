@@ -53,7 +53,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 disable_mode = 2
-collision_mask = 6
+collision_mask = 30
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_snap_length = 0.0

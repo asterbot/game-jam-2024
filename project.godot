@@ -138,7 +138,7 @@ debug_zoom_out={
 2d_physics/layer_2="Platform"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Items & Zones"
-2d_physics/layer_5="Standby"
+2d_physics/layer_5="Projectiles"
 
 [physics]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=25 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/mountain.gd" id="1_wlsso"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="12_k7q4a"]
 [ext_resource type="Texture2D" uid="uid://sp07g1l6oboc" path="res://assets/tilesets/platform_tileset.png" id="12_mtum8"]
 [ext_resource type="Texture2D" uid="uid://bopdei85xuhob" path="res://assets/tilesets/platform_texture.png" id="12_tumxw"]
+[ext_resource type="PackedScene" uid="uid://com27qenqmdyp" path="res://scenes/sprout_enemy.tscn" id="18_iklfu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2iyj"]
 shader = ExtResource("2_t1r1v")
@@ -472,6 +473,18 @@ text = "henlo
 
 [node name="Hat" parent="." instance=ExtResource("12_k7q4a")]
 position = Vector2(5804, -3694)
+
+[node name="Sprout" parent="." instance=ExtResource("18_iklfu")]
+position = Vector2(1638, -3839)
+
+[node name="Sprout2" parent="." instance=ExtResource("18_iklfu")]
+position = Vector2(1802, -3998)
+
+[node name="Sprout3" parent="." instance=ExtResource("18_iklfu")]
+position = Vector2(2234, -3919)
+
+[node name="Sprout4" parent="." instance=ExtResource("18_iklfu")]
+position = Vector2(2442, -3918)
 
 [connection signal="request_selected_ingredient" from="Player" to="UI" method="_on_player_request_selected_ingredient"]
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
