@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dng6naulhe2r4" path="res://assets/player/cat-walk.png" id="2_3o7an"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
-size = Vector2(49, 95.5)
+size = Vector2(42, 95.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46wyq"]
 radius = 94.0
@@ -66,14 +66,14 @@ hframes = 4
 region_rect = Rect2(56, 6.625, 131, 241)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 5.75)
+position = Vector2(4, 5.75)
 shape = SubResource("RectangleShape2D_e1kfq")
 
 [node name="FloorDetectors" type="Node2D" parent="."]
 position = Vector2(2.5, 53)
 
 [node name="LeftDetector" type="RayCast2D" parent="FloorDetectors"]
-position = Vector2(-24, 0)
+position = Vector2(-19.5, 0)
 target_position = Vector2(0, 30)
 collision_mask = 2
 
@@ -82,7 +82,7 @@ target_position = Vector2(0, 45)
 collision_mask = 2
 
 [node name="RightDetector" type="RayCast2D" parent="FloorDetectors"]
-position = Vector2(24, 0)
+position = Vector2(22.5, 0)
 target_position = Vector2(0, 30)
 collision_mask = 2
 
@@ -92,6 +92,7 @@ target_position = Vector2(0, 100)
 collision_mask = 2
 
 [node name="PickupZone" type="Area2D" parent="."]
+visible = false
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
@@ -100,6 +101,7 @@ rotation = 3.14159
 shape = SubResource("CapsuleShape2D_46wyq")
 
 [node name="IngredientDetectionZone" type="Area2D" parent="."]
+visible = false
 position = Vector2(2, 6)
 collision_mask = 8
 metadata/_edit_lock_ = true
