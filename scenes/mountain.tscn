@@ -436,7 +436,7 @@ tile_set = SubResource("TileSet_17dnc")
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="StartCheckPoint" parent="Checkpoints" instance=ExtResource("11_himdr")]
-position = Vector2(4282, -3348)
+position = Vector2(4240, -3269)
 
 [node name="Player" parent="." instance=ExtResource("1_461c6")]
 position = Vector2(4248, -3258)
