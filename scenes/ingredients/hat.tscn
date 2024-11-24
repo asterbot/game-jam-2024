@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bibrvbixlr0le"]
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_bvor8"]
-[ext_resource type="Texture2D" uid="uid://c41k4gihok552" path="res://assets/player/hat.png" id="2_0175l"]
+[ext_resource type="Texture2D" uid="uid://d127uypbr12em" path="res://assets/player/hat.png" id="2_0175l"]
 [ext_resource type="Script" path="res://scenes/ingredients/hat.gd" id="2_ljej7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p65vk"]
