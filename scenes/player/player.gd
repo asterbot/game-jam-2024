@@ -8,7 +8,7 @@ const MAX_V_VEL = 3000
 # dash velocity when using nut
 const FORWARD_SPEED_VEL = 2000
 # jump velocity when using berries
-const EXTRA_JUMP_VELOCITY = -720
+const EXTRA_JUMP_VELOCITY = -930
 
 # regular jump velocity
 const JUMP_VELOCITY = -860
@@ -106,7 +106,8 @@ func _physics_process(delta: float) -> void:
 		extra_jumps_done = 0
 
 	if position.y >= DEATH_HEIGHT:
-		position = Globals.last_checkpoint
+		velocity = Vector2.ZERO
+		position = Globals.respawn_pos
 	
 	# control horizontal movement
 	# direction = -1 for left, 1 for right, 0 otherwise
@@ -200,12 +201,13 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 				"mints":
 					print("used mints!")
 					# get_platform_normal return zero vector if there is no intersection with ground and middle raycast
-					if not(is_on_floor() and get_platform_normal()!=Vector2.ZERO):
-						return
+					if not(is_on_floor() and get_platform_normal() != Vector2.ZERO): return
 					var checkpoint_scene = preload("res://scenes/ingredients/mint_flag.tscn").instantiate()
 					checkpoint_scene.global_position = global_position
-					Globals.last_checkpoint = checkpoint_scene.global_position # set the last checkpoint to respawn to
-					checkpoint_scene.rotation = 0
+					Globals.respawn_pos = checkpoint_scene.global_position # set the last checkpoint to respawn to
+					#checkpoint_scene.rotation = 0
+					for child in $"../Checkpoints".get_children():
+						child.queue_free()
 					$"../Checkpoints".add_child(checkpoint_scene)
 
 			# Decrement amount and update_ui

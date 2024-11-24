@@ -1,9 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbcerw2dhad67"]
+[gd_scene load_steps=5 format=3 uid="uid://dbcerw2dhad67"]
 
-[ext_resource type="Texture2D" uid="uid://bnen2p53u634b" path="res://assets/ingredients/low_res/mint-flag.png" id="1_tasra"]
+[ext_resource type="Script" path="res://scenes/ingredients/mint_flag.gd" id="1_f1ul4"]
+[ext_resource type="Texture2D" uid="uid://dfjo8dyphecjj" path="res://assets/ingredients/low_res/mint-flag.png" id="1_tasra"]
+[ext_resource type="LabelSettings" uid="uid://dmui8n01cg2lh" path="res://scenes/ingredients/display_name_font.tres" id="3_emdp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hver"]
+size = Vector2(88, 220)
 
 [node name="MintFlag" type="Node2D"]
+script = ExtResource("1_f1ul4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(24, -78)
 texture = ExtResource("1_tasra")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, -41)
+shape = SubResource("RectangleShape2D_6hver")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -197.0
+offset_right = 214.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Press E
+to remove"
+label_settings = ExtResource("3_emdp1")
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
