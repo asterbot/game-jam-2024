@@ -6,9 +6,10 @@ const MAX_H_VEL = 600
 const MAX_V_VEL = 3000
 
 # dash velocity when using nut
-const FORWARD_SPEED_VEL = 2000
+const NUT_X_VEL = 1850
+const NUT_Y_VEL = -250
 # jump velocity when using berries
-const EXTRA_JUMP_VELOCITY = -930
+const BERRY_Y_VEL = -930
 
 # regular jump velocity
 const JUMP_VELOCITY = -860
@@ -151,7 +152,7 @@ func _physics_process(delta: float) -> void:
 
 	# for debugging
 	if Input.is_action_just_pressed("speed"):
-		velocity = 2 * Vector2(-3000, -500)
+		velocity = 2 * Vector2((-3000 if $PlayerImage.flip_h else 3000), -500)
 
 
 # ----------------------------------------code for signals--------------------------------------------------------
@@ -188,10 +189,11 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 			match item:
 				"berries":
 					print("used berries!")
-					velocity.y = EXTRA_JUMP_VELOCITY
+					velocity.y = BERRY_Y_VEL
 				"nuts":
 					print("used nuts!")
-					velocity.x = -FORWARD_SPEED_VEL if $PlayerImage.flip_h else FORWARD_SPEED_VEL
+					velocity.x += -NUT_X_VEL if $PlayerImage.flip_h else NUT_X_VEL
+					velocity.y += NUT_Y_VEL
 				"tofus":
 					print("used tofus!")
 				"carrots":
