@@ -481,7 +481,7 @@ collision_mask = 24
 start_position = Vector2(2209, -4081)
 end_position = Vector2(2486, -4081)
 movement_time = 3
-attack_type = "cradle"
+attack_type = "fish"
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 

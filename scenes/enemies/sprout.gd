@@ -1,7 +1,7 @@
 extends AbstractEnemy
 
 func idle():
-	$AnimationPlayer.queue("idle")
+	pass
 
 func hit():
 	dead = true
