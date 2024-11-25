@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwoj03emuq5j5"]
+
+[ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_vwrah"]
+[ext_resource type="Texture2D" uid="uid://dke8i7is3uoft" path="res://assets/npcs/ghost-enemy.png" id="2_00kmu"]
+[ext_resource type="Script" path="res://scenes/enemies/ghost.gd" id="2_dtvku"]
+[ext_resource type="Texture2D" uid="uid://cngl7b3txrq8v" path="res://assets/projectiles/fish.png" id="4_pq7jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p5g"]
+size = Vector2(58, 146)
+
+[node name="Ghost" instance=ExtResource("1_vwrah")]
+collision_layer = 4
+collision_mask = 25
+script = ExtResource("2_dtvku")
+start_position = Vector2(0, 0)
+end_position = Vector2(0, 0)
+movement_time = 0
+attack_type = ""
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_00kmu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(3, 8)
+shape = SubResource("RectangleShape2D_g4p5g")
+
+[node name="FishProjectile" type="Sprite2D" parent="." index="3"]
+visible = false
+texture = ExtResource("4_pq7jk")
