@@ -480,7 +480,7 @@ position = Vector2(2258, -4076)
 collision_mask = 24
 start_position = Vector2(2209, -4081)
 end_position = Vector2(2486, -4081)
-movement_time = 3
+movement_time = 3.0
 attack_type = "fish"
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
