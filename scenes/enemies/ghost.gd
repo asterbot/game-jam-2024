@@ -6,22 +6,30 @@ extends AbstractEnemy
 
 @export_enum("fish","cradle") var attack_type: String
 
-
+# forward = direction from start to end (whatever that means)
 var going_forward = true;
 
-func idle():
-	$Sprite2D.flip_h = not going_forward
-	$FishProjectile.flip_h = not going_forward
+func idle(delta):
+	# Flip sprites based on direction
+	var direction = 1 if going_forward else -1
 
-	if going_forward:
-		velocity = (end_position - start_position)/movement_time
-	else:
-		velocity = (start_position - end_position)/movement_time
+	# Adjust rotation and flip when necessary
+	rotation = ((end_position-start_position)*direction).angle()
 	
-	move_and_slide()
-	if position.distance_squared_to(end_position) <= 5:
+	var to_flip:bool = rad_to_deg(rotation)<-90 and rad_to_deg(rotation)>-270 
+	$Sprite2D.flip_v = to_flip
+	$FishProjectile.flip_v = to_flip
+	
+	# Calculate velocity based on direction
+	velocity = (end_position - start_position)* direction / movement_time
+	
+	# Move without collision
+	position += velocity * delta
+
+	# Toggle direction at boundaries
+	if going_forward and position.distance_squared_to(end_position) <= 100:
 		going_forward = false
-	if position.distance_squared_to(start_position) <= 5:
+	elif not going_forward and position.distance_squared_to(start_position) <= 100:
 		going_forward = true
 
 func hit():
@@ -36,7 +44,6 @@ func _ready() -> void:
 		going_forward = false
 	$FishProjectile.visible = (attack_type=="fish")
 	super()
-
 
 func _process(_delta: float) -> void:
 	super(_delta)

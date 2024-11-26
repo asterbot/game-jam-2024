@@ -8,7 +8,7 @@ var dead: bool = false;
 var periodic_attack: bool = false;
 var periodic_attack_allowed: bool = true;
 
-func idle():
+func idle(_delta):
 	assert(false, "This method must be overriden.")
 
 func hit():
@@ -20,9 +20,9 @@ func attack():
 func _ready() -> void:
 	$PeriodicTimer.set_wait_time(randf_range(3, 4))
 
-func _process(_delta):
+func _process(delta):
 	if not dead:
-		idle()
+		idle(delta)
 		if periodic_attack and periodic_attack_allowed:
 			attack()
 			periodic_attack_allowed = false;

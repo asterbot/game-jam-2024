@@ -6,10 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cngl7b3txrq8v" path="res://assets/projectiles/fish.png" id="4_pq7jk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p5g"]
-size = Vector2(58, 146)
+size = Vector2(58, 128)
 
 [node name="Ghost" instance=ExtResource("1_vwrah")]
-collision_layer = 4
 collision_mask = 25
 script = ExtResource("2_dtvku")
 start_position = Vector2(0, 0)
@@ -21,7 +20,6 @@ attack_type = ""
 texture = ExtResource("2_00kmu")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(3, 8)
 shape = SubResource("RectangleShape2D_g4p5g")
 
 [node name="FishProjectile" type="Sprite2D" parent="." index="3"]
