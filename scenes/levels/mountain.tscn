@@ -473,22 +473,28 @@ text = "henlo
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Sprout" parent="Enemies" instance=ExtResource("17_hgsqn")]
-position = Vector2(5660, -2920)
+position = Vector2(5654, -2918)
+
+[node name="Sprout2" parent="Enemies" instance=ExtResource("17_hgsqn")]
+position = Vector2(5903, -2680)
+rotation = 3.11054
+
+[node name="Sprout3" parent="Enemies" instance=ExtResource("17_hgsqn")]
+position = Vector2(5580, -2680)
+rotation = -1.52735
+
+[node name="Sprout4" parent="Enemies" instance=ExtResource("17_hgsqn")]
+position = Vector2(5677, -2539)
+rotation = 1.60043
 
 [node name="Leek" parent="Enemies" instance=ExtResource("17_gcokb")]
-position = Vector2(6131, -2920)
-
-[node name="Leek3" parent="Enemies" instance=ExtResource("17_gcokb")]
-position = Vector2(6159, -2886)
-rotation = 1.57963
-
-[node name="Leek4" parent="Enemies" instance=ExtResource("17_gcokb")]
-position = Vector2(6525, -2895)
-rotation = -1.10267
+position = Vector2(5031, -3040)
 
 [node name="Leek2" parent="Enemies" instance=ExtResource("17_gcokb")]
-position = Vector2(5838, -3474)
-rotation = 1.5708
+position = Vector2(5179, -2331)
+
+[node name="Leek3" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(4749, -2693)
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
