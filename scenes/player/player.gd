@@ -20,7 +20,7 @@ const DEATH_HEIGHT = 5000
 const EXTRA_JUMPS = 100 # for debugging of course
 
 var extra_jumps_done: int = 0
-var direction
+var direction = 0
 
 @onready var player_animation = $PlayerAnimation
 @onready var vfx_animation = $Vfx/VfxAnimation
@@ -34,7 +34,6 @@ var ingredients_in_range: Array
 
 
 func _ready():
-	direction = 0
 	for raycast in $FloorDetectors.get_children():
 		raycast.enabled = true
 	$FloorNormalDetector.enabled = true
@@ -206,6 +205,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					print("used berries!")
 					velocity.y = BERRY_Y_VEL
 					vfx_animation.stop()
+					$Vfx/NutEffect.visible = false
 					vfx_animation.play("berry_vfx")
 				"nuts":
 					print("used nuts!")
@@ -214,6 +214,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 						velocity.x = -NUT_X_VEL if $PlayerImage.flip_h else NUT_X_VEL
 					velocity.y += NUT_Y_VEL
 					vfx_animation.stop()
+					$Vfx/BerryEffect.visible = false
 					vfx_animation.play("nut_vfx")
 				"tofus":
 					print("used tofus!")
