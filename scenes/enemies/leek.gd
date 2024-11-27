@@ -15,7 +15,7 @@ func attack():
 
 func _ready() -> void:
 	periodic_attack = true
-	$PeriodicTimer.set_wait_time(randf_range(3, 4))
+	$PeriodicTimer.set_wait_time(3)
 
 func _process(delta: float) -> void:
 	# if not attacking, find out where the player is
