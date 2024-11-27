@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="12_k7q4a"]
 [ext_resource type="Texture2D" uid="uid://sp07g1l6oboc" path="res://assets/tilesets/platform_tileset.png" id="12_mtum8"]
 [ext_resource type="Texture2D" uid="uid://bopdei85xuhob" path="res://assets/tilesets/platform_texture.png" id="12_tumxw"]
-[ext_resource type="PackedScene" uid="uid://dwoj03emuq5j5" path="res://scenes/enemies/ghost.tscn" id="17_2fcpv"]
+[ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="17_gcokb"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="17_hgsqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2iyj"]
@@ -473,7 +473,22 @@ text = "henlo
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Sprout" parent="Enemies" instance=ExtResource("17_hgsqn")]
-position = Vector2(5977, -2928)
+position = Vector2(5660, -2920)
+
+[node name="Leek" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(6131, -2920)
+
+[node name="Leek3" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(6159, -2886)
+rotation = 1.57963
+
+[node name="Leek4" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(6525, -2895)
+rotation = -1.10267
+
+[node name="Leek2" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(5838, -3474)
+rotation = 1.5708
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
