@@ -455,7 +455,7 @@ position = Vector2(4240, -3269)
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_461c6")]
-position = Vector2(4248, -3258)
+position = Vector2(3217, -4146)
 floor_snap_length = 10.0
 metadata/_edit_group_ = true
 
@@ -476,10 +476,10 @@ text = "henlo
 position = Vector2(5977, -2928)
 
 [node name="Ghost" parent="Enemies" instance=ExtResource("17_2fcpv")]
-position = Vector2(2258, -4076)
+position = Vector2(2100, -4374)
 collision_mask = 24
-start_position = Vector2(2209, -4081)
-end_position = Vector2(2486, -4081)
+start_position = Vector2(2209, -4374)
+end_position = Vector2(2486, -4374)
 movement_time = 3.0
 attack_type = "fish"
 

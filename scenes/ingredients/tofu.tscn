@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://coloocqwfs33e"]
+[gd_scene load_steps=5 format=3 uid="uid://3b2qa8y1hbc2"]
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_y1jpf"]
 [ext_resource type="Script" path="res://scenes/ingredients/tofu.gd" id="2_i27gn"]
-[ext_resource type="Texture2D" uid="uid://c2ec7y24yjduq" path="res://assets/ingredients/low_res/tofu.png" id="2_xowxq"]
+[ext_resource type="Texture2D" uid="uid://bbbj73wg0qqt2" path="res://assets/ingredients/low_res/tofu.png" id="2_xowxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8oq0"]
 radius = 28.6506
 height = 63.7654
 
-[node name="Tofu" instance=ExtResource("1_y1jpf")]
+[node name="Tofu" groups=["ingredients"] instance=ExtResource("1_y1jpf")]
 script = ExtResource("2_i27gn")
 
 [node name="Sprite2D" parent="." index="0"]

@@ -159,10 +159,15 @@ func _physics_process(delta: float) -> void:
 
 # update ingredients that are in range of player
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
-	ingredients_in_range.append(body)
+	if body.is_in_group("ingredients"):
+		ingredients_in_range.append(body)
+	if body.is_in_group("projectiles"):
+		print("hit!!!!!")
+
 func _on_pickup_zone_body_exited(body: Node2D) -> void:
-	body.toggle_label(false);
-	ingredients_in_range.erase(body)
+	if body.is_in_group("ingredients"):
+		body.toggle_label(false);
+		ingredients_in_range.erase(body)
 
 # make ingredient fall when player makes contact
 func _on_ingredient_detection_zone_body_entered(ingredient: Node2D) -> void:

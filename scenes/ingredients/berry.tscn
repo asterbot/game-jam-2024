@@ -8,7 +8,7 @@
 radius = 26.163
 height = 69.2965
 
-[node name="Berry" instance=ExtResource("1_al0db")]
+[node name="Berry" groups=["ingredients"] instance=ExtResource("1_al0db")]
 script = ExtResource("2_71djc")
 
 [node name="Sprite2D" parent="." index="0"]

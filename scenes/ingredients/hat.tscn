@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p65vk"]
 size = Vector2(70, 70)
 
-[node name="Hat" instance=ExtResource("1_bvor8")]
+[node name="Hat" groups=["ingredients"] instance=ExtResource("1_bvor8")]
 script = ExtResource("2_ljej7")
 
 [node name="Sprite2D" parent="." index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwoj03emuq5j5"]
+[gd_scene load_steps=8 format=3 uid="uid://dwoj03emuq5j5"]
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_vwrah"]
 [ext_resource type="Texture2D" uid="uid://dke8i7is3uoft" path="res://assets/npcs/ghost-enemy.png" id="2_00kmu"]
@@ -8,6 +8,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p5g"]
 size = Vector2(58, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rgc3"]
+radius = 462.0
+height = 1156.0
 
 [node name="Ghost" instance=ExtResource("1_vwrah")]
 collision_mask = 25
@@ -22,6 +26,7 @@ texture = ExtResource("2_00kmu")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_g4p5g")
+metadata/_edit_lock_ = true
 
 [node name="FishProjectile" type="Sprite2D" parent="." index="3"]
 visible = false
@@ -30,3 +35,13 @@ texture = ExtResource("4_pq7jk")
 [node name="SoupCradle" type="Sprite2D" parent="." index="4"]
 visible = false
 texture = ExtResource("5_vboxv")
+
+[node name="AttackArea" parent="." index="5"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4rgc3")
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
