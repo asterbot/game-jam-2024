@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=26 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/levels/mountain.gd" id="1_wlsso"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="12_k7q4a"]
 [ext_resource type="Texture2D" uid="uid://sp07g1l6oboc" path="res://assets/tilesets/platform_tileset.png" id="12_mtum8"]
 [ext_resource type="Texture2D" uid="uid://bopdei85xuhob" path="res://assets/tilesets/platform_texture.png" id="12_tumxw"]
+[ext_resource type="PackedScene" uid="uid://dwoj03emuq5j5" path="res://scenes/enemies/ghost.tscn" id="17_2fcpv"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="17_hgsqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2iyj"]
@@ -472,7 +473,7 @@ text = "henlo
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Sprout" parent="Enemies" instance=ExtResource("17_hgsqn")]
-position = Vector2(5977, -2919)
+position = Vector2(5977, -2928)
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
