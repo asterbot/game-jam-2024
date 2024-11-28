@@ -20,10 +20,10 @@ const DEATH_HEIGHT = 5000
 const EXTRA_JUMPS = 100 # for debugging of course
 
 var extra_jumps_done: int = 0
-var direction
+var direction = 0
 
-@onready var _animation_player = $AnimationPlayer
-
+@onready var player_animation = $PlayerAnimation
+@onready var vfx_animation = $Vfx/VfxAnimation
 
 # signals
 signal update_ui(ingredient: String)
@@ -34,10 +34,11 @@ var ingredients_in_range: Array
 
 
 func _ready():
-	direction = 0
 	for raycast in $FloorDetectors.get_children():
 		raycast.enabled = true
 	$FloorNormalDetector.enabled = true
+	$Vfx/BerryEffect.visible = false
+	$Vfx/NutEffect.visible = false
 
 func near_floor():
 	# if 2 of 3 raycast nodes collide with platforms, return True
@@ -81,14 +82,27 @@ func get_closest_ingredient():
 func _process(_delta) -> void:
 	# as long as there is movement, animate player with walk cycle
 	if velocity.x != 0:
-		_animation_player.play("walk")
-		_animation_player.advance(0)
+		player_animation.play("walk")
+		player_animation.advance(0)
 	else:
-		_animation_player.stop()
+		player_animation.stop()
 	if direction < 0:
 		$PlayerImage.flip_h = true
+		$Vfx/BerryEffect.flip_h = true
+		$Vfx/BerryEffect.position.x = 20
 	elif direction > 0:
 		$PlayerImage.flip_h = false
+		$Vfx/BerryEffect.flip_h = false
+		$Vfx/BerryEffect.position.x = -10
+	
+	if not vfx_animation.is_playing(): # if not playing, set direction of vfx
+		if direction < 0:
+			$Vfx/NutEffect.flip_h = true
+			$Vfx/NutEffect.position.x = 140
+		elif direction > 0:
+			$Vfx/NutEffect.flip_h = false
+			$Vfx/NutEffect.position.x = -140
+	
 	
 	#erm debugging
 	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps_done)
@@ -195,10 +209,18 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 				"berries":
 					print("used berries!")
 					velocity.y = BERRY_Y_VEL
+					vfx_animation.stop()
+					$Vfx/NutEffect.visible = false
+					vfx_animation.play("berry_vfx")
 				"nuts":
 					print("used nuts!")
 					velocity.x += -NUT_X_VEL if $PlayerImage.flip_h else NUT_X_VEL
+					if abs(velocity.x) < NUT_X_VEL:
+						velocity.x = -NUT_X_VEL if $PlayerImage.flip_h else NUT_X_VEL
 					velocity.y += NUT_Y_VEL
+					vfx_animation.stop()
+					$Vfx/BerryEffect.visible = false
+					vfx_animation.play("nut_vfx")
 				"tofus":
 					print("used tofus!")
 				"carrots":

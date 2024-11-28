@@ -12,6 +12,7 @@ script = ExtResource("1_eql7s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="PeriodicTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="AttackArea" type="Area2D" parent="."]
 
