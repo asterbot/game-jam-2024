@@ -17,8 +17,6 @@ const FRICTION = 80
 
 const DEATH_HEIGHT = 5000
 
-const EXTRA_JUMPS = 100 # for debugging of course
-
 var extra_jumps_done: int = 0
 var direction = 0
 
@@ -102,10 +100,6 @@ func _process(_delta) -> void:
 		elif direction > 0:
 			$Vfx/NutEffect.flip_h = false
 			$Vfx/NutEffect.position.x = -140
-	
-	
-	#erm debugging
-	$Label.text = "Double Jumps Left: " + str(EXTRA_JUMPS - extra_jumps_done)
 
 
 # runs on every physics frame
@@ -136,7 +130,7 @@ func _physics_process(delta: float) -> void:
 	# control vertical movement
 	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()):
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("debug") and extra_jumps_done < EXTRA_JUMPS:
+	if Input.is_action_just_pressed("debug"):
 		velocity.y = -1500
 		extra_jumps_done += 1
 	velocity.y = clamp(velocity.y, -MAX_V_VEL, MAX_V_VEL)
