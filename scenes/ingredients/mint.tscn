@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_0esf4"]
 [ext_resource type="Script" path="res://scenes/ingredients/mint.gd" id="2_rp664"]
-[ext_resource type="Texture2D" uid="uid://dqqd4tsernqgo" path="res://assets/ingredients/low_res/mint.png" id="3_dpnhy"]
+[ext_resource type="Texture2D" uid="uid://ca7g6qpekt5cu" path="res://assets/ingredients/low_res/mint.png" id="3_dpnhy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2f6r"]
 radius = 27.5813
 height = 76.3658
 
-[node name="Mint" instance=ExtResource("1_0esf4")]
+[node name="Mint" groups=["ingredients"] instance=ExtResource("1_0esf4")]
 script = ExtResource("2_rp664")
 
 [node name="Sprite2D" parent="." index="0"]

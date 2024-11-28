@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://dae4ro1kbqsbd" path="res://assets/player/cat-walk.png" id="2_3o7an"]
-[ext_resource type="Texture2D" uid="uid://j1oj5pqqlkia" path="res://assets/ingredients/berry_effect.png" id="2_kkpnj"]
-[ext_resource type="Texture2D" uid="uid://2ai86o4wmjvt" path="res://assets/ingredients/nut_effect.png" id="3_tgfey"]
+[ext_resource type="Texture2D" uid="uid://dng6naulhe2r4" path="res://assets/player/cat-walk.png" id="2_3o7an"]
+[ext_resource type="Texture2D" uid="uid://di6tc54m4e2js" path="res://assets/ingredients/berry_effect.png" id="2_kkpnj"]
+[ext_resource type="Texture2D" uid="uid://b81rqkd5ecpbc" path="res://assets/ingredients/nut_effect.png" id="3_tgfey"]
 
 [sub_resource type="Animation" id="Animation_0ney2"]
 length = 0.001
@@ -123,7 +123,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 disable_mode = 2
-collision_mask = 22
+collision_mask = 6
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_snap_length = 0.0
@@ -186,7 +186,7 @@ metadata/_edit_lock_ = true
 
 [node name="PickupZone" type="Area2D" parent="."]
 visible = false
-collision_mask = 8
+collision_mask = 24
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -210,6 +210,8 @@ shape = SubResource("RectangleShape2D_mpk4k")
 libraries = {
 "": SubResource("AnimationLibrary_jbc1o")
 }
+
+[node name="InvulnerableTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]

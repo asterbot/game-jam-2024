@@ -8,7 +8,7 @@
 radius = 16.9706
 height = 87.6812
 
-[node name="Carrot" instance=ExtResource("1_u10w4")]
+[node name="Carrot" groups=["ingredients"] instance=ExtResource("1_u10w4")]
 script = ExtResource("2_rtl2u")
 
 [node name="Sprite2D" parent="." index="0"]
