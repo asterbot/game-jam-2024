@@ -476,9 +476,6 @@ text = "henlo
 [node name="Sprout" parent="Enemies" instance=ExtResource("17_hgsqn")]
 position = Vector2(5654, -2918)
 
-[node name="Leek" parent="Enemies" instance=ExtResource("17_gcokb")]
-position = Vector2(5031, -3040)
-
 [node name="Coconut" parent="Enemies" instance=ExtResource("18_p4f7m")]
 position = Vector2(5483, -3886)
 radius = 200
@@ -511,6 +508,12 @@ position = Vector2(5965, -3885)
 radius = 250
 seconds_per_cycle = 5.0
 rotate_direction = "CCW"
+
+[node name="Leek" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(4096, -2762)
+
+[node name="Leek2" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(3635, -3611)
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 

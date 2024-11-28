@@ -26,10 +26,10 @@ func _process(delta: float) -> void:
 	var degrees_per_second = 360/seconds_per_cycle
 	var angle_change = degrees_per_second * delta
 	if rotate_direction == "CW":
-		rotation_degrees -= angle_change
-	elif rotate_direction == "CCW":
 		rotation_degrees += angle_change
-	global_position = rotate_pos + radius * Vector2(sin(rotation), cos(rotation))
+	elif rotate_direction == "CCW":
+		rotation_degrees -= angle_change
+	global_position = rotate_pos + radius * Vector2(cos(rotation), sin(rotation))
 	$Sprite2D.rotation = -rotation
 	super(delta)
 	
