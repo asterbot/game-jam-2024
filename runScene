@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Give at least one scene"
+    exit 1
+fi
+
+rm err 2> /dev/null
+
+touch err
+
+tail -F err  | egrep -v "(WARNING.*using text path instead)|(at.*cpp)" 2>/dev/null & 
+
+/opt/godot/Godot_v4.3-stable_linux.x86_64 --no-header $1 2> err 
+
+kill $!
+
+rm err

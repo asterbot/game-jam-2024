@@ -21,7 +21,6 @@ func idle(delta):
 		var to_flip:bool = rad_to_deg(rotation)<-90 and rad_to_deg(rotation)>-270 
 		$Sprite2D.flip_v = to_flip
 		$FishProjectile.flip_v = to_flip
-		$SoupCradle.flip_v = to_flip
 		
 		# Calculate velocity based on direction
 		velocity = (end_position - start_position)* direction / movement_time
