@@ -481,7 +481,6 @@ collision_mask = 24
 start_position = Vector2(2209, -4374)
 end_position = Vector2(2486, -4374)
 movement_time = 3.0
-attack_type = "fish"
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 

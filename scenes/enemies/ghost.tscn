@@ -19,7 +19,6 @@ script = ExtResource("2_dtvku")
 start_position = Vector2(0, 0)
 end_position = Vector2(0, 0)
 movement_time = 0.0
-attack_type = ""
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_00kmu")
@@ -29,7 +28,6 @@ shape = SubResource("RectangleShape2D_g4p5g")
 metadata/_edit_lock_ = true
 
 [node name="FishProjectile" type="Sprite2D" parent="." index="3"]
-visible = false
 texture = ExtResource("4_pq7jk")
 
 [node name="SoupCradle" type="Sprite2D" parent="." index="4"]

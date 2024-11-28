@@ -4,8 +4,6 @@ extends AbstractEnemy
 @export var end_position: Vector2
 @export var movement_time: float
 
-@export_enum("fish","cradle") var attack_type: String
-
 # forward = direction from start to end (whatever that means)
 var going_forward = true;
 
@@ -42,16 +40,13 @@ func hit():
 	print("ghost hit")
 
 func attack():
-	if attack_type == "fish":
-		var projectile_scene = preload("res://scenes/projectiles/fish.tscn").instantiate()
-		projectile_scene.position = position
-		projectile_scene.linear_velocity = (player_body.global_position - global_position).normalized()*2000
-		$"../../Projectiles".add_child(projectile_scene)
+	var projectile_scene = preload("res://scenes/projectiles/fish.tscn").instantiate()
+	projectile_scene.position = position
+	projectile_scene.linear_velocity = (player_body.global_position - global_position).normalized()*2000
+	$"../../Projectiles".add_child(projectile_scene)
 
 func _ready() -> void:
 	position = start_position
-	$FishProjectile.visible = (attack_type=="fish")
-	$SoupCradle.visible = (attack_type=="cradle")
 	super()
 
 func _process(_delta: float) -> void:
