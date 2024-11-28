@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_bfuqi"]
 [ext_resource type="Script" path="res://scenes/enemies/sprout.gd" id="2_7t6wa"]
-[ext_resource type="Texture2D" uid="uid://b0rm0n642x68o" path="res://assets/npcs/sprout.png" id="2_fekmd"]
+[ext_resource type="Texture2D" uid="uid://bwmtf7hq1ajhe" path="res://assets/npcs/sprout.png" id="2_fekmd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_esgud"]
 radius = 24.0
@@ -266,7 +266,6 @@ _data = {
 }
 
 [node name="Sprout" instance=ExtResource("1_bfuqi")]
-collision_layer = 4
 collision_mask = 25
 script = ExtResource("2_7t6wa")
 

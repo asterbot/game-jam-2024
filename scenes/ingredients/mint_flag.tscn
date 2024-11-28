@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbcerw2dhad67"]
 
 [ext_resource type="Script" path="res://scenes/ingredients/mint_flag.gd" id="1_f1ul4"]
-[ext_resource type="Texture2D" uid="uid://bnen2p53u634b" path="res://assets/ingredients/low_res/mint-flag.png" id="1_tasra"]
+[ext_resource type="Texture2D" uid="uid://dfjo8dyphecjj" path="res://assets/ingredients/low_res/mint-flag.png" id="1_tasra"]
 [ext_resource type="LabelSettings" uid="uid://dmui8n01cg2lh" path="res://scenes/ingredients/display_name_font.tres" id="3_emdp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6hver"]

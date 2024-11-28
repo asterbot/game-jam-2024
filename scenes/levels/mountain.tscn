@@ -1,24 +1,25 @@
-[gd_scene load_steps=26 format=4 uid="uid://daxejigf2musu"]
+[gd_scene load_steps=27 format=4 uid="uid://daxejigf2musu"]
 
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="1_461c6"]
 [ext_resource type="Script" path="res://scenes/levels/mountain.gd" id="1_wlsso"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="2_87cec"]
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="2_t1r1v"]
-[ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
-[ext_resource type="Texture2D" uid="uid://qwkycfaiwvxn" path="res://assets/tilesets/mountain_texture.png" id="3_sv7s8"]
+[ext_resource type="Texture2D" uid="uid://baduprnhhib7n" path="res://assets/tilesets/mountain_tileset.png" id="3_lecr5"]
+[ext_resource type="Texture2D" uid="uid://b2wymtixk0hpo" path="res://assets/tilesets/mountain_texture.png" id="3_sv7s8"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="5_7kl0j"]
-[ext_resource type="PackedScene" path="res://scenes/plants/tofu_tree.tscn" id="6_uxbuw"]
+[ext_resource type="PackedScene" uid="uid://8tb0k8dgabex" path="res://scenes/plants/tofu_tree.tscn" id="6_uxbuw"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="6_xvfta"]
-[ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="6_yke77"]
-[ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="7_1iwp4"]
+[ext_resource type="PackedScene" uid="uid://deertjekx84k8" path="res://scenes/plants/nut_tree.tscn" id="6_yke77"]
+[ext_resource type="PackedScene" uid="uid://bm1kj0bbq64ch" path="res://scenes/plants/pepper_vine.tscn" id="7_1iwp4"]
 [ext_resource type="PackedScene" uid="uid://dr5o7ahb7jun4" path="res://scenes/plants/carrot_spiral.tscn" id="8_dho6m"]
 [ext_resource type="PackedScene" uid="uid://40qvt1etu7re" path="res://scenes/plants/mint_stalk.tscn" id="9_2x0g5"]
 [ext_resource type="PackedScene" uid="uid://dbcerw2dhad67" path="res://scenes/ingredients/mint_flag.tscn" id="11_himdr"]
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="12_k7q4a"]
-[ext_resource type="Texture2D" uid="uid://wdf21hy0fjxh" path="res://assets/tilesets/platform_tileset.png" id="12_mtum8"]
-[ext_resource type="Texture2D" uid="uid://b6rdsi7l3iefj" path="res://assets/tilesets/platform_texture.png" id="12_tumxw"]
-[ext_resource type="PackedScene" uid="uid://dwoj03emuq5j5" path="res://scenes/enemies/ghost.tscn" id="17_2fcpv"]
+[ext_resource type="Texture2D" uid="uid://sp07g1l6oboc" path="res://assets/tilesets/platform_tileset.png" id="12_mtum8"]
+[ext_resource type="Texture2D" uid="uid://bopdei85xuhob" path="res://assets/tilesets/platform_texture.png" id="12_tumxw"]
+[ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="17_gcokb"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="17_hgsqn"]
+[ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="18_p4f7m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k2iyj"]
 shader = ExtResource("2_t1r1v")
@@ -473,15 +474,46 @@ text = "henlo
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Sprout" parent="Enemies" instance=ExtResource("17_hgsqn")]
-position = Vector2(5977, -2928)
+position = Vector2(5654, -2918)
 
-[node name="Ghost" parent="Enemies" instance=ExtResource("17_2fcpv")]
-position = Vector2(2258, -4076)
-collision_mask = 24
-start_position = Vector2(2209, -4081)
-end_position = Vector2(2486, -4081)
-movement_time = 3.0
-attack_type = "fish"
+[node name="Coconut" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(5483, -3886)
+radius = 200
+seconds_per_cycle = 4.0
+rotate_direction = "CCW"
+
+[node name="Coconut2" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(5163, -3885)
+radius = 100
+rotate_direction = "CCW"
+
+[node name="Coconut3" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(4923, -3804)
+radius = 100
+rotate_direction = "CCW"
+
+[node name="Coconut4" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(4683, -3724)
+radius = 100
+rotate_direction = "CCW"
+
+[node name="Coconut5" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(5965, -3885)
+radius = 300
+seconds_per_cycle = 5.0
+rotate_direction = "CW"
+
+[node name="Coconut6" parent="Enemies" instance=ExtResource("18_p4f7m")]
+position = Vector2(5965, -3885)
+radius = 250
+seconds_per_cycle = 5.0
+rotate_direction = "CCW"
+
+[node name="Leek" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(4096, -2762)
+
+[node name="Leek2" parent="Enemies" instance=ExtResource("17_gcokb")]
+position = Vector2(3635, -3611)
 
 [node name="UI" parent="." instance=ExtResource("5_7kl0j")]
 
