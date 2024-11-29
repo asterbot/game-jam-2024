@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1ws1048bcsft"]
+[gd_scene load_steps=11 format=3 uid="uid://b1ws1048bcsft"]
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_bfuqi"]
 [ext_resource type="Script" path="res://scenes/enemies/sprout.gd" id="2_7t6wa"]
@@ -266,6 +266,8 @@ _data = {
 "idle": SubResource("Animation_f8akq")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wn60o"]
+
 [node name="Sprout" instance=ExtResource("1_bfuqi")]
 collision_mask = 25
 script = ExtResource("2_7t6wa")
@@ -285,3 +287,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ykaij")
 }
 autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_wn60o")
+disabled = true
