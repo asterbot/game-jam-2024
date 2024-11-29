@@ -75,48 +75,48 @@ position = Vector2(4414, -2638)
 
 [node name="Coconut" parent="Enemies" index="3" instance=ExtResource("12_apu6w")]
 position = Vector2(4283, -3562)
-radius = 200
+radius = Vector2(150, 150)
 seconds_per_cycle = 4.0
 rotate_direction = "CCW"
 
 [node name="Coconut2" parent="Enemies" index="4" instance=ExtResource("12_apu6w")]
 position = Vector2(3963, -3561)
-radius = 100
-rotate_direction = "CCW"
 
 [node name="Coconut3" parent="Enemies" index="5" instance=ExtResource("12_apu6w")]
 position = Vector2(3723, -3480)
-radius = 100
-rotate_direction = "CCW"
+offset = 90
 
 [node name="Coconut4" parent="Enemies" index="6" instance=ExtResource("12_apu6w")]
 position = Vector2(3483, -3400)
-radius = 100
-rotate_direction = "CCW"
 
 [node name="Coconut5" parent="Enemies" index="7" instance=ExtResource("12_apu6w")]
 position = Vector2(4765, -3561)
-radius = 300
+radius = Vector2(200, 200)
 seconds_per_cycle = 5.0
-rotate_direction = "CW"
 
 [node name="Coconut6" parent="Enemies" index="8" instance=ExtResource("12_apu6w")]
 position = Vector2(4765, -3561)
-radius = 250
+radius = Vector2(200, 200)
 seconds_per_cycle = 5.0
 rotate_direction = "CCW"
 
-[node name="Leek" parent="Enemies" index="9" instance=ExtResource("13_axjio")]
+[node name="Coconut7" parent="Enemies" index="9" instance=ExtResource("12_apu6w")]
+position = Vector2(5140, -3255)
+radius = Vector2(300, 0)
+seconds_per_cycle = 5.0
+rotate_direction = "CCW"
+
+[node name="Leek" parent="Enemies" index="10" instance=ExtResource("13_axjio")]
 position = Vector2(2891, -2479)
 
-[node name="Leek2" parent="Enemies" index="10" instance=ExtResource("13_axjio")]
+[node name="Leek2" parent="Enemies" index="11" instance=ExtResource("13_axjio")]
 position = Vector2(2567, -2236)
 
-[node name="Leek3" parent="Enemies" index="11" instance=ExtResource("13_axjio")]
+[node name="Leek3" parent="Enemies" index="12" instance=ExtResource("13_axjio")]
 position = Vector2(2376, -2717)
 rotation = 3.14159
 
-[node name="Ghost" parent="Enemies" index="12" instance=ExtResource("14_8av2b")]
+[node name="Ghost" parent="Enemies" index="13" instance=ExtResource("14_8av2b")]
 position = Vector2(1144, -4007)
 start_position = Vector2(2142, -4370)
 end_position = Vector2(2442, -4370)
