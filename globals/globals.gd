@@ -40,7 +40,7 @@ var selected_index_ui = 1;
 var ingredients = {
 	"berries": {
 		"inventory_slot": 1,
-		"amount": 0,
+		"amount": 5,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
@@ -72,6 +72,6 @@ var ingredients = {
 		"inventory_slot": 6,
 		"amount": 0,
 		"discovered": false,
-		 "scene": preload("res://scenes/ingredients/mint.tscn")
+		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }
