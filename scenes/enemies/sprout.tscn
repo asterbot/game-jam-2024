@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bwmtf7hq1ajhe" path="res://assets/npcs/sprout.png" id="2_fekmd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_esgud"]
+resource_local_to_scene = true
 radius = 24.0
 height = 106.0
 
