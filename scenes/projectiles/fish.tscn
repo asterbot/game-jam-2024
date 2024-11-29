@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scenes/projectiles/fish.gd" id="2_l6kbe"]
 [ext_resource type="Texture2D" uid="uid://cngl7b3txrq8v" path="res://assets/projectiles/fish.png" id="3_rg0vt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ok8us"]
-radius = 0.01
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw1lq"]
+size = Vector2(54, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi5eb"]
 size = Vector2(54, 28)
@@ -18,8 +18,7 @@ position = Vector2(-66, -4)
 texture = ExtResource("3_rg0vt")
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_ok8us")
-metadata/_edit_lock_ = true
+shape = SubResource("RectangleShape2D_kw1lq")
 
 [node name="CollisionShape2D" parent="FloorDetectionArea" index="0"]
 shape = SubResource("RectangleShape2D_wi5eb")
