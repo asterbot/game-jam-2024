@@ -20,6 +20,8 @@ const DEATH_HEIGHT = 5000
 var extra_jumps_done: int = 0
 var direction = 0
 
+var is_vulnerable = true;
+
 @onready var player_animation = $PlayerAnimation
 @onready var vfx_animation = $Vfx/VfxAnimation
 
@@ -169,8 +171,7 @@ func _physics_process(delta: float) -> void:
 func _on_pickup_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):
 		ingredients_in_range.append(body)
-	if body.is_in_group("projectiles"):
-		print("hit!!!!!")
+	
 
 func _on_pickup_zone_body_exited(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):
@@ -178,8 +179,39 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 		ingredients_in_range.erase(body)
 
 # make ingredient fall when player makes contact
-func _on_ingredient_detection_zone_body_entered(ingredient: Node2D) -> void:
-	ingredient.gravity_scale = 1
+func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
+	call_deferred("do_stuff", body)
+
+func do_stuff(body: Node2D) -> void:
+	if body.is_in_group("ingredients"):
+		body.gravity_scale = 1
+	if is_vulnerable and (body.is_in_group("projectiles") or body.is_in_group("enemies")):
+		$InvulnerableTimer.start()
+		$PlayerImage.material.set_shader_parameter("progress",0.3)
+		is_vulnerable = false;
+
+		var dir = (global_position - body.global_position).normalized()
+		velocity = dir * 600
+
+		var all_ingredients = []
+		for ingredient in Globals.ingredients:
+			for i in range(Globals.ingredients[ingredient]["amount"]):
+				all_ingredients.append(ingredient)
+		
+		all_ingredients.shuffle()
+		for item in range(min(all_ingredients.size(), randi()%3 + 1)):
+			Globals.ingredients[all_ingredients[item]]["amount"] -= 1
+			Globals.inventory_used -= 1
+			update_ui.emit(all_ingredients[item])
+			var ingredient_scene = Globals.ingredients[all_ingredients[item]]["scene"].instantiate()
+			var offset_x = 30
+			var offset_y = 30
+			var speed = 350
+			# also, throw the ingredient
+			ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
+			ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
+			$"../Ingredients".add_child(ingredient_scene)
+
 
 func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 	# if the player has some of the selected ingredient, remove from data
@@ -237,3 +269,8 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 			Globals.ingredients[item]["amount"] -= 1
 			Globals.inventory_used -= 1
 			update_ui.emit(item)
+
+
+func _on_invulnerable_timer_timeout() -> void:
+	$PlayerImage.material.set_shader_parameter("progress",0)
+	is_vulnerable = true
