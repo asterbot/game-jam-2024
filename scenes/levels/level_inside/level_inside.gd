@@ -15,8 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-	
-
+# animations when close to pot
 func _on_camera_zoom_body_entered(body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
@@ -25,7 +24,7 @@ func _on_camera_zoom_body_entered(body: Node2D) -> void:
 	tween.tween_property($PotDisplay, "modulate:a", 1, 0.5)
 	tween.tween_property($Lights/PotLight, "energy", 1, 0.5)
 
-
+# animations when leaving pot area
 func _on_camera_zoom_body_exited(body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
@@ -37,4 +36,3 @@ func _on_camera_zoom_body_exited(body: Node2D) -> void:
 
 func _on_pot_ingredient_collected(ingredient_type: Variant) -> void:
 	ingredients_in_pot[ingredient_type] += 1
-	print(ingredients_in_pot)

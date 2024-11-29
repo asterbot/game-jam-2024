@@ -40,7 +40,7 @@ var selected_index_ui = 1;
 var ingredients = {
 	"berries": {
 		"inventory_slot": 1,
-		"amount": 5,
+		"amount": 0,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
