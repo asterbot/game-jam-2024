@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://dplfa5s3m3vdh"]
+[gd_scene load_steps=6 format=4 uid="uid://d0cg68xfk5h8b"]
 
-[ext_resource type="PackedScene" uid="uid://3debllg54q3a" path="res://scenes/levels/abstract_level.tscn" id="1_g0psb"]
+[ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g0psb"]
 [ext_resource type="Script" path="res://scenes/levels/level_zero.gd" id="2_cbfcc"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="3_xrh3b"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="4_klt41"]

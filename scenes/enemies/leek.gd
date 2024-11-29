@@ -14,8 +14,8 @@ func attack():
 	$AnimationPlayer.queue("idle")
 
 func _ready() -> void:
-	periodic_attack = true
-	$PeriodicTimer.set_wait_time(3)
+	periodic_attack = false
+	$PeriodicTimer.set_wait_time(randf_range(3, 4))
 
 func _process(delta: float) -> void:
 	# if not attacking, find out where the player is
@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 
 func _on_player_detection_zone_body_entered(body: Node2D) -> void:
 	player = body
+	periodic_attack = true
 
 func _on_player_detection_zone_body_exited(_body: Node2D) -> void:
 	player = null
+	periodic_attack = false
