@@ -180,9 +180,9 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 
 # make ingredient fall when player makes contact
 func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
-	call_deferred("do_stuff", body)
+	call_deferred("item_detection", body)
 
-func do_stuff(body: Node2D) -> void:
+func item_detection(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):
 		body.gravity_scale = 1
 	if is_vulnerable and (body.is_in_group("projectiles") or body.is_in_group("enemies")):
