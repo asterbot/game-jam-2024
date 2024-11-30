@@ -72,6 +72,6 @@ var ingredients = {
 		"inventory_slot": 6,
 		"amount": 0,
 		"discovered": false,
-		 "scene": preload("res://scenes/ingredients/mint.tscn")
+		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }

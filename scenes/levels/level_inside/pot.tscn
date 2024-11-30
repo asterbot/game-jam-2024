@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://sul21ma6e0og"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_inside/pot.gd" id="1_fhkfd"]
+[ext_resource type="Texture2D" uid="uid://dp608vpmv6v7t" path="res://assets/environment/inside_level/pot.png" id="1_x8315"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae8ar"]
+size = Vector2(364, 91)
+
+[node name="Pot" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_fhkfd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x8315")
+
+[node name="CollectZone" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_ae8ar")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

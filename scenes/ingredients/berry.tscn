@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_al0db"]
 [ext_resource type="Script" path="res://scenes/ingredients/berry.gd" id="2_71djc"]
-[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="2_knvrs"]
+[ext_resource type="Texture2D" uid="uid://bteqvbuoixsyj" path="res://assets/ingredients/low_res/berry.png" id="2_knvrs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7nrw"]
 radius = 26.163

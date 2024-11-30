@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_bfuqi"]
 [ext_resource type="Script" path="res://scenes/enemies/sprout.gd" id="2_7t6wa"]
-[ext_resource type="Texture2D" uid="uid://b0rm0n642x68o" path="res://assets/npcs/sprout.png" id="2_fekmd"]
+[ext_resource type="Texture2D" uid="uid://bwmtf7hq1ajhe" path="res://assets/npcs/sprout.png" id="2_fekmd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_esgud"]
 resource_local_to_scene = true
@@ -287,6 +287,11 @@ libraries = {
 "": SubResource("AnimationLibrary_ykaij")
 }
 autoplay = "idle"
+
+[node name="AttackArea" parent="." index="4"]
+visible = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_wn60o")
