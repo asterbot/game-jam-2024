@@ -32,7 +32,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "-"
 label_settings = SubResource("LabelSettings_y8868")
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
@@ -52,4 +51,4 @@ theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
-text = "Come back later for more information..."
+text = "~~REDACTED~~"

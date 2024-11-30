@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cacvgf0yctfci"]
 
 [ext_resource type="Script" path="res://scenes/UI/cookbook/cookbook.gd" id="1_7w2a4"]
-[ext_resource type="Texture2D" uid="uid://b50cqnxkunou5" path="res://assets/cookbook_ui.png" id="1_fvocb"]
-[ext_resource type="Texture2D" uid="uid://bn6s487o1abgy" path="res://assets/keys/directions/left_key.png" id="4_6lgse"]
-[ext_resource type="Texture2D" uid="uid://cgj2lvanjm0ak" path="res://assets/keys/letters/a_key.png" id="5_lstf8"]
-[ext_resource type="Texture2D" uid="uid://b4ggm1wrd1p42" path="res://assets/keys/letters/d_key.png" id="6_3wab1"]
-[ext_resource type="Texture2D" uid="uid://b0nwqin3pycud" path="res://assets/keys/directions/right_key.png" id="7_f8go5"]
+[ext_resource type="Texture2D" uid="uid://dve16kj846d0j" path="res://assets/cookbook_ui.png" id="1_fvocb"]
+[ext_resource type="Texture2D" uid="uid://cp60pyjwgm5nq" path="res://assets/keys/directions/left_key.png" id="4_6lgse"]
+[ext_resource type="Texture2D" uid="uid://bcl8ct7xmduas" path="res://assets/keys/letters/a_key.png" id="5_lstf8"]
+[ext_resource type="Texture2D" uid="uid://doi2penp5ewdq" path="res://assets/keys/letters/d_key.png" id="6_3wab1"]
+[ext_resource type="Texture2D" uid="uid://caf0b0osrjky6" path="res://assets/keys/directions/right_key.png" id="7_f8go5"]
 
 [node name="Cookbook" type="CanvasLayer"]
 script = ExtResource("1_7w2a4")

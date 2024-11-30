@@ -1,14 +1,57 @@
 extends CanvasLayer
 
 
+var ingredient_descriptions = {
+	0:
+"""A prospective soup connoisseur
+""",
+	1:
+"""Ah, one of the first delicacies encountered on the adventure! I have craved their tangy sweetness ever since stumbling onto these squishy fruits, so much so that I always make sure to have a few on me at all times.
+
+On top of that, the berries seem to grant mystical powers when eaten: although I have stumbled many this treacherous journey, I have always managed to stay on my feet after a berry meal.
+
+It has been quite exciting thus far, and I can only imagine what variety of tastes await further up!
+
+""",
+	2:
+"""After consuming the berries, imagine my shock when the next snack I found was nothing like it!
+Whatever the case is, I am being well-fed by nature, and I will use the opportunity to continue my journey of becoming a soup master.
+""",
+	3:
+"""
+this is a tofu
+""",
+	4:
+"""
+this is a carrot
+""",
+	5:
+"""
+this is a pepper
+""",
+	6:
+"""
+this is a mint
+"""
+}
+
+
+
+
+
+
 var pages: Array[Dictionary] = []
 var curr_page = 0
 
+
+
+
 func _ready():
 	$Cookbook.modulate.a = 0
-	pages.append(
-		{"left": preload("res://scenes/UI/cookbook/image_page.tscn").instantiate(),
-		"right": preload("res://scenes/UI/cookbook/text_page.tscn").instantiate()})
+	var left_page_0 = preload("res://scenes/UI/cookbook/controls.tscn").instantiate()
+	var right_page_0 = preload("res://scenes/UI/cookbook/text_page.tscn").instantiate()
+	right_page_0.update_text(ingredient_descriptions[0])
+	pages.append({"left": left_page_0, "right": right_page_0})
 	var page_number = 1
 	for ing_name in Globals.ingredients.keys():
 		var page_pair = {}
@@ -65,4 +108,4 @@ func _on_player_update_ui(ing_name: String, _using) -> void:
 	var left_page = pages[inventory_index]["left"]
 	var right_page = pages[inventory_index]["right"]
 	left_page.update_page(Globals.ingredients[ing_name]["inventory_slot"])
-	right_page.update_text(Globals.ingredients[ing_name]["inventory_slot"])
+	right_page.update_text(ingredient_descriptions[Globals.ingredients[ing_name]["inventory_slot"]])

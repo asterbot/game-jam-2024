@@ -13,7 +13,7 @@ var cookbook_open = false
 
 # index value -> sprite for fruit at index
 const index_sprite_map={
-	0: preload("res://assets/ingredients/low_res/berry.png"),
+	0: preload("res://assets/ingredients/low_res/unrevealed.png"),
 	1: preload("res://assets/ingredients/low_res/berry.png"),
 	2: preload("res://assets/ingredients/low_res/nut.png"),
 	3: preload("res://assets/ingredients/low_res/tofu.png"),

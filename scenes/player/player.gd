@@ -207,7 +207,7 @@ func item_detection(body: Node2D) -> void:
 			is_vulnerable = false;
 
 			var dir = (global_position - body.global_position).normalized()
-			velocity = 0.5*velocity + dir*600
+			velocity = 0.4*velocity + dir*600
 
 			var all_ingredients = []
 			for ingredient in Globals.ingredients:
