@@ -230,8 +230,13 @@ one_shot = true
 wait_time = 10.0
 one_shot = true
 
+[node name="CarrotTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]
 [connection signal="body_entered" from="IngredientDetectionZone" to="." method="_on_ingredient_detection_zone_body_entered"]
 [connection signal="timeout" from="InvulnerableTimer" to="." method="_on_invulnerable_timer_timeout"]
 [connection signal="timeout" from="InvisibleTimer" to="." method="_on_invisible_timer_timeout"]
+[connection signal="timeout" from="CarrotTimer" to="." method="_on_carrot_timer_timeout"]

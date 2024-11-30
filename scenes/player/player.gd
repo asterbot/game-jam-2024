@@ -22,11 +22,13 @@ var direction = 0
 
 var is_vulnerable = true;
 
+var hat_obtained:bool = false;
+
 @onready var player_animation = $PlayerAnimation
 @onready var vfx_animation = $Vfx/VfxAnimation
 
 # signals
-signal update_ui(ingredient: String)
+signal update_ui(ingredient: String, using: bool)
 signal request_selected_ingredient(purpose: String) 
 # purpose = what action we want to request the selected item for
 
@@ -147,10 +149,14 @@ func _physics_process(delta: float) -> void:
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
-			update_ui.emit(ingredient_name)
+			update_ui.emit(ingredient_name, false)
 		elif pick_up_ingredient.ingredient_name=="hat":
 			pick_up_ingredient.queue_free()
-			$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
+			if not Globals.carrot_activated:
+				$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
+			else:
+				$PlayerImage.texture = preload("res://assets/player/cat-carrot-hat.png")
+			hat_obtained = true
 		
 	# These are the actions where we need to request the selected ingredient from the UI
 	var request_actions = ["discard", "use_item"]
@@ -186,31 +192,32 @@ func item_detection(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):
 		body.gravity_scale = 1
 	if is_vulnerable and (body.is_in_group("projectiles") or body.is_in_group("enemies")):
-		$InvulnerableTimer.start()
-		$PlayerImage.material.set_shader_parameter("progress",0.3)
-		is_vulnerable = false;
+		if not Globals.tofu_activated:
+			$InvulnerableTimer.start()
+			$PlayerImage.material.set_shader_parameter("progress",0.3)
+			is_vulnerable = false;
 
-		var dir = (global_position - body.global_position).normalized()
-		velocity = 0.5*velocity + dir*600
+			var dir = (global_position - body.global_position).normalized()
+			velocity = 0.5*velocity + dir*600
 
-		var all_ingredients = []
-		for ingredient in Globals.ingredients:
-			for i in range(Globals.ingredients[ingredient]["amount"]):
-				all_ingredients.append(ingredient)
-		
-		all_ingredients.shuffle()
-		for item in range(min(all_ingredients.size(), randi()%3 + 1)):
-			Globals.ingredients[all_ingredients[item]]["amount"] -= 1
-			Globals.inventory_used -= 1
-			update_ui.emit(all_ingredients[item])
-			var ingredient_scene = Globals.ingredients[all_ingredients[item]]["scene"].instantiate()
-			var offset_x = 30
-			var offset_y = 30
-			var speed = 350
-			# also, throw the ingredient
-			ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
-			ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
-			$"../Ingredients".add_child(ingredient_scene)
+			var all_ingredients = []
+			for ingredient in Globals.ingredients:
+				for i in range(Globals.ingredients[ingredient]["amount"]):
+					all_ingredients.append(ingredient)
+			
+			all_ingredients.shuffle()
+			for item in range(min(all_ingredients.size(), randi()%3 + 1)):
+				Globals.ingredients[all_ingredients[item]]["amount"] -= 1
+				Globals.inventory_used -= 1
+				update_ui.emit(all_ingredients[item], false)
+				var ingredient_scene = Globals.ingredients[all_ingredients[item]]["scene"].instantiate()
+				var offset_x = 30
+				var offset_y = 30
+				var speed = 350
+				# also, throw the ingredient
+				ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
+				ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
+				$"../Ingredients".add_child(ingredient_scene)
 
 
 func _on_ui_send_selected_item(item: String, purpose: String) -> void:
@@ -219,7 +226,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 		if Globals.ingredients[item]["amount"] > 0:
 			Globals.ingredients[item]["amount"] -= 1
 			Globals.inventory_used -= 1
-			update_ui.emit(item)
+			update_ui.emit(item, false)
 			var ingredient_scene = Globals.ingredients[item]["scene"].instantiate()
 			var offset_x = 30
 			var offset_y = 30
@@ -249,10 +256,19 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					vfx_animation.play("nut_vfx")
 				"tofus":
 					print("used tofus!")
+					if Globals.tofu_activated:
+						return
 					$PlayerImage.material.set_shader_parameter("custom_alpha", 0.3)
 					$InvisibleTimer.start()
 				"carrots":
 					print("used carrots!")
+					if Globals.carrot_activated:
+						return
+					if hat_obtained:
+						$PlayerImage.texture = preload("res://assets/player/cat-carrot-hat.png")
+					else:
+						$PlayerImage.texture = preload("res://assets/player/cat-carrot.png")
+					$CarrotTimer.start()
 				"peppers":
 					print("used peppers!")
 				"mints":
@@ -270,7 +286,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 			# Decrement amount and update_ui
 			Globals.ingredients[item]["amount"] -= 1
 			Globals.inventory_used -= 1
-			update_ui.emit(item)
+			update_ui.emit(item, true)
 
 
 func _on_invulnerable_timer_timeout() -> void:
@@ -280,3 +296,11 @@ func _on_invulnerable_timer_timeout() -> void:
 
 func _on_invisible_timer_timeout() -> void:
 	$PlayerImage.material.set_shader_parameter("custom_alpha", 1)
+
+
+func _on_carrot_timer_timeout() -> void:
+	print("got here!")
+	if hat_obtained:
+		$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
+	else:
+		$PlayerImage.texture = preload("res://assets/player/cat-walk.png")

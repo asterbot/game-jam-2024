@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	super(delta)
 
 # animations when close to pot
-func _on_camera_zoom_body_entered(body: Node2D) -> void:
+func _on_camera_zoom_body_entered(_body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property($Camera2D, "zoom", Vector2(1.55, 1.55), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
@@ -26,7 +26,7 @@ func _on_camera_zoom_body_entered(body: Node2D) -> void:
 	tween.tween_property($Lights/PotLight, "energy", 1, 0.5)
 
 # animations when leaving pot area
-func _on_camera_zoom_body_exited(body: Node2D) -> void:
+func _on_camera_zoom_body_exited(_body: Node2D) -> void:
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property($Camera2D, "zoom", Vector2(1.05, 1.05), 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
