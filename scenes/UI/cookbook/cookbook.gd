@@ -8,18 +8,24 @@ var ingredient_descriptions = {
 	1:
 """Ah, one of the first delicacies encountered on the adventure! I have craved their tangy sweetness ever since stumbling onto these squishy fruits, so much so that I always make sure to have a few on me at all times.
 
-On top of that, the berries seem to grant mystical powers when eaten: although I have stumbled many this treacherous journey, I have always managed to stay on my feet after a berry meal.
+On top of that, the berries seem to grant mystical powers: although I have stumbled many this treacherous journey, I have always managed to stay on my feet after a berry meal.
 
 It has been quite exciting thus far, and I can only imagine what variety of tastes await further up!
 
 """,
 	2:
-"""After consuming the berries, imagine my shock when the next snack I found was nothing like it!
-Whatever the case is, I am being well-fed by nature, and I will use the opportunity to continue my journey of becoming a soup master.
+"""After consuming the berries, imagine my surprise when the next snack I found was nothing like it!
+
+It took me ages to break through the nut's tough exterior, and the insides were just as crunchy. What was most shocking though, was when an undulating tremor coursed through my body as soon as I tasted it.
+
+How electrifying! I was bursting with so much energy that it couldn't stop myself from running for some hours. However strange these foods are, I am being well-fed by nature and I will use these opportunities to continue my journey of becoming a soup master.
 """,
 	3:
-"""
-this is a tofu
+"""Today is the day I first found my first aggressor on this expedition. The little sprout packs a big punch despite looking so tame, so I found some respite in the local ingredients once again.
+
+I didn't think much of the tofu skins on the nearby tree, but the sprout seeds that used to beat me so thoroughly had no ill effect when I grasped them in my hand!
+
+
 """,
 	4:
 """
