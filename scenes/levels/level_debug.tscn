@@ -60,7 +60,7 @@ tile_map_data = PackedByteArray("AAABANb/AAAEAAAAAAABANf/AAABAAEAAAABANj/AAABAAE
 position = Vector2(3028, -2944)
 
 [node name="Player" parent="." index="3"]
-position = Vector2(-544, -71)
+position = Vector2(3356, -2794)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="9"]
 
@@ -113,25 +113,9 @@ start_position = Vector2(2142, -4370)
 end_position = Vector2(2442, -4370)
 movement_time = 3.0
 
-[node name="Sprout8" parent="Enemies" index="11" instance=ExtResource("11_yety3")]
-position = Vector2(-1294, 5.99998)
-rotation = 0.727619
-
-[node name="Sprout9" parent="Enemies" index="12" instance=ExtResource("11_yety3")]
-position = Vector2(-984, 7.00002)
-rotation = 0.0172597
-
-[node name="Sprout10" parent="Enemies" index="13" instance=ExtResource("11_yety3")]
-position = Vector2(-1146, -334)
-rotation = 3.14008
-
-[node name="Sprout11" parent="Enemies" index="14" instance=ExtResource("11_yety3")]
-position = Vector2(-907, -208)
-rotation = 1.57656
-
-[node name="Sprout12" parent="Enemies" index="15" instance=ExtResource("11_yety3")]
-position = Vector2(-621, -377)
-rotation = -1.55668
+[node name="Sprout" parent="Enemies" index="11" instance=ExtResource("11_yety3")]
+position = Vector2(5320, -2558)
+rotation = -1.10823
 
 [node name="Hat" parent="." index="7" instance=ExtResource("15_b1nd4")]
 position = Vector2(4601, -3350)

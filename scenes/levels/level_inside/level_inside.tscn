@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkrn7lqlxm65d" path="res://scenes/levels/level_inside/pot_display.tscn" id="7_lme0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]
-size = Vector2(225, 232)
+size = Vector2(261, 394)
 
 [sub_resource type="Animation" id="Animation_i8n74"]
 length = 0.001
@@ -109,11 +109,10 @@ zoom = Vector2(1.05, 1.05)
 
 [node name="CameraZoom" type="Area2D" parent="." index="8"]
 collision_layer = 8
-metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraZoom" index="0"]
-position = Vector2(593.5, 362)
+position = Vector2(611.5, 443)
 shape = SubResource("RectangleShape2D_ai4dy")
 
 [node name="PotDisplay" parent="." index="9" instance=ExtResource("7_lme0a")]
