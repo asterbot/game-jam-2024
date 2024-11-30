@@ -249,6 +249,8 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					vfx_animation.play("nut_vfx")
 				"tofus":
 					print("used tofus!")
+					$PlayerImage.material.set_shader_parameter("custom_alpha", 0.3)
+					$InvisibleTimer.start()
 				"carrots":
 					print("used carrots!")
 				"peppers":
@@ -274,3 +276,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 func _on_invulnerable_timer_timeout() -> void:
 	$PlayerImage.material.set_shader_parameter("progress",0)
 	is_vulnerable = true
+
+
+func _on_invisible_timer_timeout() -> void:
+	$PlayerImage.material.set_shader_parameter("custom_alpha", 1)

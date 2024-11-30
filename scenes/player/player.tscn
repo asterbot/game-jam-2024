@@ -78,6 +78,7 @@ _data = {
 shader = ExtResource("4_osydm")
 shader_parameter/colour = Color(0.772549, 0.152941, 0, 1)
 shader_parameter/progress = 0.0
+shader_parameter/custom_alpha = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
 size = Vector2(42, 95.5)
@@ -168,6 +169,7 @@ shape = SubResource("RectangleShape2D_e1kfq")
 metadata/_edit_lock_ = true
 
 [node name="FloorDetectors" type="Node2D" parent="."]
+visible = false
 position = Vector2(2.5, 53)
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -188,6 +190,7 @@ target_position = Vector2(0, 30)
 collision_mask = 2
 
 [node name="FloorNormalDetector" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(4, 53)
 target_position = Vector2(0, 100)
 collision_mask = 2
@@ -205,6 +208,7 @@ rotation = 3.14159
 shape = SubResource("CapsuleShape2D_46wyq")
 
 [node name="IngredientDetectionZone" type="Area2D" parent="."]
+visible = false
 position = Vector2(2, 6)
 collision_mask = 28
 metadata/_edit_lock_ = true
@@ -222,7 +226,12 @@ libraries = {
 [node name="InvulnerableTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="InvisibleTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]
 [connection signal="body_entered" from="IngredientDetectionZone" to="." method="_on_ingredient_detection_zone_body_entered"]
 [connection signal="timeout" from="InvulnerableTimer" to="." method="_on_invulnerable_timer_timeout"]
+[connection signal="timeout" from="InvisibleTimer" to="." method="_on_invisible_timer_timeout"]

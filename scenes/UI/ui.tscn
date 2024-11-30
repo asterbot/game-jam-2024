@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc8ertsqq0qdm"]
+[gd_scene load_steps=13 format=3 uid="uid://bc8ertsqq0qdm"]
 
 [ext_resource type="Script" path="res://scenes/UI/h_box_container.gd" id="1_fdn0j"]
 [ext_resource type="PackedScene" uid="uid://bu8aru7n5drf8" path="res://scenes/UI/inventory_slot.tscn" id="1_tywlm"]
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_wpxx6"]
 [ext_resource type="LabelSettings" uid="uid://du7rxt236lnys" path="res://scenes/UI/resources/inventory_font.tres" id="3_staen"]
+[ext_resource type="Texture2D" uid="uid://bbbj73wg0qqt2" path="res://assets/ingredients/low_res/tofu.png" id="4_vy6ka"]
+[ext_resource type="Texture2D" uid="uid://c5d8wi32l11xe" path="res://assets/ingredients/low_res/carrot.png" id="5_3dxyh"]
 [ext_resource type="Texture2D" uid="uid://cko1teb7cly0c" path="res://assets/ingredients/sack.png" id="5_pun84"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scld8"]
@@ -28,6 +30,8 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yclq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw5rw"]
 bg_color = Color(0.283875, 0.336369, 0.634543, 1)
@@ -99,6 +103,55 @@ layout_mode = 2
 
 [node name="MintSlot" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_tywlm")]
 layout_mode = 2
+
+[node name="ProgressTimers" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.39
+theme_override_styles/separator = SubResource("StyleBoxEmpty_yclq0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
+theme_override_constants/separation = 20
+
+[node name="HBoxContainerTofu" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer/HBoxContainerTofu"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_vy6ka")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer/HBoxContainerTofu"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="HBoxContainerCarrot" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer/HBoxContainerCarrot"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_3dxyh")
+expand_mode = 1
+
+[node name="ProgressBar2" type="ProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer/HBoxContainerCarrot"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
