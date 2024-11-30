@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bouxvvctkbnvr"]
+[gd_scene load_steps=17 format=3 uid="uid://bouxvvctkbnvr"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ieyu0"]
-[ext_resource type="Texture2D" uid="uid://dae4ro1kbqsbd" path="res://assets/player/cat-walk.png" id="2_3o7an"]
-[ext_resource type="Texture2D" uid="uid://j1oj5pqqlkia" path="res://assets/ingredients/berry_effect.png" id="2_kkpnj"]
-[ext_resource type="Texture2D" uid="uid://2ai86o4wmjvt" path="res://assets/ingredients/nut_effect.png" id="3_tgfey"]
+[ext_resource type="Texture2D" uid="uid://dng6naulhe2r4" path="res://assets/player/cat-walk.png" id="2_3o7an"]
+[ext_resource type="Texture2D" uid="uid://di6tc54m4e2js" path="res://assets/ingredients/berry_effect.png" id="2_kkpnj"]
+[ext_resource type="Texture2D" uid="uid://b81rqkd5ecpbc" path="res://assets/ingredients/nut_effect.png" id="3_tgfey"]
+[ext_resource type="Shader" path="res://scenes/player/player.gdshader" id="4_osydm"]
 
 [sub_resource type="Animation" id="Animation_0ney2"]
 length = 0.001
@@ -72,6 +73,11 @@ _data = {
 "berry_vfx": SubResource("Animation_nup1k"),
 "nut_vfx": SubResource("Animation_dkh8k")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3sv3q"]
+shader = ExtResource("4_osydm")
+shader_parameter/colour = Color(0.772549, 0.152941, 0, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kfq"]
 size = Vector2(42, 95.5)
@@ -148,6 +154,7 @@ libraries = {
 }
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3sv3q")
 position = Vector2(5, -65)
 texture = ExtResource("2_3o7an")
 hframes = 4
@@ -155,6 +162,7 @@ region_rect = Rect2(56, 6.625, 131, 241)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(4, 5.75)
 shape = SubResource("RectangleShape2D_e1kfq")
 metadata/_edit_lock_ = true
@@ -197,9 +205,8 @@ rotation = 3.14159
 shape = SubResource("CapsuleShape2D_46wyq")
 
 [node name="IngredientDetectionZone" type="Area2D" parent="."]
-visible = false
 position = Vector2(2, 6)
-collision_mask = 8
+collision_mask = 28
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -213,7 +220,9 @@ libraries = {
 }
 
 [node name="InvulnerableTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
 [connection signal="body_exited" from="PickupZone" to="." method="_on_pickup_zone_body_exited"]
 [connection signal="body_entered" from="IngredientDetectionZone" to="." method="_on_ingredient_detection_zone_body_entered"]
+[connection signal="timeout" from="InvulnerableTimer" to="." method="_on_invulnerable_timer_timeout"]

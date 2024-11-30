@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwxf7n7gy4snu"]
+
+[ext_resource type="PackedScene" uid="uid://bx11ray3gawmp" path="res://scenes/projectiles/abstract_projectile.tscn" id="1_u210c"]
+[ext_resource type="Script" path="res://scenes/projectiles/sprout_seed.gd" id="2_31vy3"]
+[ext_resource type="Texture2D" uid="uid://bdvlvef2keaxq" path="res://assets/projectiles/sprout_seed.png" id="2_078ld"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjdg1"]
+radius = 19.0919
+height = 62.2254
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkxf0"]
+radius = 19.799
+height = 62.2254
+
+[node name="SproutSeed" instance=ExtResource("1_u210c")]
+script = ExtResource("2_31vy3")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_078ld")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_vjdg1")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="FloorDetectionArea" index="0"]
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_rkxf0")
