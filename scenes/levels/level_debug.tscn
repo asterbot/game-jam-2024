@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="3_akqlm"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="4_vcohj"]
 [ext_resource type="PackedScene" uid="uid://dbcerw2dhad67" path="res://scenes/ingredients/mint_flag.tscn" id="4_w8mck"]
-[ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="5_gv4qe"]
-[ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="6_3f1vx"]
-[ext_resource type="PackedScene" path="res://scenes/plants/tofu_tree.tscn" id="7_n4jso"]
+[ext_resource type="PackedScene" uid="uid://deertjekx84k8" path="res://scenes/plants/nut_tree.tscn" id="5_gv4qe"]
+[ext_resource type="PackedScene" uid="uid://bm1kj0bbq64ch" path="res://scenes/plants/pepper_vine.tscn" id="6_3f1vx"]
+[ext_resource type="PackedScene" uid="uid://8tb0k8dgabex" path="res://scenes/plants/tofu_tree.tscn" id="7_n4jso"]
 [ext_resource type="PackedScene" uid="uid://dr5o7ahb7jun4" path="res://scenes/plants/carrot_spiral.tscn" id="8_8q6va"]
 [ext_resource type="PackedScene" uid="uid://40qvt1etu7re" path="res://scenes/plants/mint_stalk.tscn" id="9_35ugu"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="11_yety3"]
 [ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="12_apu6w"]
 [ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="13_axjio"]
-[ext_resource type="PackedScene" uid="uid://dwoj03emuq5j5" path="res://scenes/enemies/ghost.tscn" id="14_8av2b"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/ghost.tscn" id="14_8av2b"]
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="15_b1nd4"]
 
 [node name="LevelDebug" instance=ExtResource("1_xpqy2")]
@@ -60,67 +60,78 @@ tile_map_data = PackedByteArray("AAABANb/AAAEAAAAAAABANf/AAABAAEAAAABANj/AAABAAE
 position = Vector2(3028, -2944)
 
 [node name="Player" parent="." index="3"]
-position = Vector2(3012, -3053)
+position = Vector2(-544, -71)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="9"]
 
-[node name="Sprout" parent="Enemies" index="0" instance=ExtResource("11_yety3")]
-position = Vector2(4814, -2638)
-
-[node name="Sprout2" parent="Enemies" index="1" instance=ExtResource("11_yety3")]
-position = Vector2(4624, -2639)
-
-[node name="Sprout3" parent="Enemies" index="2" instance=ExtResource("11_yety3")]
-position = Vector2(4414, -2638)
-
-[node name="Coconut" parent="Enemies" index="3" instance=ExtResource("12_apu6w")]
+[node name="Coconut" parent="Enemies" index="0" instance=ExtResource("12_apu6w")]
 position = Vector2(4283, -3562)
 radius = Vector2(150, 150)
 seconds_per_cycle = 4.0
 rotate_direction = "CCW"
 
-[node name="Coconut2" parent="Enemies" index="4" instance=ExtResource("12_apu6w")]
+[node name="Coconut2" parent="Enemies" index="1" instance=ExtResource("12_apu6w")]
 position = Vector2(3963, -3561)
 
-[node name="Coconut3" parent="Enemies" index="5" instance=ExtResource("12_apu6w")]
+[node name="Coconut3" parent="Enemies" index="2" instance=ExtResource("12_apu6w")]
 position = Vector2(3723, -3480)
 offset = 90
 
-[node name="Coconut4" parent="Enemies" index="6" instance=ExtResource("12_apu6w")]
+[node name="Coconut4" parent="Enemies" index="3" instance=ExtResource("12_apu6w")]
 position = Vector2(3483, -3400)
 
-[node name="Coconut5" parent="Enemies" index="7" instance=ExtResource("12_apu6w")]
+[node name="Coconut5" parent="Enemies" index="4" instance=ExtResource("12_apu6w")]
 position = Vector2(4765, -3561)
 radius = Vector2(200, 200)
 seconds_per_cycle = 5.0
 
-[node name="Coconut6" parent="Enemies" index="8" instance=ExtResource("12_apu6w")]
+[node name="Coconut6" parent="Enemies" index="5" instance=ExtResource("12_apu6w")]
 position = Vector2(4765, -3561)
 radius = Vector2(200, 200)
 seconds_per_cycle = 5.0
 rotate_direction = "CCW"
 
-[node name="Coconut7" parent="Enemies" index="9" instance=ExtResource("12_apu6w")]
+[node name="Coconut7" parent="Enemies" index="6" instance=ExtResource("12_apu6w")]
 position = Vector2(5140, -3255)
 radius = Vector2(300, 0)
 seconds_per_cycle = 5.0
 rotate_direction = "CCW"
 
-[node name="Leek" parent="Enemies" index="10" instance=ExtResource("13_axjio")]
+[node name="Leek" parent="Enemies" index="7" instance=ExtResource("13_axjio")]
 position = Vector2(2891, -2479)
 
-[node name="Leek2" parent="Enemies" index="11" instance=ExtResource("13_axjio")]
+[node name="Leek2" parent="Enemies" index="8" instance=ExtResource("13_axjio")]
 position = Vector2(2567, -2236)
 
-[node name="Leek3" parent="Enemies" index="12" instance=ExtResource("13_axjio")]
+[node name="Leek3" parent="Enemies" index="9" instance=ExtResource("13_axjio")]
 position = Vector2(2376, -2717)
 rotation = 3.14159
 
-[node name="Ghost" parent="Enemies" index="13" instance=ExtResource("14_8av2b")]
+[node name="Ghost" parent="Enemies" index="10" instance=ExtResource("14_8av2b")]
 position = Vector2(1144, -4007)
 start_position = Vector2(2142, -4370)
 end_position = Vector2(2442, -4370)
 movement_time = 3.0
+
+[node name="Sprout8" parent="Enemies" index="11" instance=ExtResource("11_yety3")]
+position = Vector2(-1294, 5.99998)
+rotation = 0.727619
+
+[node name="Sprout9" parent="Enemies" index="12" instance=ExtResource("11_yety3")]
+position = Vector2(-984, 7.00002)
+rotation = 0.0172597
+
+[node name="Sprout10" parent="Enemies" index="13" instance=ExtResource("11_yety3")]
+position = Vector2(-1146, -334)
+rotation = 3.14008
+
+[node name="Sprout11" parent="Enemies" index="14" instance=ExtResource("11_yety3")]
+position = Vector2(-907, -208)
+rotation = 1.57656
+
+[node name="Sprout12" parent="Enemies" index="15" instance=ExtResource("11_yety3")]
+position = Vector2(-621, -377)
+rotation = -1.55668
 
 [node name="Hat" parent="." index="7" instance=ExtResource("15_b1nd4")]
 position = Vector2(4601, -3350)

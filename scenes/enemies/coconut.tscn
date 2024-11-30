@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_u23v7"]
 [ext_resource type="Script" path="res://scenes/enemies/coconut.gd" id="2_yvkx1"]
-[ext_resource type="Texture2D" uid="uid://grwko36qnnuj" path="res://assets/npcs/coconut.png" id="3_6gqgh"]
+[ext_resource type="Texture2D" uid="uid://c8aeq2wxtljgw" path="res://assets/npcs/coconut.png" id="3_6gqgh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ak1oc"]
 radius = 35.0
