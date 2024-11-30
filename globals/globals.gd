@@ -5,6 +5,9 @@ extends Node
 const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
 var respawn_pos = DEFAULT_RESPAWN_POS
 
+# if cookbook is open, prevent player from moving
+var cookbook_open = false
+
 # index value -> sprite for fruit at index
 const index_sprite_map={
 	0: preload("res://assets/ingredients/low_res/unrevealed.png"),
