@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bamkqq4pmq71s"]
+[gd_scene load_steps=5 format=3 uid="uid://7w82sggbeh7c"]
 
 [ext_resource type="PackedScene" uid="uid://bv40bmwqlf6t" path="res://scenes/ingredients/abstract_ingredient.tscn" id="1_b2sii"]
 [ext_resource type="Script" path="res://scenes/ingredients/nut.gd" id="2_ccbl1"]
-[ext_resource type="Texture2D" uid="uid://b1s16rr100mnt" path="res://assets/ingredients/low_res/nut.png" id="2_ttvif"]
+[ext_resource type="Texture2D" uid="uid://xw1uupw8dnb7" path="res://assets/ingredients/low_res/nut.png" id="2_ttvif"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvubr"]
 radius = 26.163

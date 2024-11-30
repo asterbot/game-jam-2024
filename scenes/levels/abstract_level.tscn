@@ -336,13 +336,14 @@ metadata/_edit_group_ = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="UI" parent="." instance=ExtResource("7_l1ija")]
-
 [node name="Ingredients" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("7_l1ija")]
 
 [node name="Cookbook" parent="." instance=ExtResource("8_8lao6")]
 
 [connection signal="toggle_cookbook_visibility" from="." to="Cookbook" method="_on_abstract_level_toggle_cookbook_visibility"]
 [connection signal="request_selected_ingredient" from="Player" to="UI" method="_on_player_request_selected_ingredient"]
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
+[connection signal="update_ui" from="Player" to="Cookbook" method="_on_player_update_ui"]
 [connection signal="send_selected_item" from="UI" to="Player" method="_on_ui_send_selected_item"]

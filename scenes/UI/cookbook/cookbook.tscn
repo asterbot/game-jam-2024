@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cacvgf0yctfci"]
+[gd_scene load_steps=7 format=3 uid="uid://cacvgf0yctfci"]
 
 [ext_resource type="Script" path="res://scenes/UI/cookbook/cookbook.gd" id="1_7w2a4"]
 [ext_resource type="Texture2D" uid="uid://dve16kj846d0j" path="res://assets/cookbook_ui.png" id="1_fvocb"]
-[ext_resource type="PackedScene" uid="uid://dbb20u1j51ba8" path="res://scenes/UI/cookbook/image_page.tscn" id="2_ane6b"]
-[ext_resource type="PackedScene" uid="uid://bhg4bnq4inf28" path="res://scenes/UI/cookbook/text_page.tscn" id="3_qtn8o"]
 [ext_resource type="Texture2D" uid="uid://cp60pyjwgm5nq" path="res://assets/keys/directions/left_key.png" id="4_6lgse"]
 [ext_resource type="Texture2D" uid="uid://bcl8ct7xmduas" path="res://assets/keys/letters/a_key.png" id="5_lstf8"]
 [ext_resource type="Texture2D" uid="uid://doi2penp5ewdq" path="res://assets/keys/letters/d_key.png" id="6_3wab1"]
@@ -48,10 +46,11 @@ texture = ExtResource("1_fvocb")
 expand_mode = 1
 
 [node name="LeftPage" type="MarginContainer" parent="Cookbook"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0895833
-anchor_top = 0.0805556
+anchor_top = 0.0759259
 anchor_right = 0.484375
 anchor_bottom = 0.918519
 grow_horizontal = 2
@@ -60,31 +59,24 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
-
-[node name="ImagePage" parent="Cookbook/LeftPage" instance=ExtResource("2_ane6b")]
-layout_mode = 2
 
 [node name="RightPage" type="MarginContainer" parent="Cookbook"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.532812
-anchor_top = 0.0842593
+anchor_left = 0.515625
+anchor_top = 0.0759259
 anchor_right = 0.930208
 anchor_bottom = 0.914815
-offset_left = 6.10352e-05
 grow_horizontal = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 50
-metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
-[node name="TextPage" parent="Cookbook/RightPage" instance=ExtResource("3_qtn8o")]
-layout_mode = 2
-
 [node name="LeftKeys" type="HBoxContainer" parent="Cookbook"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0838542
@@ -108,6 +100,7 @@ texture = ExtResource("5_lstf8")
 stretch_mode = 5
 
 [node name="RightKeys" type="HBoxContainer" parent="Cookbook"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.827604
