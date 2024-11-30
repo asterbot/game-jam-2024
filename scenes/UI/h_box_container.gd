@@ -35,9 +35,9 @@ func _process(_delta: float) -> void:
 			break
 		index += 1
 	
-	if Input.is_action_just_pressed("inventory_left"):
+	if Input.is_action_just_pressed("inventory_left") and not Globals.cookbook_open:
 		Globals.selected_index_ui -= 1
-	if Input.is_action_just_pressed("inventory_right"):
+	if Input.is_action_just_pressed("inventory_right") and not Globals.cookbook_open:
 		Globals.selected_index_ui += 1
 
 	if Globals.selected_index_ui > Globals.max_index:
