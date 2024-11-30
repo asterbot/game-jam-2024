@@ -5,6 +5,9 @@ extends Node
 const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
 var respawn_pos = DEFAULT_RESPAWN_POS
 
+var tofu_activated = false;
+var carrot_activated = false;
+
 # if cookbook is open, prevent player from moving
 var cookbook_open = false
 

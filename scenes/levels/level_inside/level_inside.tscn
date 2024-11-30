@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g4cjb"]
 [ext_resource type="Script" path="res://scenes/levels/level_inside/level_inside.gd" id="2_khp1a"]
-[ext_resource type="Texture2D" uid="uid://ddxe735x3b0pw" path="res://assets/environment/inside_level/cave_exit.png" id="2_sl7ld"]
+[ext_resource type="Texture2D" uid="uid://d3nwys28njw6w" path="res://assets/environment/inside_level/cave_exit.png" id="2_sl7ld"]
 [ext_resource type="PackedScene" uid="uid://sul21ma6e0og" path="res://scenes/levels/level_inside/pot.tscn" id="3_g58xe"]
-[ext_resource type="Texture2D" uid="uid://c5dg3qykn4l0q" path="res://assets/environment/inside_level/logs.png" id="4_fs5ok"]
-[ext_resource type="Texture2D" uid="uid://374srbbeiyd5" path="res://assets/environment/white_orb.png" id="7_kx5t1"]
+[ext_resource type="Texture2D" uid="uid://x07bql5yab8u" path="res://assets/environment/inside_level/logs.png" id="4_fs5ok"]
+[ext_resource type="Texture2D" uid="uid://ncxj0hrccpg" path="res://assets/environment/white_orb.png" id="7_kx5t1"]
 [ext_resource type="PackedScene" uid="uid://dkrn7lqlxm65d" path="res://scenes/levels/level_inside/pot_display.tscn" id="7_lme0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]

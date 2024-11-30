@@ -11,10 +11,11 @@ extends HBoxContainer
 
 func receive_data_from_ui(ingredient: String) -> void:
 	"""Receives ingredient name from ui.gd and passes to inventory slots"""
-	var ingredient_info = Globals.ingredients[ingredient]
-	var inventory_slot = ingredient_info["inventory_slot"]
-	selection_map[inventory_slot].set_amount(ingredient_info["amount"])
-	selection_map[inventory_slot].set_image(inventory_slot)
+	if Globals.ingredients[ingredient]["discovered"]:
+		var ingredient_info = Globals.ingredients[ingredient]
+		var inventory_slot = ingredient_info["inventory_slot"]
+		selection_map[inventory_slot].set_amount(ingredient_info["amount"])
+		selection_map[inventory_slot].set_image(inventory_slot)
 
 func provide_selected_ingredient()->String:
 	return Globals.index_ingredient_map[Globals.selected_index_ui]

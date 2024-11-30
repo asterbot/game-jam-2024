@@ -56,19 +56,23 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if player_body != null:
+		periodic_attack = true
 		# Unit vector in direction it is facing
 		var dir = Vector2(1,0) if not flipped else Vector2(-1,0)
 		var result = dir.dot(player_body.global_position-global_position)
-		if (result<0):
+		if (result<0):	
 			# Reverse the flip
 			toggle_flip(not flipped)
+	if Globals.tofu_activated:
+		periodic_attack = false
 	super(_delta)
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	call_deferred("_handle_attack_area_body_entered", body)
 
 func _handle_attack_area_body_entered(body: Node2D) -> void:
-	periodic_attack = true
+	if not Globals.tofu_activated:
+		periodic_attack = true
 	player_body = body
 
 

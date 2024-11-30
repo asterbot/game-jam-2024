@@ -14,9 +14,3 @@ func _process(delta: float) -> void:
 		
 	
 	super(delta)
-	#var berries = $Bush/Ingredients.get_children()
-	#for b in berries:
-		#print(b.position)
-		#print(b.global_position)
-	#print($Player.global_position)
-	#print()

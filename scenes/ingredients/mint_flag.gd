@@ -3,6 +3,9 @@ extends Node2D
 var player_in_range: bool = false
 
 
+func _ready() -> void:
+	$Label.visible = false
+
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("pick_up"):
 		queue_free()

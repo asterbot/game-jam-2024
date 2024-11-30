@@ -12,6 +12,7 @@ func _process(_delta: float) -> void:
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if linear_velocity.length() > 0:
 		var target_angle = linear_velocity.angle()
+		target_angle = wrapf(target_angle,0, 2*PI)
 		if rad_to_deg(target_angle) > 90 and rad_to_deg(target_angle) < 270:
 			$Sprite2D.flip_v = true
 		rotation = target_angle
