@@ -60,9 +60,10 @@ tile_map_data = PackedByteArray("AAABANb/AAAEAAAAAAABANf/AAABAAEAAAABANj/AAABAAE
 position = Vector2(3028, -2944)
 
 [node name="Player" parent="." index="3"]
-position = Vector2(3356, -2794)
+position = Vector2(3350, -2795)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="9"]
+zoom = Vector2(0.9, 0.9)
 
 [node name="Coconut" parent="Enemies" index="0" instance=ExtResource("12_apu6w")]
 position = Vector2(4283, -3562)

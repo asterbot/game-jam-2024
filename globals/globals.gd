@@ -5,6 +5,9 @@ extends Node
 const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
 var respawn_pos = DEFAULT_RESPAWN_POS
 
+# if cookbook is open, prevent player from moving
+var cookbook_open = false
+
 # index value -> sprite for fruit at index
 const index_sprite_map={
 	0: preload("res://assets/ingredients/low_res/unrevealed.png"),
@@ -39,36 +42,42 @@ var selected_index_ui = 1;
 # information here is updated onto the UI via signals
 var ingredients = {
 	"berries": {
+		"name": "Winged Berry",
 		"inventory_slot": 1,
 		"amount": 0,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
+		"name": "Nut and Bolt",
 		"inventory_slot": 2,
 		"amount": 0,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
+		"name": "Tofu Cloak",
 		"inventory_slot": 3,
 		"amount": 0,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/tofu.tscn")
 	},
 	"carrots": {
+		"name": "Carrot Telescope",
 		"inventory_slot": 4,
 		"amount": 0,
 		"discovered": false,
 		 "scene": preload("res://scenes/ingredients/carrot.tscn")
 	},
 	"peppers": {
+		"name": "Pepper Bomb",
 		"inventory_slot": 5,
 		"amount": 0,
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/pepper.tscn")
 	},
 	"mints": {
+		"name": "Mint Saver",
 		"inventory_slot": 6,
 		"amount": 0,
 		"discovered": false,

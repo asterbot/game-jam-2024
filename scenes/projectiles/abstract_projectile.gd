@@ -21,3 +21,7 @@ func _on_floor_detection_area_body_entered(body: Node2D) -> void:
 		body.gravity_scale=1
 	queue_free()
 	pass
+
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
