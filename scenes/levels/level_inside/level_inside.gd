@@ -11,9 +11,10 @@ var ingredients_in_pot = {
 
 func _ready() -> void:
 	$PotDisplay.modulate.a = 0
+	super()
 
 func _process(delta: float) -> void:
-	pass
+	super(delta)
 
 # animations when close to pot
 func _on_camera_zoom_body_entered(body: Node2D) -> void:

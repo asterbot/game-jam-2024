@@ -46,8 +46,8 @@ var ingredients = {
 	},
 	"nuts": {
 		"inventory_slot": 2,
-		"amount": 0,
-		"discovered": false,
+		"amount": 10,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
@@ -64,8 +64,8 @@ var ingredients = {
 	},
 	"peppers": {
 		"inventory_slot": 5,
-		"amount": 0,
-		"discovered": false,
+		"amount": 5,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/pepper.tscn")
 	},
 	"mints": {
