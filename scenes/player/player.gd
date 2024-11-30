@@ -51,6 +51,14 @@ func near_floor():
 	return numCollisions >= 2
 
 
+func is_on_invisible():
+	var raycast = $FloorNormalDetector
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider is TileMapLayer:
+			return collider.is_in_group("invisible_platforms")
+	return false
+
 func get_platform_normal():
 	# get platform normal of the tile directly below the player
 	var raycast = $FloorNormalDetector
@@ -82,6 +90,7 @@ func get_closest_ingredient():
 
 # runs at the frame rate of the computer (independent from physics frames)
 func _process(_delta) -> void:
+	get_platform_normal()
 	# as long as there is movement, animate player with walk cycle
 	if velocity.x != 0:
 		player_animation.play("walk")
@@ -256,14 +265,10 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					vfx_animation.play("nut_vfx")
 				"tofus":
 					print("used tofus!")
-					if Globals.tofu_activated:
-						return
 					$PlayerImage.material.set_shader_parameter("custom_alpha", 0.3)
 					$InvisibleTimer.start()
 				"carrots":
 					print("used carrots!")
-					if Globals.carrot_activated:
-						return
 					if hat_obtained:
 						$PlayerImage.texture = preload("res://assets/player/cat-carrot-hat.png")
 					else:
@@ -274,7 +279,7 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 				"mints":
 					print("used mints!")
 					# get_platform_normal return zero vector if there is no intersection with ground and middle raycast
-					if not(is_on_floor() and get_platform_normal() != Vector2.ZERO): return
+					if not(is_on_floor() and get_platform_normal() != Vector2.ZERO) or is_on_invisible(): return
 					var checkpoint_scene = preload("res://scenes/ingredients/mint_flag.tscn").instantiate()
 					checkpoint_scene.global_position = global_position
 					Globals.respawn_pos = checkpoint_scene.global_position # set the last checkpoint to respawn to
