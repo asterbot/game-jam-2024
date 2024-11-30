@@ -5,18 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://bdvlvef2keaxq" path="res://assets/projectiles/sprout_seed.png" id="2_078ld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjdg1"]
-radius = 19.0919
+radius = 18.3848
 height = 62.2254
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkxf0"]
-radius = 19.799
+radius = 18.3848
 height = 62.2254
 
 [node name="SproutSeed" instance=ExtResource("1_u210c")]
 script = ExtResource("2_31vy3")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -7)
+position = Vector2(0, 6)
+rotation = 3.14159
 texture = ExtResource("2_078ld")
 
 [node name="CollisionShape2D" parent="." index="1"]
