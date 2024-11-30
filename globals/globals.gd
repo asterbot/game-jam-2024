@@ -40,14 +40,14 @@ var selected_index_ui = 1;
 var ingredients = {
 	"berries": {
 		"inventory_slot": 1,
-		"amount": 10,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
 		"inventory_slot": 2,
-		"amount": 5,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
