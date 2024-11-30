@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://cacvgf0yctfci"]
+
+[ext_resource type="Texture2D" uid="uid://dve16kj846d0j" path="res://assets/cookbook_ui.png" id="1_fvocb"]
+[ext_resource type="PackedScene" uid="uid://dbb20u1j51ba8" path="res://scenes/UI/cookbook/image_page.tscn" id="2_ane6b"]
+[ext_resource type="PackedScene" uid="uid://bhg4bnq4inf28" path="res://scenes/UI/cookbook/text_page.tscn" id="3_qtn8o"]
+[ext_resource type="Texture2D" uid="uid://cp60pyjwgm5nq" path="res://assets/keys/directions/left_key.png" id="4_6lgse"]
+[ext_resource type="Texture2D" uid="uid://bcl8ct7xmduas" path="res://assets/keys/letters/a_key.png" id="5_lstf8"]
+[ext_resource type="Texture2D" uid="uid://doi2penp5ewdq" path="res://assets/keys/letters/d_key.png" id="6_3wab1"]
+[ext_resource type="Texture2D" uid="uid://caf0b0osrjky6" path="res://assets/keys/directions/right_key.png" id="7_f8go5"]
+
+[node name="Cookbook" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27451)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="CookbookImage" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_fvocb")
+expand_mode = 1
+
+[node name="LeftPage" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068
+anchor_top = 0.06
+anchor_right = 0.477
+anchor_bottom = 0.939
+offset_left = 0.439987
+offset_top = 0.199997
+offset_right = 0.159973
+offset_bottom = 0.879944
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ImagePage" parent="LeftPage" instance=ExtResource("2_ane6b")]
+layout_mode = 2
+
+[node name="RightPage" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.06
+anchor_right = 0.933
+anchor_bottom = 0.939
+offset_left = -0.320068
+offset_top = 0.199997
+offset_right = -6.36011
+offset_bottom = 0.879944
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextPage" parent="RightPage" instance=ExtResource("3_qtn8o")]
+layout_mode = 2
+
+[node name="LeftKeys" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0895833
+anchor_top = 0.910185
+anchor_right = 0.0895833
+anchor_bottom = 0.910185
+offset_bottom = -6.10352e-05
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="LeftKeys"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("4_6lgse")
+
+[node name="TextureRect2" type="TextureRect" parent="LeftKeys"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("5_lstf8")
+
+[node name="RightKeys" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.911
+anchor_top = 0.913
+anchor_right = 0.911
+anchor_bottom = 0.913
+offset_left = -173.12
+offset_top = -75.04
+offset_right = 0.879883
+offset_bottom = -0.0400391
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="RightKeys"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("6_3wab1")
+
+[node name="TextureRect2" type="TextureRect" parent="RightKeys"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("7_f8go5")

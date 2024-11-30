@@ -4,6 +4,6 @@
 
 [resource]
 font = ExtResource("1_xdreo")
-font_size = 35
+font_size = 40
 shadow_size = 15
 shadow_color = Color(0.290373, 0.318295, 0.478928, 1)
