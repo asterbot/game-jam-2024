@@ -4,7 +4,8 @@
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="1_k6vp3"]
 [ext_resource type="Texture2D" uid="uid://b2wymtixk0hpo" path="res://assets/tilesets/mountain_texture.png" id="2_duxo1"]
 [ext_resource type="Texture2D" uid="uid://baduprnhhib7n" path="res://assets/tilesets/mountain_tileset.png" id="3_u50ch"]
-[ext_resource type="TileSet" uid="uid://0don4at2il7e" path="res://scenes/levels/level_tileset.tres" id="5_5p82g"]
+[ext_resource type="TileSet" uid="uid://4gyjeww12wg5" path="res://scenes/levels/invisible_platform_tileset.tres" id="5_fe4lp"]
+[ext_resource type="TileSet" uid="uid://ctqhkas1jrcy0" path="res://scenes/levels/platform_tileset.tres" id="5_ikqh0"]
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="6_42b3e"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="7_l1ija"]
 [ext_resource type="PackedScene" uid="uid://cacvgf0yctfci" path="res://scenes/UI/cookbook/cookbook.tscn" id="8_8lao6"]
@@ -50,20 +51,6 @@ texture_region_size = Vector2i(150, 150)
 tile_size = Vector2i(150, 150)
 sources/0 = SubResource("TileSetAtlasSource_nxb4n")
 
-[sub_resource type="GDScript" id="GDScript_we673"]
-script/source = "extends TileMapLayer
-
-
-var flip_v = TileSetAtlasSource.TRANSFORM_FLIP_V
-
-func _ready():
-	for tile_coords in get_used_cells():
-		var atlas_coords = get_cell_atlas_coords(tile_coords)
-		if atlas_coords.y == 9:
-			print(atlas_coords)
-			#set_cell(tile_coords, 0, atlas_coords, flip_v)
-"
-
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_d51jn")
 
@@ -76,8 +63,10 @@ tile_set = SubResource("TileSet_v1o2l")
 [node name="Plants" type="Node2D" parent="Environment"]
 
 [node name="Platforms" type="TileMapLayer" parent="Environment"]
-tile_set = ExtResource("5_5p82g")
-script = SubResource("GDScript_we673")
+tile_set = ExtResource("5_ikqh0")
+
+[node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment"]
+tile_set = ExtResource("5_fe4lp")
 
 [node name="Checkpoints" type="Node2D" parent="."]
 

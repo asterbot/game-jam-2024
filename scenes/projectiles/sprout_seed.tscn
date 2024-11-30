@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bx11ray3gawmp" path="res://scenes/projectiles/abstract_projectile.tscn" id="1_u210c"]
 [ext_resource type="Script" path="res://scenes/projectiles/sprout_seed.gd" id="2_31vy3"]
-[ext_resource type="Texture2D" uid="uid://cbmaiks27wdjw" path="res://assets/projectiles/sprout_seed.png" id="2_078ld"]
+[ext_resource type="Texture2D" uid="uid://bdvlvef2keaxq" path="res://assets/projectiles/sprout_seed.png" id="2_078ld"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjdg1"]
 radius = 19.0919

@@ -28,6 +28,7 @@ window/size/viewport_height=1080
 
 ingredients=""
 projectiles=""
+invisible_platforms=""
 
 [input]
 

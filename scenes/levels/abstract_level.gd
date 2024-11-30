@@ -5,6 +5,7 @@ class_name AbstractLevel
 signal toggle_cookbook_visibility()
 
 func _ready():
+	$UI.update_all()
 	pass
 
 func _process(_delta):

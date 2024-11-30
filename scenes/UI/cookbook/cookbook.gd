@@ -103,7 +103,7 @@ func _on_abstract_level_toggle_cookbook_visibility() -> void:
 		make_invisible()
 
 
-func _on_player_update_ui(ing_name: String) -> void:
+func _on_player_update_ui(ing_name: String, _using) -> void:
 	var inventory_index = Globals.ingredients[ing_name]["inventory_slot"]
 	var left_page = pages[inventory_index]["left"]
 	var right_page = pages[inventory_index]["right"]
