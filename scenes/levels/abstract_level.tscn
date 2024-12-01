@@ -100,4 +100,4 @@ script = ExtResource("11_34vgc")
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
 [connection signal="update_ui" from="Player" to="Cookbook" method="_on_player_update_ui"]
 [connection signal="send_selected_item" from="UI" to="Player" method="_on_ui_send_selected_item"]
-[connection signal="body_exited" from="DeathArea" to="DeathArea" method="_on_body_exited"]
+[connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]

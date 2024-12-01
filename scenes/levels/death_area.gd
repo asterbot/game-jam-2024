@@ -11,8 +11,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		body.queue_free()
 	else:
+		body.hit()
 		body.global_position = Globals.respawn_pos
+		body.velocity = Vector2.ZERO

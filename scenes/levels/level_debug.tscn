@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://do2xy7s6cr3cn" path="res://scenes/enemies/ghost.tscn" id="14_8av2b"]
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="15_b1nd4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rthqj"]
-size = Vector2(11970, 10918)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1udip"]
+size = Vector2(48105, 3756)
 
 [node name="LevelDebug" instance=ExtResource("1_xpqy2")]
 script = ExtResource("2_d17in")
@@ -133,5 +133,5 @@ position = Vector2(4601, -3350)
 collision_mask = 11
 
 [node name="CollisionShape2D" parent="DeathArea" index="0"]
-position = Vector2(2845, -1805)
-shape = SubResource("RectangleShape2D_rthqj")
+position = Vector2(2431.5, 5632)
+shape = SubResource("RectangleShape2D_1udip")
