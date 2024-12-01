@@ -16,20 +16,27 @@ It has been quite exciting thus far, and I can only imagine what variety of tast
 	2:
 """After consuming the berries, imagine my surprise when the next snack I found was nothing like it!
 
-It took me ages to break through the nut's tough exterior, and the insides were just as crunchy. What was most shocking though, was when an undulating tremor coursed through my body as soon as I tasted it.
+It took me ages to break through the nut's tough exterior, and the insides were just as difficult to chew. What was most shocking though, was when an undulating tremor coursed through my body as soon as I tasted it.
 
 How electrifying! I was bursting with so much energy that it couldn't stop myself from running for some hours. However strange these foods are, I am being well-fed by nature and I will use these opportunities to continue my journey of becoming a soup master.
 """,
 	3:
 """Today is the day I first found my first aggressor on this expedition. The little sprout packs a big punch despite looking so tame, so I found some respite in the local ingredients once again.
 
-I didn't think much of the tofu skins on the nearby tree, but the sprout seeds that used to beat me so thoroughly had no ill effect when I grasped them in my hand!
+I didn't think much of the tofu sheets on the nearby tree, but the sprout seeds that used to beat me so thoroughly had no ill effect when I held them in my hand! They were also surprisingly smooth too.
 
+I decided to taste them after I scuttled my way past, but it left a sour taste in my mouth... I could see some enjoying it, but it's not for me.
 
+Meanwhile, I found a small cave nearby to stay for the night. I spotted an ominous pot, but this might be the safer option considering the dangers outside.
 """,
 	4:
-"""
-this is a carrot
+"""When I woke up the next day, I noticed that the outside seemed a little different: new routes have emerged, new plants have grown, and new enemies threaten to push me deeper into the mountain.
+
+I had become sullen after having seen so many ledges that were just out of reach, that I could only nibble on my carrots as a measly consolation prize. While the watery, mild flavour didn't blow me away, the slight crunch was a nice touch.
+
+But several platforms appeared in front of my eyes after I finished the whole stick! I've been seeing ghosts for a while, so I was very happy to use the platforms and leave my current situation behind.
+
+The requests have become more and more difficult, so I hope these hidden paths can help me find more ingredients to survive a little bit longer.
 """,
 	5:
 """
