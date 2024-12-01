@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dc5e3xk3i347f"]
+[gd_scene load_steps=16 format=4 uid="uid://dc5e3xk3i347f"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g4cjb"]
 [ext_resource type="Script" path="res://scenes/levels/level_inside/level_inside.gd" id="2_khp1a"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6iiryefnl10w" path="res://scenes/npc/dialogue_detection_area.tscn" id="7_5d7ul"]
 [ext_resource type="Texture2D" uid="uid://374srbbeiyd5" path="res://assets/environment/white_orb.png" id="7_kx5t1"]
 [ext_resource type="PackedScene" uid="uid://dkrn7lqlxm65d" path="res://scenes/levels/level_inside/pot_display.tscn" id="7_lme0a"]
+[ext_resource type="FontFile" uid="uid://bxbjyp5yg4ltc" path="res://assets/tinypixel.otf" id="10_smurd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]
 size = Vector2(261, 394)
@@ -74,6 +75,11 @@ _data = {
 "RESET": SubResource("Animation_i8n74"),
 "pot_fire_flicker": SubResource("Animation_yifb2")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyx6j"]
+font = ExtResource("10_smurd")
+font_size = 160
+font_color = Color(0, 0, 0, 1)
 
 [node name="InsideLevel" instance=ExtResource("1_g4cjb")]
 script = ExtResource("2_khp1a")
@@ -192,6 +198,28 @@ libraries = {
 "": SubResource("AnimationLibrary_kwdig")
 }
 autoplay = "pot_fire_flicker"
+
+[node name="EndScreen" type="CanvasLayer" parent="." index="18"]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="EndScreen" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564706, 0.666667, 0.984314, 1)
+
+[node name="Label" type="Label" parent="EndScreen" index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_uyx6j")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="ingredient_collected" from="Environment/Pot" to="." method="_on_pot_ingredient_collected"]
 [connection signal="ingredient_collected" from="Environment/Pot" to="PotDisplay" method="_on_pot_ingredient_collected"]

@@ -71,8 +71,6 @@ I originally had grand aspirations of becoming a soup chef, but the mountain wan
 
 
 
-
-
 var pages: Array[Dictionary] = []
 var curr_page = 0
 
