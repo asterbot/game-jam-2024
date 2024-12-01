@@ -7,8 +7,7 @@ func hit():
 	dead = true
 	$AnimationPlayer.play("dead")
 
-func attack():
-	$AnimationPlayer.play("attack")
+func shoot_bullets():
 	var seed_scene = preload("res://scenes/projectiles/sprout_seed.tscn")
 	for attack_offset in [-15, 0, 15]:
 		var cur_seed = seed_scene.instantiate() as RigidBody2D
@@ -17,6 +16,9 @@ func attack():
 		cur_seed.position = Vector2(position.x, position.y) + attack_direction*40
 		cur_seed.linear_velocity = attack_direction*(860 + sin(attack_angle - PI)*460)
 		$"../../Projectiles".add_child(cur_seed)
+
+func attack():
+	$AnimationPlayer.play("attack")
 	$AnimationPlayer.queue("idle")
 
 

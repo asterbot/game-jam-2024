@@ -41,7 +41,6 @@ func idle(delta):
 func hit():
 	periodic_attack = false
 	$AnimationPlayer.play("dead")
-	print("ghost hit")
 
 func attack():
 	var projectile_scene = preload("res://scenes/projectiles/fish.tscn").instantiate()
