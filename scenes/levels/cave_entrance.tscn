@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://j6jkvpoqagi1"]
+[gd_scene load_steps=4 format=3 uid="uid://j6jkvpoqagi1"]
 
 [ext_resource type="Texture2D" uid="uid://d12i0i6rt6gor" path="res://assets/environment/platform_stage/cave_entrance.png" id="1_46w1a"]
+[ext_resource type="Script" path="res://scenes/levels/cave_entrance.gd" id="1_b404k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gfwy"]
 size = Vector2(117, 226.5)
 
 [node name="CaveEntrance" type="Node2D"]
+script = ExtResource("1_b404k")
 
 [node name="CaveEntrance" type="Sprite2D" parent="."]
 position = Vector2(-1, -323)
@@ -19,3 +21,6 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.5, -113.75)
 shape = SubResource("RectangleShape2D_2gfwy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

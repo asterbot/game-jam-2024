@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bon4phevyut1y"]
 
 [ext_resource type="Script" path="res://scenes/UI/dialogue/dialogue_box.gd" id="1_exyr8"]
-[ext_resource type="Texture2D" uid="uid://b5xjljh3lml3m" path="res://assets/dialogue_ui.png" id="1_sttgx"]
-[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="2_57gqt"]
-[ext_resource type="Texture2D" uid="uid://b0nwqin3pycud" path="res://assets/keys/directions/right_key.png" id="5_yv70k"]
+[ext_resource type="Texture2D" uid="uid://dywl37v5etdba" path="res://assets/dialogue_ui.png" id="1_sttgx"]
+[ext_resource type="FontFile" uid="uid://bxbjyp5yg4ltc" path="res://assets/tinypixel.otf" id="2_57gqt"]
+[ext_resource type="Texture2D" uid="uid://caf0b0osrjky6" path="res://assets/keys/directions/right_key.png" id="5_yv70k"]
 
 [node name="DialogueBox" type="CanvasLayer"]
 script = ExtResource("1_exyr8")
