@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkrn7lqlxm65d"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_inside/pot_display.gd" id="1_arl2v"]
-[ext_resource type="Texture2D" uid="uid://imfp4kc3hw3e" path="res://assets/ingredients/low_res/berry.png" id="1_sfkc6"]
-[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="2_e14kl"]
-[ext_resource type="Texture2D" uid="uid://b1s16rr100mnt" path="res://assets/ingredients/low_res/nut.png" id="3_5o7nj"]
-[ext_resource type="Texture2D" uid="uid://bbbj73wg0qqt2" path="res://assets/ingredients/low_res/tofu.png" id="4_5hkii"]
-[ext_resource type="Texture2D" uid="uid://c5d8wi32l11xe" path="res://assets/ingredients/low_res/carrot.png" id="5_y4u2j"]
-[ext_resource type="Texture2D" uid="uid://bsvq8lbesc0ya" path="res://assets/ingredients/low_res/pepper.png" id="6_5w4ka"]
-[ext_resource type="Texture2D" uid="uid://ca7g6qpekt5cu" path="res://assets/ingredients/low_res/mint.png" id="7_bfokj"]
+[ext_resource type="Texture2D" uid="uid://bteqvbuoixsyj" path="res://assets/ingredients/low_res/berry.png" id="1_sfkc6"]
+[ext_resource type="FontFile" uid="uid://bxbjyp5yg4ltc" path="res://assets/tinypixel.otf" id="2_e14kl"]
+[ext_resource type="Texture2D" uid="uid://xw1uupw8dnb7" path="res://assets/ingredients/low_res/nut.png" id="3_5o7nj"]
+[ext_resource type="Texture2D" uid="uid://chv5mrpylretu" path="res://assets/ingredients/low_res/tofu.png" id="4_5hkii"]
+[ext_resource type="Texture2D" uid="uid://cmuunv32frfkc" path="res://assets/ingredients/low_res/carrot.png" id="5_y4u2j"]
+[ext_resource type="Texture2D" uid="uid://b1o8bxggpnw41" path="res://assets/ingredients/low_res/pepper.png" id="6_5w4ka"]
+[ext_resource type="Texture2D" uid="uid://dqqd4tsernqgo" path="res://assets/ingredients/low_res/mint.png" id="7_bfokj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hcd0y"]
 font = ExtResource("2_e14kl")
