@@ -91,26 +91,28 @@ func get_closest_ingredient():
 # runs at the frame rate of the computer (independent from physics frames)
 func _process(_delta) -> void:
 	get_platform_normal()
+	if Globals.dialogue_open:
+		velocity.x = 0
 	# as long as there is movement, animate player with walk cycle
 	if velocity.x != 0:
 		player_animation.play("walk")
 		player_animation.advance(0)
 	else:
 		player_animation.stop()
-	if direction < 0:
+	if direction < 0 and not Globals.dialogue_open:
 		$PlayerImage.flip_h = true
 		$Vfx/BerryEffect.flip_h = true
 		$Vfx/BerryEffect.position.x = 20
-	elif direction > 0:
+	elif direction > 0 and not Globals.dialogue_open:
 		$PlayerImage.flip_h = false
 		$Vfx/BerryEffect.flip_h = false
 		$Vfx/BerryEffect.position.x = -10
 	
 	if not vfx_animation.is_playing(): # if not playing, set direction of vfx
-		if direction < 0:
+		if direction < 0 and not Globals.dialogue_open:
 			$Vfx/NutEffect.flip_h = true
 			$Vfx/NutEffect.position.x = 140
-		elif direction > 0:
+		elif direction > 0 and not Globals.dialogue_open:
 			$Vfx/NutEffect.flip_h = false
 			$Vfx/NutEffect.position.x = -140
 
@@ -134,14 +136,14 @@ func _physics_process(delta: float) -> void:
 	# control horizontal movement
 	# direction = -1 for left, 1 for right, 0 otherwise
 	direction = Input.get_axis("left", "right")
-	if direction != 0 and not Globals.cookbook_open:
+	if direction != 0 and not Globals.cookbook_open and not Globals.dialogue_open:
 		velocity.x += direction * H_VEL_DELTA
 	# apply friction if no direction or velocity is greater than h_vel threshold
 	if direction == 0 or abs(velocity.x) > MAX_H_VEL:
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
 	
 	# control vertical movement
-	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()) and not Globals.cookbook_open:
+	if Input.is_action_just_pressed("up") and (is_on_floor() or near_floor()) and not Globals.cookbook_open and not Globals.dialogue_open:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("debug"):
 		velocity.y = -1500
@@ -151,7 +153,7 @@ func _physics_process(delta: float) -> void:
 	# logic for picking up ingredients
 	var pick_up_ingredient = get_closest_ingredient()
 	# if there is a closest ingredient, update info in $Data and update UI
-	if pick_up_ingredient != null and Input.is_action_just_pressed("pick_up") and not Globals.cookbook_open:
+	if pick_up_ingredient != null and Input.is_action_just_pressed("pick_up") and not Globals.cookbook_open and not Globals.dialogue_open:
 		if pick_up_ingredient.ingredient_name!="hat" and Globals.inventory_used < Globals.inventory_capacity:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
@@ -170,7 +172,7 @@ func _physics_process(delta: float) -> void:
 	# These are the actions where we need to request the selected ingredient from the UI
 	var request_actions = ["discard", "use_item"]
 	for action in request_actions:
-		if Input.is_action_just_pressed(action) and not Globals.cookbook_open:
+		if Input.is_action_just_pressed(action) and not Globals.cookbook_open and not Globals.dialogue_open:
 			request_selected_ingredient.emit(action)
 	 		# logic is handled at end of the signal chain
 			break
