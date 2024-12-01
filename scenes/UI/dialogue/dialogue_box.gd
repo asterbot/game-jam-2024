@@ -12,7 +12,7 @@ var dialogues = {
 		"two": ["wassssupp"],
 	},
 	"general": {
-		"zero_hat_picked_up": ["You unlocked the cookbook!"],
+		"zero_hat_picked_up": ["You unlocked the cookbook! Press W to open"],
 		"ingredient_discovered": ["Your cookbook has been updated!"]
 	}
 }

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/UI/dialogue/dialogue_box.gd" id="1_exyr8"]
 [ext_resource type="Texture2D" uid="uid://dywl37v5etdba" path="res://assets/dialogue_ui.png" id="1_sttgx"]
 [ext_resource type="FontFile" uid="uid://bxbjyp5yg4ltc" path="res://assets/tinypixel.otf" id="2_57gqt"]
-[ext_resource type="Texture2D" uid="uid://caf0b0osrjky6" path="res://assets/keys/directions/right_key.png" id="5_yv70k"]
+[ext_resource type="Texture2D" uid="uid://debqvl61f4hpb" path="res://assets/keys/letters/q_key.png" id="3_dlu1n"]
 
 [node name="DialogueBox" type="CanvasLayer"]
 script = ExtResource("1_exyr8")
@@ -33,7 +33,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("5_yv70k")
+texture = ExtResource("3_dlu1n")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 

@@ -227,7 +227,7 @@ libraries = {
 one_shot = true
 
 [node name="InvisibleTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 6.0
 one_shot = true
 
 [node name="CarrotTimer" type="Timer" parent="."]
