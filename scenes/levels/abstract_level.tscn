@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgy6o2uaitd14"]
+[gd_scene load_steps=15 format=3 uid="uid://dgy6o2uaitd14"]
 
 [ext_resource type="Script" path="res://scenes/levels/abstract_level.gd" id="1_d51jn"]
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="1_k6vp3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/inventory_slot/ui.tscn" id="7_l1ija"]
 [ext_resource type="PackedScene" uid="uid://cacvgf0yctfci" path="res://scenes/UI/cookbook/cookbook.tscn" id="8_8lao6"]
 [ext_resource type="PackedScene" uid="uid://bon4phevyut1y" path="res://scenes/UI/dialogue/dialogue_box.tscn" id="10_owvuj"]
+[ext_resource type="Script" path="res://scenes/levels/death_area.gd" id="11_34vgc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrjuw"]
 shader = ExtResource("1_k6vp3")
@@ -87,8 +88,16 @@ metadata/_edit_group_ = true
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_owvuj")]
 
+[node name="DeathArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 29
+script = ExtResource("11_34vgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
+
 [connection signal="toggle_cookbook_visibility" from="." to="Cookbook" method="_on_abstract_level_toggle_cookbook_visibility"]
 [connection signal="request_selected_ingredient" from="Player" to="UI" method="_on_player_request_selected_ingredient"]
 [connection signal="update_ui" from="Player" to="UI" method="_on_player_update_ui"]
 [connection signal="update_ui" from="Player" to="Cookbook" method="_on_player_update_ui"]
 [connection signal="send_selected_item" from="UI" to="Player" method="_on_ui_send_selected_item"]
+[connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]

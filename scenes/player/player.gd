@@ -129,9 +129,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		extra_jumps_done = 0
 
-	if position.y >= DEATH_HEIGHT:
-		velocity = Vector2.ZERO
-		position = Globals.respawn_pos
 	
 	# control horizontal movement
 	# direction = -1 for left, 1 for right, 0 otherwise
@@ -157,11 +154,12 @@ func _physics_process(delta: float) -> void:
 		if pick_up_ingredient.ingredient_name!="hat" and Globals.inventory_used < Globals.inventory_capacity:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
+			if not Globals.ingredients[ingredient_name]["discovered"]:
+				Globals.start_dialogue("general", "ingredient_discovered")
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
 			update_ui.emit(ingredient_name, false)
-			Globals.start_dialogue("general", ingredient_name + "_received")
 		elif pick_up_ingredient.ingredient_name=="hat":
 			pick_up_ingredient.queue_free()
 			if not Globals.carrot_activated:
@@ -200,6 +198,27 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
 	call_deferred("item_detection", body)
 
+
+func hit():
+	var all_ingredients = []
+	for ingredient in Globals.ingredients:
+		for i in range(Globals.ingredients[ingredient]["amount"]):
+			all_ingredients.append(ingredient)
+	
+	all_ingredients.shuffle()
+	for item in range(min(all_ingredients.size(), randi()%3 + 1)):
+		Globals.ingredients[all_ingredients[item]]["amount"] -= 1
+		Globals.inventory_used -= 1
+		update_ui.emit(all_ingredients[item], false)
+		var ingredient_scene = Globals.ingredients[all_ingredients[item]]["scene"].instantiate()
+		var offset_x = 30
+		var offset_y = 30
+		var speed = 350
+		# also, throw the ingredient
+		ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
+		ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
+		$"../Ingredients".add_child(ingredient_scene)
+
 func item_detection(body: Node2D) -> void:
 	if body.is_in_group("ingredients"):
 		body.gravity_scale = 1
@@ -212,25 +231,7 @@ func item_detection(body: Node2D) -> void:
 			var dir = (global_position - body.global_position).normalized()
 			velocity = 0.4*velocity + dir*600
 
-			var all_ingredients = []
-			for ingredient in Globals.ingredients:
-				for i in range(Globals.ingredients[ingredient]["amount"]):
-					all_ingredients.append(ingredient)
-			
-			all_ingredients.shuffle()
-			for item in range(min(all_ingredients.size(), randi()%3 + 1)):
-				Globals.ingredients[all_ingredients[item]]["amount"] -= 1
-				Globals.inventory_used -= 1
-				update_ui.emit(all_ingredients[item], false)
-				var ingredient_scene = Globals.ingredients[all_ingredients[item]]["scene"].instantiate()
-				var offset_x = 30
-				var offset_y = 30
-				var speed = 350
-				# also, throw the ingredient
-				ingredient_scene.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
-				ingredient_scene.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
-				$"../Ingredients".add_child(ingredient_scene)
-
+			hit()
 
 func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 	# if the player has some of the selected ingredient, remove from data

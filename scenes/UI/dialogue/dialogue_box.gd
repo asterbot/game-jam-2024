@@ -12,12 +12,7 @@ var dialogues = {
 		"two": ["wassssupp"],
 	},
 	"general": {
-		"berries_received": ["Cookbook has been updated with berries!"],
-		"nuts_received": ["Cookbook has been updated with nuts!"],
-		"tofus_received": ["Cookbook has been updated with tofus!"],
-		"carrots_received": ["Cookbook has been updated with carrots!"],
-		"peppers_received": ["Cookbook has been updated with peppers!"],
-		"mints_received": ["Cookbook has been updated with mints!"],
+		"ingredient_discovered": ["Your cookbook has been updated!"]
 	}
 }
 
