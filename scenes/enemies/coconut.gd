@@ -34,6 +34,3 @@ func _process(delta: float) -> void:
 	global_position = rotate_pos + Vector2(radius.x*cos(rotation), radius.y*sin(rotation))
 	$Sprite2D.rotation = -rotation
 	super(delta)
-	
-	if Input.is_action_just_pressed("berry_select"):
-		hit()
