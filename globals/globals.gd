@@ -89,6 +89,13 @@ var ingredients = {
 	}
 }
 
+func start_dialogue(speaker: String, state = null):
+	"""If state is null, it uses the state saved in globals"""
+	dialogue_speaker = speaker
+	if state!=null:
+		dialogue_states[dialogue_speaker] = state
+	dialogue_open = true
+
 var dialogue_open = false
 
 var dialogue_speaker = null
@@ -97,5 +104,5 @@ var dialogue_speaker = null
 var dialogue_states = {
 	"adjucator": "intro",
 	"mountain_giant": "one",
-	"general": "one"
+	"general": "default"
 }

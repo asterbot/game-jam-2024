@@ -12,8 +12,12 @@ var dialogues = {
 		"two": ["wassssupp"],
 	},
 	"general": {
-		"one": ["Hey how are you"],
-		"two": ["wassssupp"],
+		"berries_received": ["Cookbook has been updated with berries!"],
+		"nuts_received": ["Cookbook has been updated with nuts!"],
+		"tofus_received": ["Cookbook has been updated with tofus!"],
+		"carrots_received": ["Cookbook has been updated with carrots!"],
+		"peppers_received": ["Cookbook has been updated with peppers!"],
+		"mints_received": ["Cookbook has been updated with mints!"],
 	}
 }
 
@@ -26,7 +30,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Globals.dialogue_open:
 		visible = true
 		var speaker = Globals.dialogue_speaker
@@ -39,7 +43,7 @@ func _process(delta: float) -> void:
 			visible = false
 			cur_index = 0
 			return
-		$NinePatchRect/RichTextLabel.text = all_dialogues[cur_index]
+		%RichTextLabel.text = all_dialogues[cur_index]
 		if Input.is_action_just_pressed("dialogue_next") and cur_index < num_dialogues:
 			cur_index+=1
 		

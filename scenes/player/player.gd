@@ -161,6 +161,7 @@ func _physics_process(delta: float) -> void:
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
 			update_ui.emit(ingredient_name, false)
+			Globals.start_dialogue("general", ingredient_name + "_received")
 		elif pick_up_ingredient.ingredient_name=="hat":
 			pick_up_ingredient.queue_free()
 			if not Globals.carrot_activated:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dc5e3xk3i347f"]
+[gd_scene load_steps=14 format=4 uid="uid://dc5e3xk3i347f"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g4cjb"]
 [ext_resource type="Script" path="res://scenes/levels/level_inside/level_inside.gd" id="2_khp1a"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b6iiryefnl10w" path="res://scenes/npc/dialogue_detection_area.tscn" id="7_5d7ul"]
 [ext_resource type="Texture2D" uid="uid://ncxj0hrccpg" path="res://assets/environment/white_orb.png" id="7_kx5t1"]
 [ext_resource type="PackedScene" uid="uid://dkrn7lqlxm65d" path="res://scenes/levels/level_inside/pot_display.tscn" id="7_lme0a"]
-[ext_resource type="PackedScene" uid="uid://bon4phevyut1y" path="res://scenes/UI/dialogue/dialogue_box.tscn" id="9_ip03w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]
 size = Vector2(261, 394)
@@ -193,8 +192,6 @@ autoplay = "pot_fire_flicker"
 
 [node name="Cookbook" parent="." index="14"]
 visible = false
-
-[node name="DialogueBox" parent="." index="15" instance=ExtResource("9_ip03w")]
 
 [connection signal="ingredient_collected" from="Environment/Pot" to="." method="_on_pot_ingredient_collected"]
 [connection signal="ingredient_collected" from="Environment/Pot" to="PotDisplay" method="_on_pot_ingredient_collected"]

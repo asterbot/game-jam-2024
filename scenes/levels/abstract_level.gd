@@ -9,6 +9,6 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if Input.is_action_just_pressed("cookbook"):
+	if Input.is_action_just_pressed("cookbook") and not Globals.dialogue_open:
 		Globals.cookbook_open = not Globals.cookbook_open
 		toggle_cookbook_visibility.emit()

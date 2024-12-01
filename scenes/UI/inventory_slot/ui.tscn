@@ -85,7 +85,7 @@ theme_override_constants/separation = 30
 script = ExtResource("1_fdn0j")
 
 [node name="CookbookSlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(110, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0hbbv")
 
