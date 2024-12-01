@@ -1,2 +1,1 @@
-# game-jam-2024
-godot my beloved
+# Souper-Secrets v1.0 beta version
