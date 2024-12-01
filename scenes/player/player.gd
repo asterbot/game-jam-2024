@@ -129,9 +129,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		extra_jumps_done = 0
 
-	if position.y >= DEATH_HEIGHT:
-		velocity = Vector2.ZERO
-		position = Globals.respawn_pos
 	
 	# control horizontal movement
 	# direction = -1 for left, 1 for right, 0 otherwise
@@ -157,11 +154,12 @@ func _physics_process(delta: float) -> void:
 		if pick_up_ingredient.ingredient_name!="hat" and Globals.inventory_used < Globals.inventory_capacity:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
+			if not Globals.ingredients[ingredient_name]["discovered"]:
+				Globals.start_dialogue("general", "ingredient_discovered")
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
 			update_ui.emit(ingredient_name, false)
-			Globals.start_dialogue("general", ingredient_name + "_received")
 		elif pick_up_ingredient.ingredient_name=="hat":
 			pick_up_ingredient.queue_free()
 			if not Globals.carrot_activated:
