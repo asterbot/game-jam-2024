@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8tb0k8dgabex"]
+[gd_scene load_steps=4 format=3 uid="uid://bvm2lvac2sn6p"]
 
 [ext_resource type="PackedScene" uid="uid://b7efyntpk2mdn" path="res://scenes/plants/abstract_plant.tscn" id="1_ta3no"]
-[ext_resource type="Texture2D" uid="uid://c4gf4ai7qg4vf" path="res://assets/ingredients/plants/tofu_tree.png" id="2_pednx"]
-[ext_resource type="PackedScene" uid="uid://coloocqwfs33e" path="res://scenes/ingredients/tofu.tscn" id="3_re3wg"]
+[ext_resource type="Texture2D" uid="uid://chr04mxe88e54" path="res://assets/ingredients/plants/tofu_tree.png" id="2_pednx"]
+[ext_resource type="PackedScene" uid="uid://3b2qa8y1hbc2" path="res://scenes/ingredients/tofu.tscn" id="3_re3wg"]
 
 [node name="TofuTree" instance=ExtResource("1_ta3no")]
 position = Vector2(7, -96)

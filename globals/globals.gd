@@ -2,7 +2,7 @@ extends Node
 
 
 # I just set this manually, we can use this as the starting position in the game
-const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
+const DEFAULT_RESPAWN_POS = Vector2(0,0)
 var respawn_pos = DEFAULT_RESPAWN_POS
 
 var tofu_activated = false;
