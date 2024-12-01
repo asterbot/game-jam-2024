@@ -175,7 +175,7 @@ show_percentage = false
 
 [node name="TimerTofu" type="Timer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer/HBoxContainerTofu"]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 6.0
 one_shot = true
 
 [node name="HBoxContainerCarrot" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ProgressTimers/VBoxContainer"]
