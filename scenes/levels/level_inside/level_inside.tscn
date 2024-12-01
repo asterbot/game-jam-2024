@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dc5e3xk3i347f"]
+[gd_scene load_steps=17 format=4 uid="uid://dc5e3xk3i347f"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g4cjb"]
 [ext_resource type="Script" path="res://scenes/levels/level_inside/level_inside.gd" id="2_khp1a"]
@@ -13,6 +13,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]
 size = Vector2(261, 394)
+
+[sub_resource type="LabelSettings" id="LabelSettings_onrav"]
+font = ExtResource("10_smurd")
+font_size = 30
 
 [sub_resource type="Animation" id="Animation_i8n74"]
 length = 0.001
@@ -145,14 +149,29 @@ offset_left = 90.0
 offset_top = 350.0
 offset_right = 90.0
 offset_bottom = 350.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PotDisplay" index="1"]
+z_index = 3
+layout_mode = 0
+offset_left = 6.0
+offset_top = -71.0
+offset_right = 362.0
+offset_bottom = -36.0
+text = "Q to throw, E to cook"
+label_settings = SubResource("LabelSettings_onrav")
 metadata/_edit_use_anchors_ = true
 
 [node name="Lights" type="Node2D" parent="." index="12"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]
 color = Color(0.576471, 0.666667, 0.835294, 1)
 energy = 0.8
 blend_mode = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="PotLight" type="PointLight2D" parent="Lights" index="1"]
 position = Vector2(278, 511)
@@ -201,6 +220,7 @@ autoplay = "pot_fire_flicker"
 
 [node name="EndScreen" type="CanvasLayer" parent="." index="18"]
 layer = 4
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="EndScreen" index="0"]
 anchors_preset = 15
