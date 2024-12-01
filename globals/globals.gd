@@ -59,43 +59,43 @@ var ingredients = {
 	"berries": {
 		"name": "Winged Berry",
 		"inventory_slot": 1,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
 		"name": "Nut and Bolt",
 		"inventory_slot": 2,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
 		"name": "Tofu Cloak",
 		"inventory_slot": 3,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/tofu.tscn")
 	},
 	"carrots": {
 		"name": "Carrot Telescope",
 		"inventory_slot": 4,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		 "scene": preload("res://scenes/ingredients/carrot.tscn")
 	},
 	"peppers": {
 		"name": "Pepper Bomb",
 		"inventory_slot": 5,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/pepper.tscn")
 	},
 	"mints": {
 		"name": "Mint Saver",
 		"inventory_slot": 6,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }
@@ -109,10 +109,10 @@ func start_dialogue(state = null):
 var dialogue_open = false
 
 # Game states
-var dialogue_state = "0_intro"
+var dialogue_state = "0_pass"
 
 var dialogues = {
-		"0_intro":  {
+		"0_pass":  {
 			"lines" : [ "[oWo] Hello... who are you?",
 				  		"[oWo] You... you can see me?",
 						"[oWo] You're the first one who has been able to see me since I died 500 years ago",
@@ -127,54 +127,69 @@ var dialogues = {
 					],
 			"completed": false
 			},
-		"1_intro": {
-			"lines" : [   "[oWo] Hello... who are you?",
-				  		"[oWo] You... you can see me?",
-						"[oWo] You're the first one who has been able to see me since I died 500 years ago",
-						"[oWo] It... it is unforgiv-",
-						"[??????] WHO AWOKE ME FROM MY SLUMBER???",
-						"[??????] AH I SEE, SOMEONE NEW!!!!! HOW EXCITING, I'VE BEEN WAITING FOR SO LONG!!!!!",
-						"[??????] I SEE YOU HAVE A CHEF HAT, DOES THAT MEAN YOU CAN COOK????",
-						"[oWo] Oh...",
-						"[??????] THERE'S A COOKING POT IN FRONT OF YOU, MAKE YOUR WAY THERE AND COOK ME SOME SOUP!",
-						"[??????] YOU MAY NOT HAVE WHAT YOU NEED FOR IT YET, YOU SHOULD GO OUT AND FIND SOME THINGS!",
-						"[??????] FIND EVERYTHING YOU CAN AND BRING ME BACK THREE OF EACH"
+		"1_pass": {
+			"lines" : [ "[??????] AH NOT BAD AT ALL... THIS ISN'T HALF BAD!",
+						"[oWo] :3",
+						"[??????] I SEE YOUR POTENTIAL NOW AS A TOP SOUP CHEF",
+						"[??????] HOWEVER, THESE INGREDIENTS ARE QUTIE BLAND COMPARED TO WHAT I LIKE",
+						"[??????] TODAY, I'M CRAVING A LITTLE BIT OF SWEET AND SOUR! A BIT OF SOMETHING CHILLED TOO",
+						"[??????] BRING ME 4 OF EACH! OFF YOU GO!!!" 
 					],
 			"completed": false
 			},
-		"2_intro": {
-			"lines" : [   "[oWo] Hello... who are you?",
-				  		"[oWo] You... you can see me?",
-						"[oWo] You're the first one who has been able to see me since I died 500 years ago",
-						"[oWo] It... it is unforgiv-",
-						"[??????] WHO AWOKE ME FROM MY SLUMBER???",
-						"[??????] AH I SEE, SOMEONE NEW!!!!! HOW EXCITING, I'VE BEEN WAITING FOR SO LONG!!!!!",
-						"[??????] I SEE YOU HAVE A CHEF HAT, DOES THAT MEAN YOU CAN COOK????",
-						"[oWo] Oh...",
-						"[??????] THERE'S A COOKING POT IN FRONT OF YOU, MAKE YOUR WAY THERE AND COOK ME SOME SOUP!",
-						"[??????] YOU MAY NOT HAVE WHAT YOU NEED FOR IT YET, YOU SHOULD GO OUT AND FIND SOME THINGS!",
-						"[??????] FIND EVERYTHING YOU CAN AND BRING ME BACK THREE OF EACH"
+		"fail":{
+			"lines":[
+				"[??????] ............ what is this?",
+				"[??????] YOU UNDER-DELIVERED ON YOUR SUPPOSED \"CULINARY SKILLS\"!!!",
+				"[??????] TRY AGAIN!"
+			],
+			"completed": false,
+		},
+		"2_pass": {
+			"lines" : [  "[??????] WELL WELL WELL, YOU HAVE SURPASSED MY EXPECTATIONS ONCE AGAIN!",
+						"[??????] I CAN'T BELIEVE YOU FOUND THE MINTS, I TRIED REALLY HARD TO HIDE THEM!",
+						"[??????] ALRIGHT, I HAVE ONE LAST REQUEST FOR YOU",
+						"[??????] I'D LIKE SOME SPICE IN MY SOUP WITH SOME CRUNCH, IT SHOULD TAKE ME OUT FOR LUNCH! - BRING ME 3 OF EACH",
+						"[??????] IT BETTER BE ELECTRIFYING AS WELL, MAKE THE SHOCK DOUBLE THE SPICE!"
+						
 					],
 			"completed": false
 			},
-		"3_intro": {
-			"lines" : [   "[oWo] Hello... who are you?",
-				  		"[oWo] You... you can see me?",
-						"[oWo] You're the first one who has been able to see me since I died 500 years ago",
-						"[oWo] It... it is unforgiv-",
-						"[??????] WHO AWOKE ME FROM MY SLUMBER???",
-						"[??????] AH I SEE, SOMEONE NEW!!!!! HOW EXCITING, I'VE BEEN WAITING FOR SO LONG!!!!!",
-						"[??????] I SEE YOU HAVE A CHEF HAT, DOES THAT MEAN YOU CAN COOK????",
-						"[oWo] Oh...",
-						"[??????] THERE'S A COOKING POT IN FRONT OF YOU, MAKE YOUR WAY THERE AND COOK ME SOME SOUP!",
-						"[??????] YOU MAY NOT HAVE WHAT YOU NEED FOR IT YET, YOU SHOULD GO OUT AND FIND SOME THINGS!",
-						"[??????] FIND EVERYTHING YOU CAN AND BRING ME BACK THREE OF EACH"
+		"3_pass": {
+			"lines" : [   "[??????] WELL DONE! YOU HAVE IMPRESSED ME BEYOND MY EXPECTATIONS!",
+						  "[??????] I RECOGNIZE YOUR TALENT, AND I WANT TO HIRE YOU AS MY FULL-TIME PERSONAL CHEF. HOW DOES THAT SOUND?",
+						  "[oWo] psst.... go away ... run away as quick as you can! The mountain giant is very unforgiving!",
+						  "[Mountain Giant] NOW, NOW, WE DON'T WANT TO REVEAL OUR SECRETS, DO WE ;)"
 					],
 			"completed": false
 			},
-		"0_idle": {
+		"1_idle": {
 			"lines" : [   
-						"[oWo] Hello... who are you?",
+						"[oWo] Remember.... did you bring 3 of everything yet?",
+						"[oWo] Feel free to consult the book you found, it looks like it was written by someone important!",
+						"[??????] DID SOMEONE SAY SOMETHING?",
+						"[oWo] No! Nothing!"
+					  ],
+			"completed": false
+			},
+		"2_idle": {
+			"lines" : [   
+						"[oWo] Remember.... did you bring 4 of everything yet?",
+						"[oWo] Should be sweet, sour, and chill",
+						"[oWo] The book should lead you where you need to be! Explore and collect!",
+						"[??????] WHAAAAAAAT",
+						"[oWo] No! Nothing! Sorry to disturb you!"
+					  ],
+			"completed": false
+			},
+		"3_idle": {
+			"lines" : [   
+						"[oWo] I know this particular request is a lot",
+						"[oWo] Remember, it must be spicy, crunchy and electrifying",
+						"[oWo] But don't fright! For it is but trivial if you look at my travel journa-", 
+						"[oWo] Sorry, the book you have on you",
+						"[??????] YOU'RE REALLY TESTING MY PATIENCE IN BETWEEN MY NAP!",
+						"[oWo] O_O"
 					  ],
 			"completed": false
 			},

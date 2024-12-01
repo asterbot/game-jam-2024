@@ -19,10 +19,11 @@ func _process(_delta):
 		if Globals.curr_level == 0:
 			Globals.curr_level += 1
 		Transition.change_scene(level_scene_map[Globals.curr_level])
+		print("got here")
 		Globals.dialogue_state = str(Globals.curr_level) + "_idle"
 
 func _on_body_entered(_body: Node2D) -> void:
-	if Globals.dialogues[str(Globals.curr_level)+"_intro"]["completed"]:
+	if Globals.curr_level==0 or Globals.dialogues[str(Globals.curr_level - 1)+"_pass"]["completed"] :
 		can_leave = true
 		$Key.visible = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dc5e3xk3i347f"]
+[gd_scene load_steps=16 format=4 uid="uid://dc5e3xk3i347f"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g4cjb"]
 [ext_resource type="Script" path="res://scenes/levels/level_inside/level_inside.gd" id="2_khp1a"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6iiryefnl10w" path="res://scenes/npc/dialogue_detection_area.tscn" id="7_5d7ul"]
 [ext_resource type="Texture2D" uid="uid://ncxj0hrccpg" path="res://assets/environment/white_orb.png" id="7_kx5t1"]
 [ext_resource type="PackedScene" uid="uid://dkrn7lqlxm65d" path="res://scenes/levels/level_inside/pot_display.tscn" id="7_lme0a"]
+[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="10_flmth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai4dy"]
 size = Vector2(261, 394)
@@ -75,6 +76,10 @@ _data = {
 "pot_fire_flicker": SubResource("Animation_yifb2")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_gwanj"]
+font = ExtResource("10_flmth")
+font_size = 30
+
 [node name="InsideLevel" instance=ExtResource("1_g4cjb")]
 script = ExtResource("2_khp1a")
 
@@ -112,7 +117,7 @@ texture_scale = 2.0
 position = Vector2(1640, 528)
 speaker = "adjucator"
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="7"]
 position = Vector2(1523, 903)
 
 [node name="PlayerLight" type="PointLight2D" parent="Player" index="9"]
@@ -192,11 +197,17 @@ libraries = {
 }
 autoplay = "pot_fire_flicker"
 
-[node name="Cookbook" parent="." index="14"]
+[node name="DialogueBox" parent="." index="16"]
 visible = false
 
-[node name="DialogueBox" parent="." index="15"]
-visible = false
+[node name="Label" type="Label" parent="." index="18"]
+offset_left = 93.0
+offset_top = 258.0
+offset_right = 449.0
+offset_bottom = 293.0
+text = "Q to throw, E to cook"
+label_settings = SubResource("LabelSettings_gwanj")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="ingredient_collected" from="Environment/Pot" to="." method="_on_pot_ingredient_collected"]
 [connection signal="ingredient_collected" from="Environment/Pot" to="PotDisplay" method="_on_pot_ingredient_collected"]

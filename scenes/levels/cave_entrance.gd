@@ -11,7 +11,8 @@ func _process(_delta: float) -> void:
 		Transition.change_scene("res://scenes/levels/level_inside/level_inside.tscn")
 		if not Globals.dialogue_triggered[Globals.curr_level]:
 			Globals.dialogue_triggered[Globals.curr_level] = true
-			Globals.dialogue_state = str(Globals.curr_level) + "_intro"
+			if Globals.curr_level==0:
+				Globals.dialogue_state = str(Globals.curr_level) + "_pass"
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
