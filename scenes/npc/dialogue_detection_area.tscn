@@ -1,48 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6iiryefnl10w"]
+[gd_scene load_steps=5 format=3 uid="uid://b6iiryefnl10w"]
 
 [ext_resource type="Script" path="res://scenes/npc/dialogue_detection_area.gd" id="1_rmidh"]
-[ext_resource type="Texture2D" uid="uid://denxdj4qnqpcb" path="res://assets/keys/letters/e_key.png" id="2_6d0xp"]
+[ext_resource type="Texture2D" uid="uid://c5loptspet134" path="res://assets/keys/letters/e_key.png" id="2_6d0xp"]
+[ext_resource type="PackedScene" uid="uid://lvm5fldglllx" path="res://scenes/UI/key.tscn" id="3_qbmlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n1yn"]
 size = Vector2(167, 66)
-
-[sub_resource type="Animation" id="Animation_rmeua"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-60, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_q5fs5"]
-resource_name = "hover"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-60, 2), Vector2(-60, -22), Vector2(-60, 2)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_anrnh"]
-_data = {
-"RESET": SubResource("Animation_rmeua"),
-"hover": SubResource("Animation_q5fs5")
-}
 
 [node name="DialogueDetectionArea" type="Node2D"]
 script = ExtResource("1_rmidh")
@@ -53,16 +16,14 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_2n1yn")
 
-[node name="EKey" type="Sprite2D" parent="."]
-position = Vector2(-60, 2)
-scale = Vector2(0.486667, 0.486667)
-texture = ExtResource("2_6d0xp")
+[node name="Key" parent="." instance=ExtResource("3_qbmlc")]
+position = Vector2(-58, 4)
+scale = Vector2(0.6, 0.6)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="EKey"]
-libraries = {
-"": SubResource("AnimationLibrary_anrnh")
-}
-autoplay = "hover"
+[node name="Sprite2D" parent="Key" index="0"]
+texture = ExtResource("2_6d0xp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="Key"]

@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=4 uid="uid://d0cg68xfk5h8b"]
+[gd_scene load_steps=14 format=4 uid="uid://d0cg68xfk5h8b"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g0psb"]
 [ext_resource type="Script" path="res://scenes/levels/level_zero.gd" id="2_cbfcc"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="3_xrh3b"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="4_klt41"]
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="5_pqslj"]
+[ext_resource type="PackedScene" uid="uid://lvm5fldglllx" path="res://scenes/UI/key.tscn" id="6_rrwul"]
+[ext_resource type="Texture2D" uid="uid://c06pj32q8qmi0" path="res://assets/keys/directions/up_key.png" id="7_l5887"]
+[ext_resource type="Texture2D" uid="uid://b0nwqin3pycud" path="res://assets/keys/directions/right_key.png" id="8_eax7m"]
+[ext_resource type="Texture2D" uid="uid://bn6s487o1abgy" path="res://assets/keys/directions/left_key.png" id="9_rgwg7"]
+[ext_resource type="Texture2D" uid="uid://c5loptspet134" path="res://assets/keys/letters/e_key.png" id="10_7li5a"]
+[ext_resource type="Texture2D" uid="uid://bp7kqd1jaai3t" path="res://assets/keys/space_key.png" id="11_ckax3"]
+[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="12_6tt0q"]
+[ext_resource type="Texture2D" uid="uid://bbdo7n6ctgkey" path="res://assets/keys/mouse/left_mouse_key.png" id="13_2ltos"]
 
 [node name="LevelZero" instance=ExtResource("1_g0psb")]
 script = ExtResource("2_cbfcc")
@@ -23,6 +31,62 @@ tile_map_data = PackedByteArray("AAD9//v/AAABAAEAAAD+//v/AAAAAAAAAAD///v/AAABAAA
 position = Vector2(0, -500)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="9"]
+zoom = Vector2(0.8, 0.8)
 
 [node name="Hat" parent="." index="7" instance=ExtResource("5_pqslj")]
 position = Vector2(6260, -1918)
+
+[node name="KeyInstructions" type="Node2D" parent="." index="11"]
+
+[node name="KeyUp" parent="KeyInstructions" index="0" instance=ExtResource("6_rrwul")]
+position = Vector2(2, -658)
+
+[node name="Sprite2D" parent="KeyInstructions/KeyUp" index="0"]
+texture = ExtResource("7_l5887")
+
+[node name="KeyRight" parent="KeyInstructions" index="1" instance=ExtResource("6_rrwul")]
+position = Vector2(67, -605)
+
+[node name="Sprite2D" parent="KeyInstructions/KeyRight" index="0"]
+texture = ExtResource("8_eax7m")
+
+[node name="KeyLeft" parent="KeyInstructions" index="2" instance=ExtResource("6_rrwul")]
+position = Vector2(-64, -605)
+
+[node name="Sprite2D" parent="KeyInstructions/KeyLeft" index="0"]
+texture = ExtResource("9_rgwg7")
+
+[node name="KeyE" parent="KeyInstructions" index="3" instance=ExtResource("6_rrwul")]
+position = Vector2(5951, -1993)
+
+[node name="Sprite2D" parent="KeyInstructions/KeyE" index="0"]
+texture = ExtResource("10_7li5a")
+
+[node name="KeySpace" parent="KeyInstructions" index="4" instance=ExtResource("6_rrwul")]
+position = Vector2(8012, -2586)
+
+[node name="Sprite2D" parent="KeyInstructions/KeySpace" index="0"]
+texture = ExtResource("11_ckax3")
+
+[node name="Label" type="Label" parent="KeyInstructions" index="5"]
+offset_left = 7966.0
+offset_top = -2689.0
+offset_right = 8037.0
+offset_bottom = -2631.0
+theme_override_fonts/font = ExtResource("12_6tt0q")
+theme_override_font_sizes/font_size = 50
+text = "OR"
+metadata/_edit_use_anchors_ = true
+
+[node name="Mouse" parent="KeyInstructions" index="6" instance=ExtResource("6_rrwul")]
+position = Vector2(8000, -2750)
+
+[node name="Sprite2D" parent="KeyInstructions/Mouse" index="0"]
+texture = ExtResource("13_2ltos")
+
+[editable path="KeyInstructions/KeyUp"]
+[editable path="KeyInstructions/KeyRight"]
+[editable path="KeyInstructions/KeyLeft"]
+[editable path="KeyInstructions/KeyE"]
+[editable path="KeyInstructions/KeySpace"]
+[editable path="KeyInstructions/Mouse"]
