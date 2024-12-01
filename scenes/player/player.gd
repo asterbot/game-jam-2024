@@ -198,7 +198,6 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
 	call_deferred("item_detection", body)
 
-
 func hit():
 	var all_ingredients = []
 	for ingredient in Globals.ingredients:

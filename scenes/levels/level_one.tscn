@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_b8613"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="2_06syp"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="2_a7jqn"]
-[ext_resource type="Texture2D" uid="uid://d0bquq8qdfskt" path="res://assets/decorations/warning_sign.png" id="2_jhm18"]
-[ext_resource type="Texture2D" uid="uid://4uyjbaytp8ml" path="res://assets/decorations/fence_1.png" id="3_4xtdf"]
-[ext_resource type="PackedScene" uid="uid://deertjekx84k8" path="res://scenes/plants/nut_tree.tscn" id="3_etnvq"]
-[ext_resource type="Texture2D" uid="uid://cdloe1sym66ak" path="res://assets/decorations/geyser.png" id="4_6l4pe"]
+[ext_resource type="Texture2D" uid="uid://7vi46xdakldb" path="res://assets/decorations/warning_sign.png" id="2_jhm18"]
+[ext_resource type="Texture2D" uid="uid://coym1rshrv5lk" path="res://assets/decorations/fence_1.png" id="3_4xtdf"]
+[ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="3_etnvq"]
+[ext_resource type="Texture2D" uid="uid://ck6cfdpi1hucv" path="res://assets/decorations/geyser.png" id="4_6l4pe"]
 [ext_resource type="PackedScene" uid="uid://bvm2lvac2sn6p" path="res://scenes/plants/tofu_tree.tscn" id="4_utwp3"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="5_v4wu8"]
 
@@ -99,9 +99,6 @@ tile_map_data = PackedByteArray("AAD5/wEAAAABAAAAAAD3/wEAAAAAAAEAAAD7/wEAAAABAAE
 zoom = Vector2(0.8, 0.8)
 
 [node name="UI" parent="." index="7"]
-visible = false
-
-[node name="Cookbook" parent="." index="8"]
 visible = false
 
 [node name="DialogueBox" parent="." index="9"]
