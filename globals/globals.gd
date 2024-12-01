@@ -10,6 +10,7 @@ var carrot_activated = false;
 
 # if cookbook is open, prevent player from moving
 var cookbook_open = false
+var dialogue_open = false
 
 # index value -> sprite for fruit at index
 const index_sprite_map={

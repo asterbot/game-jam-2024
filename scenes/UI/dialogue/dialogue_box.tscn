@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://bon4phevyut1y"]
+[gd_scene load_steps=4 format=3 uid="uid://bon4phevyut1y"]
+
+[ext_resource type="Script" path="res://scenes/UI/dialogue/dialogue_box.gd" id="1_exyr8"]
+[ext_resource type="Texture2D" uid="uid://b5xjljh3lml3m" path="res://assets/dialogue_ui.png" id="1_sttgx"]
+[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="2_57gqt"]
 
 [node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_exyr8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 1919.0
+offset_bottom = 210.0
+texture = ExtResource("1_sttgx")
+patch_margin_left = 100
+patch_margin_right = 100
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 1898.0
+offset_bottom = 182.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_57gqt")
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+text = "Woah this is a dialogue"
