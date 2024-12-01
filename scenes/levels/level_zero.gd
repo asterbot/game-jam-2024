@@ -1,11 +1,33 @@
 extends AbstractLevel
 
-func _process(delta: float) -> void:
-	# for debugging
-	var camera = $Player/Camera2D
-	if Input.is_action_just_pressed("debug_zoom_in"):
-		camera.zoom += Vector2(0.1, 0.1)
-	if Input.is_action_just_pressed("debug_zoom_out"):
-		camera.zoom = Vector2(max(camera.zoom.x - 0.1, 0.1), max(camera.zoom.y - 0.1, 0.1))
-	super(delta)
+var show_inventory = false
 
+func _ready():
+	$UI.visible = false
+	%BerryBush/ReplenishTimer.set_wait_time(3)
+	%KeyE2.modulate.a = 0
+	$Player/PlayerImage.texture = preload("res://assets/player/cat-walk.png")
+
+
+func _process(delta):
+	if show_inventory:
+		super(delta)
+	else:
+		Globals.ingredients["berries"]["amount"] = 0
+		Globals.inventory_used = 0
+
+func _on_hat_tree_exited() -> void:
+	show_inventory = true
+	$UI.visible = true
+	Globals.start_dialogue("general", "zero_hat_picked_up")
+
+
+func _on_berry_zone_body_entered(body: Node2D) -> void:
+	if show_inventory:
+		var tween = get_tree().create_tween()
+		tween.tween_property(%KeyE2, "modulate:a", 1, 1)
+
+
+func _on_berry_zone_body_exited(body: Node2D) -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(%KeyE2, "modulate:a", 0, 1)
