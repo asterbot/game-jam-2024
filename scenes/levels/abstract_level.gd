@@ -5,6 +5,7 @@ class_name AbstractLevel
 signal toggle_cookbook_visibility()
 
 func _ready():
+	$Cookbook.visible = true
 	$UI.update_all()
 	pass
 

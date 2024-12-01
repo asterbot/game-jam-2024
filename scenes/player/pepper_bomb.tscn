@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://d0dkq5xxxrif"]
 
-[ext_resource type="Texture2D" uid="uid://bsvq8lbesc0ya" path="res://assets/ingredients/low_res/pepper.png" id="1_h2heg"]
+[ext_resource type="Texture2D" uid="uid://b1o8bxggpnw41" path="res://assets/ingredients/low_res/pepper.png" id="1_h2heg"]
 [ext_resource type="Script" path="res://scenes/player/pepper_bomb.gd" id="1_t3f7g"]
-[ext_resource type="Texture2D" uid="uid://bvnyjeskf1jda" path="res://assets/ingredients/explosion.png" id="3_op4qj"]
-[ext_resource type="Texture2D" uid="uid://ncxj0hrccpg" path="res://assets/environment/white_orb.png" id="4_h7sqo"]
+[ext_resource type="Texture2D" uid="uid://ddekmvosspccc" path="res://assets/ingredients/explosion.png" id="3_op4qj"]
+[ext_resource type="Texture2D" uid="uid://374srbbeiyd5" path="res://assets/environment/white_orb.png" id="4_h7sqo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nwu0"]
 radius = 37.4833

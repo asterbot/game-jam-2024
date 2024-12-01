@@ -80,6 +80,7 @@ var curr_page = 0
 
 
 func _ready():
+	$Cookbook.visible = true
 	$Cookbook.modulate.a = 0
 	var left_page_0 = preload("res://scenes/UI/cookbook/controls.tscn").instantiate()
 	var right_page_0 = preload("res://scenes/UI/cookbook/text_page.tscn").instantiate()
@@ -96,14 +97,13 @@ func _ready():
 		page_number += 1
 		if Globals.ingredients[ing_name]["discovered"]:
 			left_page.update_page(Globals.ingredients[ing_name]["inventory_slot"])
-			right_page.update_text(Globals.ingredients[ing_name]["inventory_slot"])
+			right_page.update_text(ingredient_descriptions[Globals.ingredients[ing_name]["inventory_slot"]])
 		page_pair["left"] = left_page
 		page_pair["right"] = right_page
 		pages.append(page_pair)
 	flip_to_page(curr_page)
 
 func _process(_delta):
-	# only 
 	if Input.is_action_just_pressed("cookbook_left") and Globals.cookbook_open and curr_page > 0:
 		curr_page -= 1
 		flip_to_page(curr_page)

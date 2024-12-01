@@ -41,6 +41,7 @@ func _ready():
 	$FloorNormalDetector.enabled = true
 	$Vfx/BerryEffect.visible = false
 	$Vfx/NutEffect.visible = false
+	$PlayerImage.texture = preload("res://assets/player/cat-walk-hat.png")
 
 func near_floor():
 	# if 2 of 3 raycast nodes collide with platforms, return True
@@ -90,7 +91,6 @@ func get_closest_ingredient():
 
 # runs at the frame rate of the computer (independent from physics frames)
 func _process(_delta) -> void:
-	get_platform_normal()
 	if Globals.dialogue_open:
 		velocity.x = 0
 	# as long as there is movement, animate player with walk cycle
