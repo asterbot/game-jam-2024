@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="11_yety3"]
 [ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="12_apu6w"]
 [ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="13_axjio"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/ghost.tscn" id="14_8av2b"]
+[ext_resource type="PackedScene" uid="uid://do2xy7s6cr3cn" path="res://scenes/enemies/ghost.tscn" id="14_8av2b"]
 [ext_resource type="PackedScene" uid="uid://bibrvbixlr0le" path="res://scenes/ingredients/hat.tscn" id="15_b1nd4"]
 
 [node name="LevelDebug" instance=ExtResource("1_xpqy2")]

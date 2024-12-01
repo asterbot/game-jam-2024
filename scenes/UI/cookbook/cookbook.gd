@@ -59,7 +59,7 @@ I know the imminent risks that come from eating my offensive weapons, but what e
 	6:
 """Mint from the mountain is how I'd expect mint to taste like. Chew on them for a moment, and your mouth will feel chilled in an instant. The roughness of the leaves also gives substance to an otherwise milquetoast ingredient.
 
-Unfortunately, mints also have the uncanny ability to backtrack your last moments. I have slipped off the mountain several times, but every time I opened my eyes, my feet were firmly planted on the very slopes I fell off.
+Unfortunately, mints also have the uncanny ability to backtrack to your last moments. I have slipped off the mountain several times, but every time I opened my eyes, my feet were firmly planted on the very slopes I fell off.
 
 I've been yearning to return home but it seems impossible nowadays. Every ingredient I collect is not for me. For every stride I take to move forward, it makes no favours and pushes me so far back that I cannot see the progress I have made.
 

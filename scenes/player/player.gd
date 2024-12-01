@@ -278,6 +278,15 @@ func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 					$CarrotTimer.start()
 				"peppers":
 					print("used peppers!")
+					var pepper_bomb = preload("res://scenes/player/pepper_bomb.tscn").instantiate()
+					pepper_bomb.global_position = global_position
+					var offset_x = 30
+					var offset_y = 30
+					var speed = 500
+					pepper_bomb.global_position = global_position + Vector2(-offset_x if $PlayerImage.flip_h else offset_x, -offset_y) 
+					pepper_bomb.linear_velocity = Vector2(-speed if $PlayerImage.flip_h else speed, 0) + velocity
+					$"../Projectiles".add_child(pepper_bomb)
+					
 				"mints":
 					print("used mints!")
 					# get_platform_normal return zero vector if there is no intersection with ground and middle raycast

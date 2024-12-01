@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwoj03emuq5j5"]
+[gd_scene load_steps=11 format=3 uid="uid://do2xy7s6cr3cn"]
 
 [ext_resource type="PackedScene" uid="uid://dkgtf6dqcwryb" path="res://scenes/enemies/abstract_enemy.tscn" id="1_vwrah"]
-[ext_resource type="Texture2D" uid="uid://dke8i7is3uoft" path="res://assets/npcs/ghost-enemy.png" id="2_00kmu"]
+[ext_resource type="Texture2D" uid="uid://bgrij13itiuj0" path="res://assets/npcs/ghost-enemy.png" id="2_00kmu"]
 [ext_resource type="Script" path="res://scenes/enemies/ghost.gd" id="2_dtvku"]
-[ext_resource type="Texture2D" uid="uid://cngl7b3txrq8v" path="res://assets/projectiles/fish.png" id="4_pq7jk"]
+[ext_resource type="Texture2D" uid="uid://c0tu6loaftqlu" path="res://assets/projectiles/fish.png" id="4_pq7jk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4p5g"]
 size = Vector2(58, 128)
