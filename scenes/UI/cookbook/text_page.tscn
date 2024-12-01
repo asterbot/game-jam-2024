@@ -35,7 +35,7 @@ size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_y8868")
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_mehod")
 
