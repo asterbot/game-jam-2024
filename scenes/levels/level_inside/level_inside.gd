@@ -46,6 +46,7 @@ func is_pass(level: int):
 	return true
 
 func _ready() -> void:
+	$EndScreen.visible = false
 	$PotDisplay.modulate.a = 0
 	super()
 
@@ -59,6 +60,7 @@ func _process(delta: float) -> void:
 		else:
 			Globals.start_dialogue("fail")
 	super(delta)
+	game_done()
 
 # animations when close to pot
 func _on_camera_zoom_body_entered(_body: Node2D) -> void:
@@ -83,3 +85,7 @@ func _on_camera_zoom_body_exited(_body: Node2D) -> void:
 
 func _on_pot_ingredient_collected(ingredient_type: Variant) -> void:
 	ingredients_in_pot[ingredient_type] += 1
+
+func game_done():
+	if Input.is_action_just_pressed("berry_select"):
+		$EndScreen.visible = true
