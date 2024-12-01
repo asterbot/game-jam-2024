@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmup0vx1r6j61"]
+
+[ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="1_ljc0s"]
+[ext_resource type="Texture2D" uid="uid://qwkycfaiwvxn" path="res://assets/tilesets/mountain_texture.png" id="1_qr1kk"]
+[ext_resource type="Texture2D" uid="uid://d127uypbr12em" path="res://assets/player/hat.png" id="3_28ocr"]
+[ext_resource type="Texture2D" uid="uid://dwawdmkra8dbw" path="res://assets/player/player.png" id="4_6qu3m"]
+
+[sub_resource type="Animation" id="Animation_4ple3"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cyl67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7lyy"]
+_data = {
+"RESET": SubResource("Animation_cyl67"),
+"hover": SubResource("Animation_4ple3")
+}
+
+[node name="FrontPage" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qr1kk")
+
+[node name="Hat" type="TextureRect" parent="Control"]
+layout_mode = 0
+anchor_left = -0.0692708
+anchor_top = 0.161111
+anchor_right = 0.493468
+anchor_bottom = 0.161111
+offset_right = -830.459
+offset_bottom = 250.0
+rotation = -0.785398
+scale = Vector2(3.056, 3.056)
+texture = ExtResource("3_28ocr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23125
+anchor_top = 0.181481
+anchor_right = 0.811458
+anchor_bottom = 0.648148
+offset_bottom = 6.10352e-05
+theme_override_fonts/font = ExtResource("1_ljc0s")
+theme_override_font_sizes/font_size = 200
+text = "SOUPER 
+  SECRETS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.307292
+anchor_top = 0.816667
+anchor_right = 0.776042
+anchor_bottom = 0.923148
+theme_override_fonts/font = ExtResource("1_ljc0s")
+theme_override_font_sizes/font_size = 80
+text = "Press E to start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.610937
+anchor_top = 0.206481
+anchor_right = 0.997356
+anchor_bottom = 0.715364
+offset_right = 178.077
+offset_bottom = -434.593
+rotation = 0.523599
+pivot_offset = Vector2(460, 57.5)
+theme_override_colors/font_color = Color(0.537787, 1, 0.506004, 1)
+theme_override_fonts/font = ExtResource("1_ljc0s")
+theme_override_font_sizes/font_size = 80
+text = "It's time to cook!"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Label3"]
+libraries = {
+"": SubResource("AnimationLibrary_c7lyy")
+}
+autoplay = "hover"
+
+[node name="Cat-walk" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = -0.687037
+anchor_right = 1.10439
+anchor_bottom = 1.66423
+offset_right = -430.422
+offset_bottom = -2289.37
+rotation = 0.523599
+scale = Vector2(7.43578, 7.43578)
+texture = ExtResource("4_6qu3m")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
