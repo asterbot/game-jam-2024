@@ -6,12 +6,13 @@ var player_entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Key.visible = false
+	$Key.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if player_entered and Input.is_action_just_pressed("pick_up"):
-		Globals.start_dialogue(speaker)
+		Globals.start_dialogue()
+
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$Key.visible = true

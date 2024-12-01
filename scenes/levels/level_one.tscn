@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_b8613"]
 [ext_resource type="PackedScene" uid="uid://j6jkvpoqagi1" path="res://scenes/levels/cave_entrance.tscn" id="2_06syp"]
 [ext_resource type="PackedScene" uid="uid://b060pv3kgky1y" path="res://scenes/plants/berry_bush.tscn" id="2_a7jqn"]
-[ext_resource type="PackedScene" uid="uid://deertjekx84k8" path="res://scenes/plants/nut_tree.tscn" id="3_etnvq"]
+[ext_resource type="PackedScene" path="res://scenes/plants/nut_tree.tscn" id="3_etnvq"]
 [ext_resource type="PackedScene" uid="uid://bvm2lvac2sn6p" path="res://scenes/plants/tofu_tree.tscn" id="4_utwp3"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="5_v4wu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ithn"]
 size = Vector2(152137, 6383)
 
-[node name="LevelOne" instance=ExtResource("1_b8613")]
+[node name="LevelOne2" instance=ExtResource("1_b8613")]
 
 [node name="CaveEntrance" parent="Environment" index="1" instance=ExtResource("2_06syp")]
 position = Vector2(2, 91)

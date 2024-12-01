@@ -7,7 +7,9 @@ func _ready():
 	%BerryBush/ReplenishTimer.set_wait_time(3)
 	%KeyE2.modulate.a = 0
 	$Player/PlayerImage.texture = preload("res://assets/player/cat-walk.png")
-
+	if not Globals.game_started:
+		$Player.position = Globals.DEFAULT_RESPAWN_POS
+		Globals.game_started = true
 
 func _process(delta):
 	if show_inventory:
@@ -19,7 +21,7 @@ func _process(delta):
 func _on_hat_tree_exited() -> void:
 	show_inventory = true
 	$UI.visible = true
-	Globals.start_dialogue("general", "zero_hat_picked_up")
+	Globals.start_dialogue("zero_hat_picked_up")
 
 
 func _on_berry_zone_body_entered(body: Node2D) -> void:

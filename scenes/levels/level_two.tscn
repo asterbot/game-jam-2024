@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do2xy7s6cr3cn" path="res://scenes/enemies/ghost.tscn" id="3_wqs8n"]
 [ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="4_lhjjx"]
 [ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="5_b24hs"]
-[ext_resource type="PackedScene" uid="uid://bm1kj0bbq64ch" path="res://scenes/plants/pepper_vine.tscn" id="6_7op2v"]
+[ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="6_7op2v"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="6_vhp4w"]
 
 [node name="LevelOne" instance=ExtResource("1_gkoyc")]

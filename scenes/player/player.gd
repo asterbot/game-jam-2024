@@ -155,7 +155,7 @@ func _physics_process(delta: float) -> void:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
 			if not Globals.ingredients[ingredient_name]["discovered"]:
-				Globals.start_dialogue("general", "ingredient_discovered")
+				Globals.start_dialogue("ingredient_discovered")
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
