@@ -4,7 +4,7 @@ var show_inventory = false
 
 func _ready():
 	$UI.visible = false
-	%BerryBush/ReplenishTimer.set_wait_time(3)
+	%BerryBush/ReplenishTimer.set_wait_time(10)
 	%KeyE2.modulate.a = 0
 	$Player/PlayerImage.texture = preload("res://assets/player/cat-walk.png")
 	if not Globals.game_started:
