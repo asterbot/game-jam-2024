@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgy6o2uaitd14"]
+[gd_scene load_steps=19 format=3 uid="uid://dgy6o2uaitd14"]
 
 [ext_resource type="Script" path="res://scenes/levels/abstract_level.gd" id="1_d51jn"]
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="1_k6vp3"]
 [ext_resource type="Texture2D" uid="uid://b2wymtixk0hpo" path="res://assets/tilesets/mountain_texture.png" id="2_duxo1"]
 [ext_resource type="Texture2D" uid="uid://baduprnhhib7n" path="res://assets/tilesets/mountain_tileset.png" id="3_u50ch"]
 [ext_resource type="TileSet" uid="uid://4gyjeww12wg5" path="res://scenes/levels/invisible_platform_tileset.tres" id="5_fe4lp"]
+[ext_resource type="Texture2D" uid="uid://bkbb80dag42gj" path="res://assets/tilesets/platform_texture.png" id="5_gr0lh"]
 [ext_resource type="TileSet" uid="uid://ctqhkas1jrcy0" path="res://scenes/levels/platform_tileset.tres" id="5_ikqh0"]
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="6_42b3e"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/inventory_slot/ui.tscn" id="7_l1ija"]
@@ -54,6 +55,16 @@ texture_region_size = Vector2i(150, 150)
 tile_size = Vector2i(150, 150)
 sources/0 = SubResource("TileSetAtlasSource_nxb4n")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvwld"]
+shader = ExtResource("1_k6vp3")
+shader_parameter/texture_scale = Vector2(1, 1)
+shader_parameter/overlay_texture = ExtResource("5_gr0lh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcuyg"]
+shader = ExtResource("1_k6vp3")
+shader_parameter/texture_scale = Vector2(1, 1)
+shader_parameter/overlay_texture = ExtResource("5_gr0lh")
+
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_d51jn")
 
@@ -81,9 +92,11 @@ tile_set = SubResource("TileSet_v1o2l")
 [node name="Plants" type="Node2D" parent="Environment"]
 
 [node name="Platforms" type="TileMapLayer" parent="Environment"]
+material = SubResource("ShaderMaterial_lvwld")
 tile_set = ExtResource("5_ikqh0")
 
 [node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment" groups=["invisible_platforms"]]
+material = SubResource("ShaderMaterial_hcuyg")
 tile_set = ExtResource("5_fe4lp")
 script = ExtResource("7_rawk3")
 
@@ -102,6 +115,7 @@ metadata/_edit_group_ = true
 [node name="UI" parent="." instance=ExtResource("7_l1ija")]
 
 [node name="Cookbook" parent="." instance=ExtResource("8_8lao6")]
+visible = false
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_owvuj")]
 

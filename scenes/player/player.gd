@@ -155,7 +155,7 @@ func _physics_process(delta: float) -> void:
 			pick_up_ingredient.queue_free()
 			var ingredient_name = pick_up_ingredient.ingredient_name
 			if not Globals.ingredients[ingredient_name]["discovered"]:
-				Globals.start_dialogue("general", "ingredient_discovered")
+				Globals.start_dialogue("ingredient_discovered")
 			Globals.ingredients[ingredient_name]["discovered"] = true
 			Globals.ingredients[ingredient_name]["amount"] += 1
 			Globals.inventory_used += 1
@@ -197,7 +197,6 @@ func _on_pickup_zone_body_exited(body: Node2D) -> void:
 # make ingredient fall when player makes contact
 func _on_ingredient_detection_zone_body_entered(body: Node2D) -> void:
 	call_deferred("item_detection", body)
-
 
 func hit():
 	var all_ingredients = []
