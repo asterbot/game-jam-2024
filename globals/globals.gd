@@ -87,3 +87,8 @@ var ingredients = {
 		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }
+
+# Game states
+var general_state = "one"
+var adjucator_state = "one"
+var mountain_giant_state = "one"

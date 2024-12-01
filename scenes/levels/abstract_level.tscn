@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/levels/abstract_level.gd" id="1_d51jn"]
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="1_k6vp3"]
-[ext_resource type="Texture2D" uid="uid://b2wymtixk0hpo" path="res://assets/tilesets/mountain_texture.png" id="2_duxo1"]
-[ext_resource type="Texture2D" uid="uid://baduprnhhib7n" path="res://assets/tilesets/mountain_tileset.png" id="3_u50ch"]
+[ext_resource type="Texture2D" uid="uid://qwkycfaiwvxn" path="res://assets/tilesets/mountain_texture.png" id="2_duxo1"]
+[ext_resource type="Texture2D" uid="uid://3wrw1hjo40d8" path="res://assets/tilesets/mountain_tileset.png" id="3_u50ch"]
 [ext_resource type="TileSet" uid="uid://4gyjeww12wg5" path="res://scenes/levels/invisible_platform_tileset.tres" id="5_fe4lp"]
 [ext_resource type="TileSet" uid="uid://ctqhkas1jrcy0" path="res://scenes/levels/platform_tileset.tres" id="5_ikqh0"]
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="6_42b3e"]
-[ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/ui.tscn" id="7_l1ija"]
+[ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/inventory_slot/ui.tscn" id="7_l1ija"]
 [ext_resource type="PackedScene" uid="uid://cacvgf0yctfci" path="res://scenes/UI/cookbook/cookbook.tscn" id="8_8lao6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrjuw"]
