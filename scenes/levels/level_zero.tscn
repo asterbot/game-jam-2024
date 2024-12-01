@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d0cg68xfk5h8b"]
+[gd_scene load_steps=16 format=4 uid="uid://d0cg68xfk5h8b"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_g0psb"]
 [ext_resource type="Script" path="res://scenes/levels/level_zero.gd" id="2_cbfcc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bp7kqd1jaai3t" path="res://assets/keys/space_key.png" id="11_ckax3"]
 [ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="12_6tt0q"]
 [ext_resource type="Texture2D" uid="uid://bbdo7n6ctgkey" path="res://assets/keys/mouse/left_mouse_key.png" id="13_2ltos"]
+[ext_resource type="PackedScene" uid="uid://dmup0vx1r6j61" path="res://scenes/front_page.tscn" id="14_k6cpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fevba"]
 size = Vector2(476, 239)
@@ -116,6 +117,8 @@ position = Vector2(0, -500)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZones/BerryZone" index="0"]
 position = Vector2(7303, -1291.5)
 shape = SubResource("RectangleShape2D_fevba")
+
+[node name="FrontPage" parent="." index="13" instance=ExtResource("14_k6cpw")]
 
 [connection signal="tree_exited" from="Hat" to="." method="_on_hat_tree_exited"]
 [connection signal="body_entered" from="PickupZones/BerryZone" to="." method="_on_berry_zone_body_entered"]

@@ -9,9 +9,15 @@ func _ready():
 	$Player/PlayerImage.texture = preload("res://assets/player/cat-walk.png")
 	if not Globals.game_started:
 		$Player.position = Globals.DEFAULT_RESPAWN_POS
-		Globals.game_started = true
+		$FrontPage.visible = true
+		
 
 func _process(delta):
+	if not Globals.game_started and Input.is_action_just_pressed("interact"):
+		Globals.game_started = true
+		var tween = get_tree().create_tween()
+		tween.tween_property($FrontPage/Control, "modulate:a",0,1)
+
 	if show_inventory:
 		super(delta)
 	else:
