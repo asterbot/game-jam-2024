@@ -22,7 +22,7 @@ var direction = 0
 
 var is_vulnerable = true;
 
-var hat_obtained:bool = false;
+var hat_obtained:bool = true;
 
 @onready var player_animation = $PlayerAnimation
 @onready var vfx_animation = $Vfx/VfxAnimation

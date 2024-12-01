@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do2xy7s6cr3cn" path="res://scenes/enemies/ghost.tscn" id="3_wqs8n"]
 [ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="4_lhjjx"]
 [ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="5_b24hs"]
-[ext_resource type="PackedScene" uid="uid://bm1kj0bbq64ch" path="res://scenes/plants/pepper_vine.tscn" id="6_7op2v"]
+[ext_resource type="PackedScene" path="res://scenes/plants/pepper_vine.tscn" id="6_7op2v"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="6_vhp4w"]
 
 [node name="LevelOne" instance=ExtResource("1_gkoyc")]
@@ -28,10 +28,9 @@ tile_map_data = PackedByteArray("AAD5/wEAAAABAAAAAAD3/wEAAAAAAAEAAAD7/wEAAAABAAE
 
 [node name="InvisiblePlatforms" parent="Environment" index="4"]
 tile_map_data = PackedByteArray("AAAzAAQAAAAAAAoAAAA0AAQAAAABAAoAAAA1AAQAAAACAAoAAAA1AAEAAAAAAAoAAAA2AAEAAAABAAoAAAA3AAEAAAACAAoAAAAzAP//AAAAAAoAAAA0AP//AAABAAoAAAA1AP//AAACAAoAAAA0AP3/AAAAAAoAAAA1AP3/AAABAAoAAAA2AP3/AAACAAoAAAAzAPv/AAAAAAoAAAA0APv/AAABAAoAAAA1APv/AAACAAoAAAA1APn/AAAAAAoAAAA2APn/AAABAAoAAAA3APn/AAACAAoAAADi/wkAAAAAAAoAAADj/wkAAAABAAoAAADk/wkAAAABAAoAAADl/wkAAAACAAoAAADc/wkAAAAAAAoAAADd/wkAAAABAAoAAADe/wkAAAABAAoAAADf/wkAAAACAAoAAADb/wcAAAAJAAoAAADc/wcAAAALAAoAAADl/wcAAAABAAsAAADk/wcAAAAAAAsAAADm/wcAAAACAAsAAADz/+//AAAAAAoAAAD0/+//AAABAAoAAAD1/+//AAACAAoAAAD0/+3/AAAAAAoAAAD1/+3/AAABAAoAAAD2/+3/AAACAAoAAADz/+r/AAAAAAoAAAD0/+r/AAABAAoAAAD1/+r/AAACAAoAAAA=")
-script = null
 
 [node name="Player" parent="." index="3"]
-position = Vector2(3964, 440)
+position = Vector2(55, -2056)
 
 [node name="Ghost" parent="Enemies" index="3" instance=ExtResource("3_wqs8n")]
 position = Vector2(3495, -686)
