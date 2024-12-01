@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgy6o2uaitd14"]
+[gd_scene load_steps=16 format=3 uid="uid://dgy6o2uaitd14"]
 
 [ext_resource type="Script" path="res://scenes/levels/abstract_level.gd" id="1_d51jn"]
 [ext_resource type="Shader" path="res://scenes/levels/texture_mask.gdshader" id="1_k6vp3"]
@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://ctqhkas1jrcy0" path="res://scenes/levels/platform_tileset.tres" id="5_ikqh0"]
 [ext_resource type="PackedScene" uid="uid://bouxvvctkbnvr" path="res://scenes/player/player.tscn" id="6_42b3e"]
 [ext_resource type="PackedScene" uid="uid://bc8ertsqq0qdm" path="res://scenes/UI/inventory_slot/ui.tscn" id="7_l1ija"]
+[ext_resource type="Script" path="res://scenes/levels/invisible_platforms.gd" id="7_rawk3"]
 [ext_resource type="PackedScene" uid="uid://cacvgf0yctfci" path="res://scenes/UI/cookbook/cookbook.tscn" id="8_8lao6"]
 [ext_resource type="PackedScene" uid="uid://bon4phevyut1y" path="res://scenes/UI/dialogue/dialogue_box.tscn" id="10_owvuj"]
 [ext_resource type="Script" path="res://scenes/levels/death_area.gd" id="11_34vgc"]
@@ -69,6 +70,7 @@ tile_set = ExtResource("5_ikqh0")
 
 [node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment"]
 tile_set = ExtResource("5_fe4lp")
+script = ExtResource("7_rawk3")
 
 [node name="Checkpoints" type="Node2D" parent="."]
 

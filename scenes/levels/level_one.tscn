@@ -15,28 +15,28 @@ size = Vector2(152137, 6383)
 [node name="CaveEntrance" parent="Environment" index="1" instance=ExtResource("2_06syp")]
 position = Vector2(2, 91)
 
-[node name="TofuTree2" parent="Environment/Plants" index="0" instance=ExtResource("4_utwp3")]
-position = Vector2(-321, 1039)
-amount = 3
-
-[node name="TofuTree3" parent="Environment/Plants" index="1" instance=ExtResource("4_utwp3")]
-position = Vector2(819, -972)
-amount = 3
-
-[node name="BerryBush" parent="Environment/Plants" index="2" instance=ExtResource("2_a7jqn")]
+[node name="BerryBush" parent="Environment/Plants" index="0" instance=ExtResource("2_a7jqn")]
 position = Vector2(1941, -281)
 amount = 3
 
-[node name="BerryBush3" parent="Environment/Plants" index="3" instance=ExtResource("2_a7jqn")]
+[node name="BerryBush2" parent="Environment/Plants" index="1" instance=ExtResource("2_a7jqn")]
 position = Vector2(-605, -1317)
 amount = 3
 
-[node name="NutTree" parent="Environment/Plants" index="4" instance=ExtResource("3_etnvq")]
+[node name="NutTree" parent="Environment/Plants" index="2" instance=ExtResource("3_etnvq")]
 position = Vector2(2566, 420)
 amount = 3
 
-[node name="NutTree2" parent="Environment/Plants" index="5" instance=ExtResource("3_etnvq")]
+[node name="NutTree2" parent="Environment/Plants" index="3" instance=ExtResource("3_etnvq")]
 position = Vector2(-1278, -460)
+amount = 3
+
+[node name="TofuTree" parent="Environment/Plants" index="4" instance=ExtResource("4_utwp3")]
+position = Vector2(-321, 1039)
+amount = 3
+
+[node name="TofuTree2" parent="Environment/Plants" index="5" instance=ExtResource("4_utwp3")]
+position = Vector2(819, -972)
 amount = 3
 
 [node name="Platforms" parent="Environment" index="3"]

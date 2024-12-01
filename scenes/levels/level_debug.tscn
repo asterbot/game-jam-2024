@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dh2mglqi6owor"]
+[gd_scene load_steps=17 format=4 uid="uid://dh2mglqi6owor"]
 
 [ext_resource type="PackedScene" uid="uid://dgy6o2uaitd14" path="res://scenes/levels/abstract_level.tscn" id="1_xpqy2"]
 [ext_resource type="Script" path="res://scenes/levels/level_debug.gd" id="2_d17in"]
@@ -7,10 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dbcerw2dhad67" path="res://scenes/ingredients/mint_flag.tscn" id="4_w8mck"]
 [ext_resource type="PackedScene" uid="uid://deertjekx84k8" path="res://scenes/plants/nut_tree.tscn" id="5_gv4qe"]
 [ext_resource type="PackedScene" uid="uid://bm1kj0bbq64ch" path="res://scenes/plants/pepper_vine.tscn" id="6_3f1vx"]
-[ext_resource type="PackedScene" uid="uid://8tb0k8dgabex" path="res://scenes/plants/tofu_tree.tscn" id="7_n4jso"]
+[ext_resource type="PackedScene" uid="uid://bvm2lvac2sn6p" path="res://scenes/plants/tofu_tree.tscn" id="7_n4jso"]
 [ext_resource type="PackedScene" uid="uid://dr5o7ahb7jun4" path="res://scenes/plants/carrot_spiral.tscn" id="8_8q6va"]
 [ext_resource type="PackedScene" uid="uid://40qvt1etu7re" path="res://scenes/plants/mint_stalk.tscn" id="9_35ugu"]
-[ext_resource type="Script" path="res://scenes/levels/invisible_platforms.gd" id="10_s6634"]
 [ext_resource type="PackedScene" uid="uid://b1ws1048bcsft" path="res://scenes/enemies/sprout.tscn" id="11_yety3"]
 [ext_resource type="PackedScene" uid="uid://cia7s1fpy6oii" path="res://scenes/enemies/coconut.tscn" id="12_apu6w"]
 [ext_resource type="PackedScene" uid="uid://bacmv5ro0xg3a" path="res://scenes/enemies/leek.tscn" id="13_axjio"]
@@ -63,7 +62,6 @@ tile_map_data = PackedByteArray("AAABANb/AAAEAAAAAAABANf/AAABAAEAAAABANj/AAABAAE
 [node name="InvisiblePlatforms" parent="Environment" index="4" groups=["invisible_platforms"]]
 position = Vector2(6, 0)
 tile_map_data = PackedByteArray("AAApAM3/AAAKAAsAAAAqAM3/AAAKAAsAAAArAM3/AAAKAAsAAAAsAM3/AAAKAAsAAAAtAM3/AAAKAAsAAAAxAMz/AAADAAsAAAAyAMz/AAAEAAsAAAAyAMr/AAAKAAsAAAAxAMr/AAAKAAsAAAA=")
-script = ExtResource("10_s6634")
 
 [node name="StartCheckPoint" parent="Checkpoints" index="0" instance=ExtResource("4_w8mck")]
 position = Vector2(3028, -2944)
