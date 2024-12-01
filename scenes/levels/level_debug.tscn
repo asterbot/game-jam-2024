@@ -119,7 +119,7 @@ tile_map_data = PackedByteArray("AAApAM3/AAAKAAsAAAAqAM3/AAAKAAsAAAArAM3/AAAKAAs
 [node name="StartCheckPoint" parent="Checkpoints" index="0" instance=ExtResource("4_w8mck")]
 position = Vector2(3028, -2944)
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="6"]
 position = Vector2(3350, -2795)
 scale = Vector2(0.9, 0.9)
 

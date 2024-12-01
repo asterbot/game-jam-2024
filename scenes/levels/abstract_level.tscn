@@ -57,15 +57,26 @@ sources/0 = SubResource("TileSetAtlasSource_nxb4n")
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_d51jn")
 
-[node name="Decorations" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564077, 0.668046, 0.985176, 1)
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Mountain" type="TileMapLayer" parent="Environment"]
+z_index = -1
 material = SubResource("ShaderMaterial_mrjuw")
 tile_set = SubResource("TileSet_v1o2l")
+
+[node name="Decorations" type="Node2D" parent="Environment"]
 
 [node name="Plants" type="Node2D" parent="Environment"]
 
@@ -75,6 +86,8 @@ tile_set = ExtResource("5_ikqh0")
 [node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment" groups=["invisible_platforms"]]
 tile_set = ExtResource("5_fe4lp")
 script = ExtResource("7_rawk3")
+
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
