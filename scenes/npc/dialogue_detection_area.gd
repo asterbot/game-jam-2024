@@ -6,7 +6,7 @@ var player_entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$EKey.visible = false
+	$Key.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -14,10 +14,10 @@ func _process(_delta: float) -> void:
 		Globals.start_dialogue(speaker)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	$EKey.visible = true
+	$Key.visible = true
 	player_entered = true
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	$EKey.visible = false
+	$Key.visible = false
 	player_entered = false
