@@ -2,6 +2,8 @@ extends AbstractLevel
 
 var can_cook = false
 
+var game_complete = false
+
 var ingredients_in_pot = {
 	"berries": 0,
 	"nuts": 0,
@@ -51,16 +53,19 @@ func _ready() -> void:
 	super()
 
 func _process(delta: float) -> void:
+	if game_complete and Globals.dialogues["3_pass"]["completed"]:
+		game_done()
 	if Input.is_action_just_pressed("interact") and can_cook and Globals.curr_level!=0:
 		print(ingredients_in_pot)
 		if is_pass(Globals.curr_level):
-			print("passed!!!")
 			Globals.start_dialogue(str(Globals.curr_level)+"_pass")
 			Globals.curr_level += 1
+			if Globals.curr_level == 4:
+				game_complete = true
 		else:
 			Globals.start_dialogue("fail")
+			
 	super(delta)
-	game_done()
 
 # animations when close to pot
 func _on_camera_zoom_body_entered(_body: Node2D) -> void:
@@ -87,5 +92,5 @@ func _on_pot_ingredient_collected(ingredient_type: Variant) -> void:
 	ingredients_in_pot[ingredient_type] += 1
 
 func game_done():
-	if Input.is_action_just_pressed("berry_select"):
-		$EndScreen.visible = true
+	$EndScreen.visible = true
+	get_tree().paused = true
