@@ -11,6 +11,7 @@ var carrot_activated = false;
 # if cookbook is open, prevent player from moving
 var cookbook_open = false
 
+
 # index value -> sprite for fruit at index
 const index_sprite_map={
 	0: preload("res://assets/ingredients/low_res/unrevealed.png"),
@@ -86,4 +87,15 @@ var ingredients = {
 		"discovered": false,
 		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
+}
+
+var dialogue_open = false
+
+var dialogue_speaker = null
+
+# Game states
+var dialogue_states = {
+	"adjucator": "intro",
+	"mountain_giant": "one",
+	"general": "one"
 }
