@@ -57,6 +57,10 @@ sources/0 = SubResource("TileSetAtlasSource_nxb4n")
 [node name="AbstractLevel" type="Node2D"]
 script = ExtResource("1_d51jn")
 
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Mountain" type="TileMapLayer" parent="Environment"]
@@ -68,7 +72,7 @@ tile_set = SubResource("TileSet_v1o2l")
 [node name="Platforms" type="TileMapLayer" parent="Environment"]
 tile_set = ExtResource("5_ikqh0")
 
-[node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment"]
+[node name="InvisiblePlatforms" type="TileMapLayer" parent="Environment" groups=["invisible_platforms"]]
 tile_set = ExtResource("5_fe4lp")
 script = ExtResource("7_rawk3")
 
@@ -79,8 +83,6 @@ script = ExtResource("7_rawk3")
 [node name="Player" parent="." instance=ExtResource("6_42b3e")]
 floor_snap_length = 10.0
 metadata/_edit_group_ = true
-
-[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Ingredients" type="Node2D" parent="."]
 
