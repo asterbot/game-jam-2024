@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bon4phevyut1y"]
+[gd_scene load_steps=5 format=3 uid="uid://bon4phevyut1y"]
 
 [ext_resource type="Script" path="res://scenes/UI/dialogue/dialogue_box.gd" id="1_exyr8"]
 [ext_resource type="Texture2D" uid="uid://b5xjljh3lml3m" path="res://assets/dialogue_ui.png" id="1_sttgx"]
 [ext_resource type="FontFile" uid="uid://c7f8jke1fleg6" path="res://assets/tinypixel.otf" id="2_57gqt"]
+[ext_resource type="Texture2D" uid="uid://b0nwqin3pycud" path="res://assets/keys/directions/right_key.png" id="5_yv70k"]
 
 [node name="DialogueBox" type="CanvasLayer"]
 script = ExtResource("1_exyr8")
@@ -29,4 +30,7 @@ theme_override_font_sizes/italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
 theme_override_font_sizes/normal_font_size = 50
 theme_override_font_sizes/bold_font_size = 50
-text = "Woah this is a dialogue"
+
+[node name="Right-arrow-key" type="Sprite2D" parent="."]
+position = Vector2(1837, 150)
+texture = ExtResource("5_yv70k")

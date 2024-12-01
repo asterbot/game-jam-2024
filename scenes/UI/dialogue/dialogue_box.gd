@@ -17,12 +17,29 @@ var dialogues = {
 	}
 }
 
+var cur_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Globals.dialogue_open:
+		visible = true
+		var speaker = Globals.dialogue_speaker
+		var state = Globals.dialogue_states[speaker]
+		var all_dialogues = dialogues[speaker][state]
+		var num_dialogues = all_dialogues.size()
+		if cur_index == num_dialogues:
+			Globals.dialogue_open = false
+			Globals.dialogue_speaker = null
+			visible = false
+			cur_index = 0
+			return
+		$NinePatchRect/RichTextLabel.text = all_dialogues[cur_index]
+		if Input.is_action_just_pressed("dialogue_next") and cur_index < num_dialogues:
+			cur_index+=1
+		

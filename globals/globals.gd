@@ -10,7 +10,7 @@ var carrot_activated = false;
 
 # if cookbook is open, prevent player from moving
 var cookbook_open = false
-var dialogue_open = false
+
 
 # index value -> sprite for fruit at index
 const index_sprite_map={
@@ -89,7 +89,13 @@ var ingredients = {
 	}
 }
 
+var dialogue_open = false
+
+var dialogue_speaker = null
+
 # Game states
-var general_state = "one"
-var adjucator_state = "one"
-var mountain_giant_state = "one"
+var dialogue_states = {
+	"adjucator": "intro",
+	"mountain_giant": "one",
+	"general": "one"
+}
