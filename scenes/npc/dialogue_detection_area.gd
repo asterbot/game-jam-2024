@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if player_entered and Input.is_action_just_pressed("pick_up"):
+	if player_entered and Input.is_action_just_pressed("interact") and not Globals.dialogue_open:
 		Globals.start_dialogue(speaker)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
