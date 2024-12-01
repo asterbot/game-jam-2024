@@ -47,7 +47,6 @@ func is_pass(level: int):
 
 func _ready() -> void:
 	$PotDisplay.modulate.a = 0
-	Globals.ingredients["berries"]["amount"] = 100
 	super()
 
 func _process(delta: float) -> void:

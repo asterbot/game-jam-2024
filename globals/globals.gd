@@ -59,43 +59,43 @@ var ingredients = {
 	"berries": {
 		"name": "Winged Berry",
 		"inventory_slot": 1,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
 		"name": "Nut and Bolt",
 		"inventory_slot": 2,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
 		"name": "Tofu Cloak",
 		"inventory_slot": 3,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/tofu.tscn")
 	},
 	"carrots": {
 		"name": "Carrot Telescope",
 		"inventory_slot": 4,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		 "scene": preload("res://scenes/ingredients/carrot.tscn")
 	},
 	"peppers": {
 		"name": "Pepper Bomb",
 		"inventory_slot": 5,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/pepper.tscn")
 	},
 	"mints": {
 		"name": "Mint Saver",
 		"inventory_slot": 6,
-		"amount": 100,
-		"discovered": true,
+		"amount": 0,
+		"discovered": false,
 		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }

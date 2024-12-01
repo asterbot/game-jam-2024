@@ -13,6 +13,8 @@ func _process(_delta: float) -> void:
 			Globals.dialogue_triggered[Globals.curr_level] = true
 			if Globals.curr_level==0:
 				Globals.dialogue_state = str(Globals.curr_level) + "_pass"
+		else:
+			Globals.dialogue_state = str(Globals.curr_level) + "_idle"
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:

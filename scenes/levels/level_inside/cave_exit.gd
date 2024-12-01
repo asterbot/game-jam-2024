@@ -6,7 +6,7 @@ var level_scene_map = {
 	0: "res://scenes/levels/level_zero.tscn",
 	1: "res://scenes/levels/level_one.tscn",
 	2: "res://scenes/levels/level_two.tscn",
-	3: "res://scenes/levels/level_one.tscn",	
+	3: "res://scenes/levels/level_three.tscn",	
 }
 
 
@@ -23,8 +23,12 @@ func _process(_delta):
 		Globals.dialogue_state = str(Globals.curr_level) + "_idle"
 
 func _on_body_entered(_body: Node2D) -> void:
-	if Globals.curr_level==0 or Globals.dialogues[str(Globals.curr_level - 1)+"_pass"]["completed"] :
-		can_leave = true
+	if Globals.curr_level > 0:
+		if Globals.dialogues[str(Globals.curr_level - 1)+"_pass"]["completed"] :
+			can_leave = true
+			$Key.visible = true
+	elif (Globals.curr_level==0 and Globals.dialogues["0_pass"]["completed"]):
+		can_leave=true
 		$Key.visible = true
 
 func _on_body_exited(_body: Node2D) -> void:	
