@@ -230,8 +230,7 @@ func item_detection(body: Node2D) -> void:
 
 			var dir = (global_position - body.global_position).normalized()
 			velocity = 0.4*velocity + dir*600
-
-			hit()
+			call_deferred("hit")
 
 func _on_ui_send_selected_item(item: String, purpose: String) -> void:
 	# if the player has some of the selected ingredient, remove from data

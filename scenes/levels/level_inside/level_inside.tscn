@@ -165,6 +165,7 @@ position = Vector2(399.127, 689.956)
 rotation = -0.816814
 scale = Vector2(0.78591, 0.596315)
 color = Color(0.947413, 0.150997, 0, 1)
+energy = 1.00769
 texture = ExtResource("7_kx5t1")
 texture_scale = 1.2
 
@@ -173,7 +174,7 @@ position = Vector2(168.156, 705.626)
 rotation = 0.760964
 scale = Vector2(0.638136, 0.482412)
 color = Color(0.947413, 0.150997, 0, 1)
-energy = 1.36667
+energy = 1.7
 texture = ExtResource("7_kx5t1")
 texture_scale = 1.2
 

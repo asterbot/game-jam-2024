@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brgutyxjodshe"]
+[gd_scene load_steps=5 format=3 uid="uid://brgutyxjodshe"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_inside/cave_exit.gd" id="1_wsmv0"]
 [ext_resource type="Texture2D" uid="uid://ddxe735x3b0pw" path="res://assets/environment/inside_level/cave_exit.png" id="2_a0rk2"]
+[ext_resource type="PackedScene" uid="uid://lvm5fldglllx" path="res://scenes/UI/key.tscn" id="3_w3urh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akkjk"]
 size = Vector2(119, 164)
@@ -17,6 +18,9 @@ texture = ExtResource("2_a0rk2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, -81)
 shape = SubResource("RectangleShape2D_akkjk")
+
+[node name="Key" parent="." instance=ExtResource("3_w3urh")]
+position = Vector2(0, -217)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -3,7 +3,7 @@ extends Node
 var curr_level = 0
 
 # I just set this manually, we can use this as the starting position in the game
-const DEFAULT_RESPAWN_POS = Vector2(4248, -3256)
+const DEFAULT_RESPAWN_POS = Vector2(0,0)
 var respawn_pos = DEFAULT_RESPAWN_POS
 
 var tofu_activated = false;
@@ -28,7 +28,7 @@ const index_sprite_map={
 # Max index in the hotbar 
 var max_index = index_sprite_map.size() - 1
 
-var inventory_capacity : int = 1
+var inventory_capacity : int = 1000
 var inventory_used: int = 0
 
 # inventory slot -> item name
@@ -50,43 +50,43 @@ var ingredients = {
 	"berries": {
 		"name": "Winged Berry",
 		"inventory_slot": 1,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/berry.tscn")
 	},
 	"nuts": {
 		"name": "Nut and Bolt",
 		"inventory_slot": 2,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/nut.tscn")
 	},
 	"tofus": {
 		"name": "Tofu Cloak",
 		"inventory_slot": 3,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/tofu.tscn")
 	},
 	"carrots": {
 		"name": "Carrot Telescope",
 		"inventory_slot": 4,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		 "scene": preload("res://scenes/ingredients/carrot.tscn")
 	},
 	"peppers": {
 		"name": "Pepper Bomb",
 		"inventory_slot": 5,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/pepper.tscn")
 	},
 	"mints": {
 		"name": "Mint Saver",
 		"inventory_slot": 6,
-		"amount": 0,
-		"discovered": false,
+		"amount": 100,
+		"discovered": true,
 		"scene": preload("res://scenes/ingredients/mint.tscn")
 	}
 }
